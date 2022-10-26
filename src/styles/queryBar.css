@@ -1,0 +1,28 @@
+.query-container {
+    text-align: center;
+    background-color: #EBF0E5;
+    min-width: 200px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .query-btn {
+    width: 90%;
+    background-color: #E2E0E1;
+    color: #383C61;
+    border: 1px solid #EC6536;
+    border-shadow: 
+    font-size: calc(10px + 2vmin);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    align-content: center;
+    align-self: center;
+    margin: 10px;
+  }

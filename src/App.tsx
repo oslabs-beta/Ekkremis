@@ -1,6 +1,7 @@
 import './styles/App.css';
 import Dashboard from './components/Dashboard';
 import FrontPage from './components/FrontPage';
+import QueryBar from './components/QueryBar';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <p>
           Greetings from Ekkremis.
         </p>
+        <QueryBar />
       </header>
     </div>
   );
