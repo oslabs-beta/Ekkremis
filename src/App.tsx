@@ -1,4 +1,6 @@
 import './styles/App.css';
+import Dashboard from './components/Dashboard';
+import FrontPage from './components/FrontPage';
 
 function App() {
   return (
