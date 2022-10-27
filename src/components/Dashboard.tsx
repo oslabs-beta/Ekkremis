@@ -13,7 +13,13 @@ import QueryBar from './QueryBar'
 let mockData: any = {"pending" : [
   {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
   {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
+  {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"},
+  {"podName": "pending pod 4", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  {"podName": "pending pod 5", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  {"podName": "pending pod 6", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"},
+  {"podName": "pending pod 7", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  {"podName": "pending pod 8", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  {"podName": "pending pod 9", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
 ],
 "unknown" : [
   {"podName": "unknown pod 1", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
@@ -96,13 +102,11 @@ const TopBar = (props: any) => {
 
   return(
     <div className='top-bar'>
-      <div className='logo'>
-      
-      </div>
+      <img className='header-logo' src={require('../img/Ekkremis-logo-light.png')} alt="Ekkremis" height='100px' width='180px'/>
       <div className='url-input'>
         <input id='endpoint-url' type="text" placeholder={placeholder}/>
         <h5>/metrics</h5>
-        <button onClick={()=>{handleClick()}}>update url</button>
+        <button className='url-btn' onClick={()=>{handleClick()}}>update url</button>
       </div>
       <div className='login-buttons'>
         <button>Login</button>
@@ -141,9 +145,12 @@ const AllPodInfo = (props: any) => {
   }, props.currentPods)
 
   return(
-    <div className='all-pod-info'>
-      {podsArray}
-    </div>
+      <div className='all-pod-info'>
+          <div className='pods-header'></div>
+          <div>
+            {podsArray}
+          </div>
+      </div>
   )
 }
 
