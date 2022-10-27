@@ -3,7 +3,7 @@ import React, { useState, useEffect} from 'react';
 
 // importing other components
 import ChartsModal from './ChartsModal';
-import ErrorModal from './ErrorModal';
+// import ErrorModal from './ErrorModal';
 import '../styles/dashboard.css';
 import Navigation from './Navigation'
 
