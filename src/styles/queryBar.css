@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 .query-container {
     text-align: center;
     background-color: #EBF0E5;
-    min-width: 200px;
-    max-width: 350px;
+    min-width: 150px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -11,18 +13,38 @@
     padding: 10px;
   }
 
+/* // Popup Texts & button */
+  .query-bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  /* //Button Link */
   .query-btn {
-    width: 90%;
-    background-color: #E2E0E1;
-    color: #383C61;
-    border: 1px solid #EC6536;
-    border-shadow: 
-    font-size: calc(10px + 2vmin);
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top:20px;
-    padding-bottom: 20px;
-    align-content: center;
-    align-self: center;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5%;
     margin: 10px;
+    padding: 1.5em 3em;
+    background-size: 200% auto;
+    border: none;
+    box-shadow: 0 4px 6px #E2E0E1, 0 1px 3px #EC6536;
+    background-image: linear-gradient(to right, #ec6336a4 0%, #f7bd58df 50%, #ec6336a4 100%);
+    transition: 0.5s;
+  }
+
+  .query-btn:hover {
+    background-position: right center;
+  }
+
+  .query-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 6px #3A36C2, 0 1px 3px #EC6536;
+    /* Lowering the shadow */
   }
