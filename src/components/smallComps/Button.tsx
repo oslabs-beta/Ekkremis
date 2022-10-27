@@ -1,9 +1,19 @@
 import React from 'react';
 
-const Button = () => {
+interface Props {
+  className: string;
+  children?: React.ReactNode;
+  onClick?: () => void; //might want to remove the '?' if the button will have functionality
+}
+
+const Button: React.FC<Props> = ({ 
+    className,
+    children,
+    onClick
+  }) => {
   return (
     <div>
-      <button className='button'></button>  
+      <button className={className} onClick={onClick}>{children}</button>  
     </div>
   )
 }
