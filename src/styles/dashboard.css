@@ -1,20 +1,160 @@
 .dashboard {
   width: 100%;
-  height: 100%;
+  height: 80%;
+  background-color: #EBF0E5;
 }
 
 .top-bar {
-  border: 2px solid black;
-
+  /* border: 2px solid black;
+  background-color: #EBF0E5; */
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  background-size: 200% auto;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  border: none;
+  box-shadow: 0 4px 6px #E2E0E1, 0 1px 3px #EC6536;
+  background-image: linear-gradient(to right, #ec6336a4 0%, #f7bd58df 50%, #ec6336a4 100%);
+  transition: 0.5s;
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100px;
+  height: 75px;
 }
 
-.logo {
-  margin-right: 200px;
+.top-bar:hover {
+  background-position: right center;
 }
+
+/* .logo {
+  margin-right: 200px;
+} */
+
+.header-logo {
+  position: fixed;
+  left: 0;
+  margin-top: 5px;
+  margin-left: 50px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+}
+
+.query-bar {
+  position: fixed;
+  left: 0;
+  margin-left: 20px;
+  margin-top: 10px;
+  height: 800px;
+  max-width: 250px;
+  margin-right: 100px;
+}
+
+.right-side {
+  margin-left: 300px;
+  position: relative;
+}
+
+.display {
+  border: 1.2px solid #ec633677;
+  box-shadow: 0 4px 6px #E2E0E1, 0 1px 3px #ec6336b5;
+  flex: 0.3;
+  height: 200px;
+  width: 550px;
+  margin-top: 50px;
+}
+
+.display img {
+  height: 70%;
+  width: 70%;
+  margin-top: -30px;
+}
+
+.all-pod-info {
+  border: 1.2px solid #ec633677;
+  box-shadow: 0 4px 6px #E2E0E1, 0 1px 3px #ec6336b5;
+  flex: 0.3;
+
+  height: 300px;
+  width: 550px;
+
+  margin-top: 20px;
+  overflow-y: scroll;
+}
+
+.pod-info {
+  height: 50px;
+  width: 97%;
+
+  display: flex;
+  justify-content: center;
+  
+  border: 1.2px solid #ec633677;
+  box-shadow: 0 4px 6px #E2E0E1, 0 1px 3px #ec6336b5;
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
+  margin: 5px;
+}
+
+.pods-header {
+  height: 35px;
+  width: 535px;
+  /* position: fixed; */
+
+  display: flex;
+  justify-content: center;
+  
+  background-size: 200% auto;
+  border: none;
+  box-shadow: 0 4px 6px #f7bd58df, 0 1px 3px #EC6536;
+  background-image: linear-gradient(to right, #ec6336a4 0%, #f7bd58df 50%, #ec6336a4 100%);
+  transition: 0.5s;
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
+  margin: 5px;
+}
+
+.pods-header:hover {
+  background-position: right center;
+}
+
+.pod-info h4 {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .right-side {
+    margin-left: 180px;
+  }
+  .query-bar {
+    margin-left: 5px;
+    width: 220px;
+  }
+  .header-logo {
+    position: fixed;
+    left: 0;
+    margin-top: 5px;
+    margin-left: 2px;
+  }
+  .display {
+    width: 200px;
+  }
+  .all-pod-info {
+    width: 200px;
+  }
+  .pods-header {
+    width: 190px;
+  }
+}
+
 
 .url-input {
   display: flex;
@@ -28,70 +168,15 @@
 
 .url-input h5 {
   margin-top: 5px;
+  color: white;
+  font-weight: 800;
+    font-size: 1em;
+    text-transform: uppercase;
 }
 
 .login-buttons{
   display: flex;
   align-items: center;
   margin-left: 100px;
-}
-
-.main {
-  display: flex;
-  justify-content: center;
-
-  margin-top: 20px;
-}
-
-.query-bar {
-  border: 2px solid black;
-  flex: 0.3;
-
-  height: 800px;
-  max-width: 250px;
-
-  margin-right: 100px;
-}
-
-.display {
-  border: 2px solid black;
-  flex: 0.3;
-
-  height: 300px;
-  width: 500px;
-}
-
-.display img {
-  height: 70%;
-  width: 70%;
-  margin-top: -30px;
-}
-
-.all-pod-info {
-  border: 2px solid black;
-  flex: 0.3;
-
-  height: 500px;
-  width: 500px;
-
-  margin-top: 20px;
-}
-
-.pod-info {
-  height: 50px;
-  width: 90%;
-
-  display: flex;
-  justify-content: center;
-  
-  border: 1px solid black;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.pod-info h4 {
-  margin-left: 20px;
-  margin-right: 20px;
-  text-align: center;
 }
 
