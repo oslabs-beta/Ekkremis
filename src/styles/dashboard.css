@@ -105,7 +105,7 @@
 .pods-header {
   height: 35px;
   width: 535px;
-  position: fixed;
+  /* position: fixed; */
 
   display: flex;
   justify-content: center;

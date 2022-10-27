@@ -146,7 +146,7 @@ const AllPodInfo = (props: any) => {
 
   return(
       <div className='all-pod-info'>
-        <div className='pods-header'></div>
+          <div className='pods-header'></div>
           <div>
             {podsArray}
           </div>
