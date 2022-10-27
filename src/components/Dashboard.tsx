@@ -1,5 +1,6 @@
 // importing dependencies 
 import React, { useState, useEffect} from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // importing other components
 import ChartsModal from './ChartsModal';

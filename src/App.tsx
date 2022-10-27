@@ -1,19 +1,22 @@
-import { useState } from 'react';
 import './styles/App.css';
 import Dashboard from './components/Dashboard';
 import FrontPage from './components/FrontPage';
-// import errorModal from './components/ErrorModal';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const[openModal, setOpenModal] = useState(false);
   return (
     <div className="App">
         <Dashboard />
-        {/* <button className ='errorModalbtn' onClick={() => {
-          setOpenModal(true);
-        }}>Error Log</button>
-          {openModal && <errorModal closeModal ={setOpenModal}/>} */}
+        {/* <FrontPage/> */}
     </div>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<FrontPage />}>
+    //       {/* <Route index element={<Home />} /> */}
+    //       <Route path="dashboard" element={<Dashboard />} />
+    //     </Route>
+    //   </Routes>
+    // </BrowserRouter>
   );
 }
 

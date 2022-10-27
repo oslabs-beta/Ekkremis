@@ -41,9 +41,15 @@ html, body {
   text-align: center;
 }
 
+.fpLogo > img {
+  padding: 50px 0px 0px;
+  max-width: 35%;
+  max-height: 35%;
+}
+
 .fpH1{
   text-align: center;
-  margin: 150px 10px 0px;
+  margin: 70px 10px 0px;
 }
 
 .fpH1 > h1 {

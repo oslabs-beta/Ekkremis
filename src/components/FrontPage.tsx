@@ -2,6 +2,7 @@
 import React from "react";
 import '../styles/frontPage.css'; // css folder
 import Button from './smallComps/Button'; // this should be button 
+import Link from "react-router-dom";
 
 const logo = require('../img/Ekkremis-md.png') // https://stackoverflow.com/questions/39999367/how-do-i-reference-a-local-image-in-react
 
@@ -9,14 +10,16 @@ function FrontPage() {
   return (
     <div>
         <div className="fp">
-          <Button 
+          {/* <Button 
+            path="/dashboard"
             className="FPbutton"
             children="Continue to Dashboard"
-          /> 
+          />  */}
+          {/* <Link to="/dashboard">Continue to Dashboard</Link> */}
         </div>
         
         <div className="fpLogo">
-           <img src={logo} alt="Ekkremis Logo"/> 
+           <img src={logo} alt="Ekkremis Logo"/>
         </div>
         
         <div className="fpH1">

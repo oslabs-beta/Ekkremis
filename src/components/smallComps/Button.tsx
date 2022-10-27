@@ -4,12 +4,14 @@ interface Props {
   className: string;
   children?: React.ReactNode;
   onClick?: () => void; //might want to remove the '?' if the button will have functionality
+  path?: string
 }
 
 const Button: React.FC<Props> = ({ 
     className,
     children,
-    onClick
+    onClick,
+    path,
   }) => {
   return (
     <div>
