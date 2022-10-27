@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './styles/App.css';
 import Dashboard from './components/Dashboard';
 import FrontPage from './components/FrontPage';
+import QueryBar from './components/QueryBar';
 import errorModal from './components/ErrorModal';
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
         <p>
           Greetings from Ekkremis.
         </p>
-        <button className = errorModalbtn onClick={() => {
+        <QueryBar />
+        <button className ='errorModalbtn' onClick={() => {
           setOpenModal(true);
         }}>Error Log</button>
           {openModal && <errorModal closeModal ={setOpenModal}/>}
