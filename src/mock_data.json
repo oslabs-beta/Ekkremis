@@ -1,0 +1,29 @@
+{
+  "data": {
+    "pending" : [
+      {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+      {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+      {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
+    ],
+    "unknown" : [
+      {"podName": "unknown pod 1", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
+      {"podName": "unknown pod 2", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
+      {"podName": "unknown pod 3", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}
+    ],
+    "running" : [
+      {"podName": "running pod 1", "node": "minikube", "status": "running", "restarts": 0, "age": "48 minutes"}, 
+      {"podName": "running pod 2", "node": "minikube", "status": "running", "restarts": 0, "age": "52 minutes"}, 
+      {"podName": "running pod 3", "node": "minikube", "status": "running", "restarts": 0, "age": "54 minutes"}
+    ],
+    "failed" : [
+      {"podName": "failed pod 1", "node": "minikube", "status": "failed", "restarts": 0, "age": "21 minutes"}, 
+      {"podName": "failed pod 2", "node": "minikube", "status": "failed", "restarts": 0, "age": "25 minutes"}, 
+      {"podName": "failed pod 3", "node": "minikube", "status": "failed", "restarts": 0, "age": "27 minutes"}
+    ],
+    "successful" : [
+      {"podName": "successful pod 1", "node": "minikube", "status": "successful", "restarts": 0, "age": "27 minutes"}, 
+      {"podName": "successful pod 2", "node": "minikube", "status": "successful", "restarts": 0, "age": "36 minutes"}, 
+      {"podName": "successful pod 3", "node": "minikube", "status": "successful", "restarts": 0, "age": "29 minutes"}
+    ]
+  }
+}
