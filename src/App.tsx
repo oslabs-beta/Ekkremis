@@ -18,8 +18,8 @@ function App() {
         }}>Error Log</button>
           {openModal && <errorModal closeModal ={setOpenModal}/>} */}
       </header>
-    </div>
-  );
+     </div>
+    );
 }
 
 export default App;
