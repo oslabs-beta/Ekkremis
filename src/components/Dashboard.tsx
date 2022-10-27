@@ -5,7 +5,8 @@ import React, { useState, useEffect} from 'react';
 import ChartsModal from './ChartsModal';
 // import ErrorModal from './ErrorModal';
 import '../styles/dashboard.css';
-import QueryBar from './QueryBar'
+import QueryBar from './QueryBar';
+import ErrorModal from './ErrorModal';
 
 // import mock data 
 // import mockData from '../mock_data.json' assert { type: 'JSON' };
@@ -134,7 +135,7 @@ const AllPodInfo = (props: any) => {
 
   const populateArray = () => {
     for (let i=0; i<props.currentPods.length; i++) {
-      podsArray.push(<PodInfo key={i} podName={props.currentPods[i].podName} podBasicInfo={props.currentPods[i].podBasicInfo}/>)
+      podsArray.push(<PodInfo key={i} podName={props.currentPods[i].podName} podNode={props.currentPods[i].node} podStatus={props.currentPods[i].status} podRestarts={props.currentPods[i].restarts} podAge={props.currentPods[i].age} />)
     }
   }
 
@@ -145,9 +146,15 @@ const AllPodInfo = (props: any) => {
   }, props.currentPods)
 
   return(
-      <div className='all-pod-info'>
-          <div className='pods-header'></div>
-          <div>
+      <div>
+          <div className='pods-header'>
+            <h5>pod name</h5>
+            <h5>node</h5>
+            <h5>status</h5>
+            <h5>restarts</h5>
+            <h5>age</h5>
+          </div>
+          <div className='all-pod-info'>
             {podsArray}
           </div>
       </div>
@@ -157,14 +164,38 @@ const AllPodInfo = (props: any) => {
 // type for props for podInfo 
 type podType = {
   podName: string,
-  podBasicInfo: string
+  podNode: string,
+  podStatus: string,
+  podRestarts: number,
+  podAge: number
 }
 // component for individual pod info 
 const PodInfo = (props: podType) => {
+
+  const [showChartsModal, setShowChartsModal] = useState(false);
+
+  const toggleChartsModal = () => {
+    setShowChartsModal(!showChartsModal);
+  }
+  
+
+  const [showErrorModal, setShowErrorModal] = useState(false);
+
+  const toggleErrorModal = () => {
+    setShowErrorModal(!showErrorModal);
+  }
+
   return(
     <div className='pod-info'>
-      <h4>{props.podName}</h4>
-      <h4>{props.podBasicInfo}</h4>
+      <h5>{props.podName}</h5>
+      <h5>{props.podNode}</h5>
+      <h5>{props.podStatus}</h5>
+      <h5>{props.podRestarts}</h5>
+      <h5>{props.podAge}</h5>
+      <button onClick={toggleChartsModal}>charts</button>
+      <button onClick={toggleErrorModal}>logs</button>
+      <ChartsModal show={showChartsModal} toggleChartsModal={toggleChartsModal} />
+      <ErrorModal show={showErrorModal} toggleErrorModal={toggleErrorModal} />
     </div>
   )
 }

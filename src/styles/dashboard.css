@@ -1,7 +1,7 @@
 .dashboard {
   width: 100%;
-  height: 80%;
-  background-color: #EBF0E5;
+  height: 200%;
+  background-size: cover;
 }
 
 .top-bar {
@@ -44,6 +44,7 @@
   display: flex;
   justify-content: center;
   margin-top: 75px;
+  height: 100%;
 }
 
 .query-bar {
@@ -71,21 +72,51 @@
 }
 
 .display img {
-  height: 70%;
-  width: 70%;
-  margin-top: -30px;
+  height: 200px;
+  width: 550px;
+  margin-top: -58px;
+}
+
+.pods-header {
+  height: 35px;
+  width: 96%;
+  /* position: fixed; */
+  /* position: absolute; */
+
+  display: flex;
+  /* justify-content: center; */
+  
+  background-size: 200% auto;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px #f7bd58df, 0 1px 3px #EC6536;
+  background-image: linear-gradient(to right, #ec6336a4 0%, #f7bd58df 50%, #ec6336a4 100%);
+  transition: 0.5s;
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
+  margin-top: 30px;
+  margin-bottom: -15px;
+  /* margin-bottom: 50px; */
+}
+
+.pods-header h5 {
+  padding-left: 10px;
+  margin: 30px;
+  margin-top: 10px;
 }
 
 .all-pod-info {
   border: 1.2px solid #ec633677;
+  border-radius: 1rem;
   box-shadow: 0 4px 6px #E2E0E1, 0 1px 3px #ec6336b5;
   flex: 0.3;
 
-  height: 300px;
-  width: 550px;
+  height: 290px;
+  width: 650px;
 
   margin-top: 20px;
   overflow-y: scroll;
+  
 }
 
 .pod-info {
@@ -95,36 +126,24 @@
   display: flex;
   justify-content: center;
   
+  background-color: #E2E0E1;
   border: 1.2px solid #ec633677;
+  border-radius: 1rem;
   box-shadow: 0 4px 6px #E2E0E1, 0 1px 3px #ec6336b5;
   /* margin-top: 5px;
   margin-bottom: 5px; */
   margin: 5px;
+  padding-bottom: 10px;
+  padding-top: -10px;
 }
 
-.pods-header {
-  height: 35px;
-  width: 535px;
-  /* position: fixed; */
 
-  display: flex;
-  justify-content: center;
-  
-  background-size: 200% auto;
-  border: none;
-  box-shadow: 0 4px 6px #f7bd58df, 0 1px 3px #EC6536;
-  background-image: linear-gradient(to right, #ec6336a4 0%, #f7bd58df 50%, #ec6336a4 100%);
-  transition: 0.5s;
-  /* margin-top: 5px;
-  margin-bottom: 5px; */
-  margin: 5px;
-}
 
 .pods-header:hover {
   background-position: right center;
 }
 
-.pod-info h4 {
+.pod-info h5 {
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
