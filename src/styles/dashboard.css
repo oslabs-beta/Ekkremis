@@ -1,0 +1,97 @@
+.dashboard {
+  width: 100%;
+  height: 100%;
+}
+
+.top-bar {
+  border: 2px solid black;
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+}
+
+.logo {
+  margin-right: 200px;
+}
+
+.url-input {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-self: center;
+}
+
+.url-input h5 {
+  margin-top: 5px;
+}
+
+.login-buttons{
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
+.query-bar {
+  border: 2px solid black;
+  flex: 0.3;
+
+  height: 800px;
+  max-width: 250px;
+
+  margin-right: 100px;
+}
+
+.display {
+  border: 2px solid black;
+  flex: 0.3;
+
+  height: 300px;
+  width: 500px;
+}
+
+.display img {
+  height: 70%;
+  width: 70%;
+  margin-top: -30px;
+}
+
+.all-pod-info {
+  border: 2px solid black;
+  flex: 0.3;
+
+  height: 500px;
+  width: 500px;
+
+  margin-top: 20px;
+}
+
+.pod-info {
+  height: 50px;
+  width: 90%;
+
+  display: flex;
+  justify-content: center;
+  
+  border: 1px solid black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.pod-info h4 {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+
