@@ -6,7 +6,9 @@ function QueryBar(props: any) {
     const handleClick = (string: string) => {
       console.log('inside button handleclick', string)
       props.setStatus(string)
+      
     }
+
 
     return (
       <div className="query-container">

@@ -1,8 +1,14 @@
 .App {
   text-align: center;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }
 
 html {
-  background-color: #EBF0E5;
+  background-image: linear-gradient(#013c64, #020849);
+  height: 100%;
 }
 
