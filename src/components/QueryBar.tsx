@@ -11,6 +11,7 @@ function QueryBar(props: any) {
     return (
       <div className="query-container">
         <div className='query-bar'>
+        <img className='sub' src={require('../img/Ekkremis-sm.png')} />
             <button onClick={() => {handleClick('pending')}} className='query-btn'>Pending</button>
             <button onClick={() => {handleClick('unknown')}} className='query-btn'>Unknown</button>
             <button onClick={() => {handleClick('running')}}className='query-btn'>Running</button>

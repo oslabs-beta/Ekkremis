@@ -8,16 +8,11 @@ function App() {
   const[openModal, setOpenModal] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Greetings from Ekkremis.
-        </p>
         <Dashboard />
         {/* <button className ='errorModalbtn' onClick={() => {
           setOpenModal(true);
         }}>Error Log</button>
           {openModal && <errorModal closeModal ={setOpenModal}/>} */}
-      </header>
     </div>
   );
 }
