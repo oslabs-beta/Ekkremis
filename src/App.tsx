@@ -9,6 +9,7 @@ function App() {
         <p>
           Greetings from Ekkremis.
         </p>
+        <Dashboard />
       </header>
     </div>
   );
