@@ -5,17 +5,61 @@ import React, { useState, useEffect} from 'react';
 import ChartsModal from './ChartsModal';
 // import ErrorModal from './ErrorModal';
 import '../styles/dashboard.css';
-import Navigation from './Navigation'
+import QueryBar from './QueryBar'
 
+// import mock data 
+// import mockData from '../mock_data.json' assert { type: 'JSON' };
+// mockData = mockData.json();
+let mockData: any = {"pending" : [
+  {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
+],
+"unknown" : [
+  {"podName": "unknown pod 1", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
+  {"podName": "unknown pod 2", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
+  {"podName": "unknown pod 3", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}
+],
+"running" : [
+  {"podName": "running pod 1", "node": "minikube", "status": "running", "restarts": 0, "age": "48 minutes"}, 
+  {"podName": "running pod 2", "node": "minikube", "status": "running", "restarts": 0, "age": "52 minutes"}, 
+  {"podName": "running pod 3", "node": "minikube", "status": "running", "restarts": 0, "age": "54 minutes"}
+],
+"failed" : [
+  {"podName": "failed pod 1", "node": "minikube", "status": "failed", "restarts": 0, "age": "21 minutes"}, 
+  {"podName": "failed pod 2", "node": "minikube", "status": "failed", "restarts": 0, "age": "25 minutes"}, 
+  {"podName": "failed pod 3", "node": "minikube", "status": "failed", "restarts": 0, "age": "27 minutes"}
+],
+"successful" : [
+  {"podName": "successful pod 1", "node": "minikube", "status": "successful", "restarts": 0, "age": "27 minutes"}, 
+  {"podName": "successful pod 2", "node": "minikube", "status": "successful", "restarts": 0, "age": "36 minutes"}, 
+  {"podName": "successful pod 3", "node": "minikube", "status": "successful", "restarts": 0, "age": "29 minutes"}
+]};
+
+// fetch('../mock_data.json')
+//   .then(response => response.json())
+//   .then(data => mockData = data.data)
+//   .catch(error => console.log(error));
 
 // the parent componeent that holds all states and puts all other components together 
 const Dashboard = () => {
   // state for current URL 
   const [currentUrl, setCurrentUrl] = useState('')
   // state for current active nav bar category 
-  const [currentCategory, setcurrentCategory] = useState({});
+  const [status, setStatus] = useState("pending");
   // state for current pods for display 
-  const [currentPods, setCurrentPods] = useState([{podName: 'test1', podBasicInfo: 'something'}, {podName: 'test2', podBasicInfo: 'something'}, {podName: 'test3', podBasicInfo: 'something'}, {podName: 'test4', podBasicInfo: 'something'}]);
+  const [currentPods, setCurrentPods] = useState([
+    {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+    {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+    {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
+  ]);
+
+  useEffect(() => {
+
+      setCurrentPods(mockData[status])
+      console.log(currentPods)
+
+  }, [status])
 
 
   return(
@@ -23,7 +67,7 @@ const Dashboard = () => {
       <TopBar currentUrl={currentUrl} setCurrentUrl={setCurrentUrl}/>
       <div className='main'>
         <div className='query-bar'>
-          {/* <Navigation somestate={} /> */}
+          <QueryBar status={status} setStatus={setStatus}/>
         </div>
         <div className='right-side'>
           <Display />
@@ -53,7 +97,7 @@ const TopBar = (props: any) => {
   return(
     <div className='top-bar'>
       <div className='logo'>
-        <h3>Ekkremis</h3>
+      
       </div>
       <div className='url-input'>
         <input id='endpoint-url' type="text" placeholder={placeholder}/>
@@ -82,7 +126,7 @@ const Display = (props: any) => {
 // component for all pods info 
 const AllPodInfo = (props: any) => {
   let podsArray : any = [];
-  console.log(props.currentPods)
+  // console.log(props.currentPods)
 
   const populateArray = () => {
     for (let i=0; i<props.currentPods.length; i++) {
@@ -94,7 +138,7 @@ const AllPodInfo = (props: any) => {
 
   useEffect(() => {
     populateArray();
-  }, props.currenPods)
+  }, props.currentPods)
 
   return(
     <div className='all-pod-info'>
