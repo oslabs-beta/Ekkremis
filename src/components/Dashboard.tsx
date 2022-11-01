@@ -11,37 +11,37 @@ import ErrorModal from './ErrorModal';
 // import mock data 
 // import mockData from '../mock_data.json' assert { type: 'JSON' };
 // mockData = mockData.json();
-let mockData: any = {"pending" : [
-  {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"},
-  {"podName": "pending pod 4", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  {"podName": "pending pod 5", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  {"podName": "pending pod 6", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"},
-  {"podName": "pending pod 7", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  {"podName": "pending pod 8", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  {"podName": "pending pod 9", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
-],
-"unknown" : [
-  {"podName": "unknown pod 1", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
-  {"podName": "unknown pod 2", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
-  {"podName": "unknown pod 3", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}
-],
-"running" : [
-  {"podName": "running pod 1", "node": "minikube", "status": "running", "restarts": 0, "age": "48 minutes"}, 
-  {"podName": "running pod 2", "node": "minikube", "status": "running", "restarts": 0, "age": "52 minutes"}, 
-  {"podName": "running pod 3", "node": "minikube", "status": "running", "restarts": 0, "age": "54 minutes"}
-],
-"failed" : [
-  {"podName": "failed pod 1", "node": "minikube", "status": "failed", "restarts": 0, "age": "21 minutes"}, 
-  {"podName": "failed pod 2", "node": "minikube", "status": "failed", "restarts": 0, "age": "25 minutes"}, 
-  {"podName": "failed pod 3", "node": "minikube", "status": "failed", "restarts": 0, "age": "27 minutes"}
-],
-"successful" : [
-  {"podName": "successful pod 1", "node": "minikube", "status": "successful", "restarts": 0, "age": "27 minutes"}, 
-  {"podName": "successful pod 2", "node": "minikube", "status": "successful", "restarts": 0, "age": "36 minutes"}, 
-  {"podName": "successful pod 3", "node": "minikube", "status": "successful", "restarts": 0, "age": "29 minutes"}
-]};
+let mockData: any = {"pending" : {
+  "pendingPod1": {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  "pendingPod2": {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  "pendingPod3": {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"},
+  "pendingPod4": {"podName": "pending pod 4", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  "pendingPod5": {"podName": "pending pod 5", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  "pendingPod6": {"podName": "pending pod 6", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"},
+  "pendingPod7": {"podName": "pending pod 7", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  "pendingPod8": {"podName": "pending pod 8", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+  "pendingPod9": {"podName": "pending pod 9", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
+},
+"unknown" : {
+  "unknownPod1": {"podName": "unknown pod 1", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
+  "unknownPod2": {"podName": "unknown pod 2", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
+  "unknownPod3": {"podName": "unknown pod 3", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}
+},
+"running" : {
+  "runningPod1": {"podName": "running pod 1", "node": "minikube", "status": "running", "restarts": 0, "age": "48 minutes"}, 
+  "runningPod2": {"podName": "running pod 2", "node": "minikube", "status": "running", "restarts": 0, "age": "52 minutes"}, 
+  "runningPod3": {"podName": "running pod 3", "node": "minikube", "status": "running", "restarts": 0, "age": "54 minutes"}
+},
+"failed" : {
+  "failedPod1": {"podName": "failed pod 1", "node": "minikube", "status": "failed", "restarts": 0, "age": "21 minutes"}, 
+  "failedPod2": {"podName": "failed pod 2", "node": "minikube", "status": "failed", "restarts": 0, "age": "25 minutes"}, 
+  "failedPod3": {"podName": "failed pod 3", "node": "minikube", "status": "failed", "restarts": 0, "age": "27 minutes"}
+},
+"successful" : {
+  "successfulPod1": {"podName": "successful pod 1", "node": "minikube", "status": "successful", "restarts": 0, "age": "27 minutes"}, 
+  "successfulPod2": {"podName": "successful pod 2", "node": "minikube", "status": "successful", "restarts": 0, "age": "36 minutes"}, 
+  "successfulPod3": {"podName": "successful pod 3", "node": "minikube", "status": "successful", "restarts": 0, "age": "29 minutes"}
+}};
 
 // fetch('../mock_data.json')
 //   .then(response => response.json())
@@ -55,15 +55,16 @@ const Dashboard = () => {
   // state for current active nav bar category 
   const [status, setStatus] = useState("pending");
   // state for current pods for display 
-  const [currentPods, setCurrentPods] = useState([
-    {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-    {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-    {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
-  ]);
+  const [currentPods, setCurrentPods] = useState({
+    "pendingPod1": {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+    "pendingPod2": {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
+    "pendingPod3": {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
+});
+  const [allPods, setAllPods] = useState(mockData);
 
   useEffect(() => {
 
-      setCurrentPods(mockData[status])
+      setCurrentPods(allPods[status])
       console.log(currentPods)
 
   }, [status])
@@ -71,7 +72,7 @@ const Dashboard = () => {
 
   return(
     <div className='dashboard'>
-      <TopBar currentUrl={currentUrl} setCurrentUrl={setCurrentUrl}/>
+      <TopBar currentUrl={currentUrl} setCurrentUrl={setCurrentUrl} setAllPods={setAllPods}/>
       <div className='main'>
         <div className='query-bar'>
           <QueryBar status={status} setStatus={setStatus}/>
@@ -88,14 +89,16 @@ const Dashboard = () => {
 
 // the top nav bar containing URL event listener and (potentially login?)
 const TopBar = (props: any) => {
-  const handleClick = () => {
+  const handleClick = (setAllPods: any) => {
     console.log('inside handleClick')
     // document.getElementById() returns the type HTMLElement which does not contain a value property. The subtype HTMLInputElement does however contain the value property.
     const inputElement = (document.getElementById('endpoint-url') as HTMLInputElement);
     const inputValue = inputElement.value
-    const url = inputValue.toString() + '/metrics'
-    props.setCurrentUrl(url);
+    // const url = inputValue.toString() + '/metrics'
+    props.setCurrentUrl(inputValue);
     inputElement.value = '';
+    // console.log(props.setAllPods)
+    sendQuery(inputValue, setAllPods);
   }
 
   let placeholder = 'your url here';
@@ -107,7 +110,7 @@ const TopBar = (props: any) => {
       <div className='url-input'>
         <input id='endpoint-url' type="text" placeholder={placeholder}/>
         <h5>/metrics</h5>
-        <button className='url-btn' onClick={()=>{handleClick()}}>update url</button>
+        <button className='url-btn' onClick={()=>{handleClick(props.setAllPods)}}>update url</button>
       </div>
       <div className='login-buttons'>
         <button>Login</button>
@@ -134,8 +137,8 @@ const AllPodInfo = (props: any) => {
   // console.log(props.currentPods)
 
   const populateArray = () => {
-    for (let i=0; i<props.currentPods.length; i++) {
-      podsArray.push(<PodInfo key={i} podName={props.currentPods[i].podName} podNode={props.currentPods[i].node} podStatus={props.currentPods[i].status} podRestarts={props.currentPods[i].restarts} podAge={props.currentPods[i].age} />)
+    for (const key in props.currentPods) {
+      podsArray.push(<PodInfo key={key} podName={key} podNode={props.currentPods[key].node} podStatus={props.currentPods[key].status} podRestarts={props.currentPods[key].restarts} podAge={props.currentPods[key].age} />)
     }
   }
 
@@ -143,7 +146,7 @@ const AllPodInfo = (props: any) => {
 
   useEffect(() => {
     populateArray();
-  }, props.currentPods)
+  }, [props.currentPods])
 
   return(
       <div>
@@ -200,6 +203,29 @@ const PodInfo = (props: podType) => {
   )
 }
 
+
+function sendQuery(url: string, setPods: any) {
+  const promql = '/api/v1/query?query=';
+  let query = '(kube_pod_status_phase)==1';
+  const finalUrl = url + promql + query;
+  fetch(finalUrl)
+    .then(data => data.json())
+    .then(data => {
+      // format the data 
+      let resultArray = data.data.result;
+      let resultObject :any = {"pending": {}, "running": {}, "successful": {}, "unkown": {}, "failed": {}};
+      for (let i=0; i<resultArray.length; i++) {
+        let tempObject :any = {};
+        let podName = resultArray[i].metric.pod;
+        tempObject["node"] = resultArray[i].metric.namespace;
+        tempObject["status"] = resultArray[i].metric.phase;
+        tempObject["restart"] = 1;
+        tempObject["age"] = 5;
+        resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;
+      }
+      setPods(resultObject)
+    })
+}
 
 
 export default Dashboard
