@@ -1,29 +1,234 @@
+
 {
+  "status": "success",
   "data": {
-    "pending" : [
-      {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-      {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-      {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
-    ],
-    "unknown" : [
-      {"podName": "unknown pod 1", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
-      {"podName": "unknown pod 2", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
-      {"podName": "unknown pod 3", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}
-    ],
-    "running" : [
-      {"podName": "running pod 1", "node": "minikube", "status": "running", "restarts": 0, "age": "48 minutes"}, 
-      {"podName": "running pod 2", "node": "minikube", "status": "running", "restarts": 0, "age": "52 minutes"}, 
-      {"podName": "running pod 3", "node": "minikube", "status": "running", "restarts": 0, "age": "54 minutes"}
-    ],
-    "failed" : [
-      {"podName": "failed pod 1", "node": "minikube", "status": "failed", "restarts": 0, "age": "21 minutes"}, 
-      {"podName": "failed pod 2", "node": "minikube", "status": "failed", "restarts": 0, "age": "25 minutes"}, 
-      {"podName": "failed pod 3", "node": "minikube", "status": "failed", "restarts": 0, "age": "27 minutes"}
-    ],
-    "successful" : [
-      {"podName": "successful pod 1", "node": "minikube", "status": "successful", "restarts": 0, "age": "27 minutes"}, 
-      {"podName": "successful pod 2", "node": "minikube", "status": "successful", "restarts": 0, "age": "36 minutes"}, 
-      {"podName": "successful pod 3", "node": "minikube", "status": "successful", "restarts": 0, "age": "29 minutes"}
-    ]
+      "resultType": "vector",
+      "result": [
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "default",
+                  "phase": "Running",
+                  "pod": "cowclicker-7dbd496458-dmscq",
+                  "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "default",
+                  "phase": "Running",
+                  "pod": "cowclicker-7dbd496458-fvq9w",
+                  "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "default",
+                  "phase": "Running",
+                  "pod": "cowclicker-7dbd496458-rpznx",
+                  "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kube-system",
+                  "phase": "Running",
+                  "pod": "coredns-565d847f94-g2m7t",
+                  "uid": "2907549c-33cd-4a3e-90b6-a16c39547586"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kube-system",
+                  "phase": "Running",
+                  "pod": "etcd-minikube",
+                  "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kube-system",
+                  "phase": "Running",
+                  "pod": "kube-apiserver-minikube",
+                  "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kube-system",
+                  "phase": "Running",
+                  "pod": "kube-controller-manager-minikube",
+                  "uid": "1743d56c-880b-47d9-8242-4dd3fca10867"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kube-system",
+                  "phase": "Running",
+                  "pod": "kube-proxy-hmwlw",
+                  "uid": "bd789cec-581e-4f34-90ae-a0fce69fd225"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kube-system",
+                  "phase": "Running",
+                  "pod": "kube-scheduler-minikube",
+                  "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kube-system",
+                  "phase": "Running",
+                  "pod": "kube-state-metrics-5897f6cf77-x98z6",
+                  "uid": "6ce32cc6-4354-431d-ba53-996f9be4849d"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kube-system",
+                  "phase": "Running",
+                  "pod": "metrics-server-769cd898cd-wchcp",
+                  "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kube-system",
+                  "phase": "Running",
+                  "pod": "storage-provisioner",
+                  "uid": "1a37b3bd-b946-424c-9219-b764a09ee0b1"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kubernetes-dashboard",
+                  "phase": "Running",
+                  "pod": "dashboard-metrics-scraper-b74747df5-x8z7k",
+                  "uid": "9e28954b-9cba-48f0-90ab-808d52ebbef1"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "kubernetes-dashboard",
+                  "phase": "Running",
+                  "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7",
+                  "uid": "54223b8b-c0c7-49b9-98f3-e63789021c6d"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "kube_pod_status_phase",
+                  "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                  "job": "kube-state-metrics",
+                  "namespace": "monitoring",
+                  "phase": "Running",
+                  "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+                  "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+              },
+              "value": [
+                  1667258442.939,
+                  "1"
+              ]
+          }
+      ]
   }
 }
