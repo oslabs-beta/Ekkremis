@@ -208,7 +208,7 @@ function sendQuery(url: string, setPods: any) {
   const promql = '/api/v1/query?query=';
   let query = '(kube_pod_status_phase)==1';
   const finalUrl = url + promql + query;
-  fetch(finalUrl)
+  fetch('http://localhost:9090/api/v1/query?query=(kube_pod_status_phase)==1')
     .then(data => data.json())
     .then(data => {
       // format the data 
