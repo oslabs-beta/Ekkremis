@@ -18,6 +18,8 @@
     "electron-devtools-installer": "^3.2.0",
     "electron-reload": "^1.5.0",
     "express": "^4.18.2",
+    "node-fetch": "2.3",
+    "nodemon": "^2.0.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -30,7 +32,8 @@
     "postinstall": "electron-builder install-app-deps",
     "electron:dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://127.0.0.1:3000 && tsc -p electron -w\" \"wait-on http://127.0.0.1:3000 && tsc -p electron && electron .\"",
     "electron:build": "yarn build && tsc -p electron && electron-builder",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "backend": "nodemon ./backend/server.js"
   },
   "build": {
     "extends": null,
