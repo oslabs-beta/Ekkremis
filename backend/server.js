@@ -15,7 +15,11 @@ const PORT = 3333;
 // set up middleware functions in controllers
   // inside the middleware functions make api calls to the url passed in 
 
-app.use('/', express.static(path.resolve(__dirname, './public/index.html')));
+app.use('/src', express.static(path.resolve(__dirname, '../src')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../public/index.html'));
+});
 
 app.get('/test', ekkremisController.getAllPodsInfo, (req, res) => { // bunch of middlewares 
   res.status(200).json(res.locals.getAllPodsInfo)
