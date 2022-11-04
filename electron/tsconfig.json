@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
     "sourceMap": true,
+    "type": "module",
+    "module": "es2020",
     "strict": true,
     "outDir": "../build",
     "rootDir": "../",
     "noEmitOnError": true,
+    "noEmit": true,
     "typeRoots": [
       "node_modules/@types"
     ]

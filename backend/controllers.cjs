@@ -6,11 +6,11 @@ const ekkremisController = {};
 ekkremisController.getAllPodsInfo = (req, res, next) => {
   console.log('inside getAllPodsInfo middleware')
   // get the prometheus end point from the request 
-  // const rootUrl = req.body.url;
+  const rootUrl = req.body.url;
   const promql = '/api/v1/query?query=';
   let query = '(kube_pod_status_phase)==1';
-  // const finalUrl = rootUrl + promql + query;
-  fetch('http://localhost:9090/api/v1/query?query=(kube_pod_status_phase)==1')
+  const finalUrl = rootUrl + promql + query;
+  fetch(finalUrl)
     .then(data => data.json())
     .then(data => {
       console.log('inside 2nd then. data: ', data)

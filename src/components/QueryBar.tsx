@@ -1,4 +1,5 @@
 // promQL Query Bar
+import React from 'react';
 import '../styles/queryBar.css';
 
 function QueryBar(props: any) {

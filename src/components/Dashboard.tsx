@@ -93,12 +93,28 @@ const TopBar = (props: any) => {
     console.log('inside handleClick')
     // document.getElementById() returns the type HTMLElement which does not contain a value property. The subtype HTMLInputElement does however contain the value property.
     const inputElement = (document.getElementById('endpoint-url') as HTMLInputElement);
-    const inputValue = inputElement.value
+    const inputValue: any = inputElement.value
     // const url = inputValue.toString() + '/metrics'
     props.setCurrentUrl(inputValue);
     inputElement.value = '';
     // console.log(props.setAllPods)
-    sendQuery(inputValue, setAllPods);
+    // sendQuery(inputValue, setAllPods);
+    const urlObject = JSON.stringify({url: inputValue});
+    console.log(urlObject);
+    // send fetch request to our backend passing in the user input 
+    fetch("http://localhost:3000/test", {
+      method: "POST",
+      headers: {
+        'Accept': "application/json, text/plain",
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*'
+      },
+      body: urlObject
+    })
+      .then(data => data.json())
+      .then(data => {
+        setAllPods(data);
+      })
   }
 
   let placeholder = 'your url here';
@@ -116,7 +132,7 @@ const TopBar = (props: any) => {
         <button>Login</button>
         <button>Sign Up</button>
       </div>
-    </div>
+    </div>                                                                                                                                                    
   )
 }
 
@@ -204,28 +220,28 @@ const PodInfo = (props: podType) => {
 }
 
 
-function sendQuery(url: string, setPods: any) {
-  const promql = '/api/v1/query?query=';
-  let query = '(kube_pod_status_phase)==1';
-  const finalUrl = url + promql + query;
-  fetch('http://localhost:9090/api/v1/query?query=(kube_pod_status_phase)==1')
-    .then(data => data.json())
-    .then(data => {
-      // format the data 
-      let resultArray = data.data.result;
-      let resultObject :any = {"pending": {}, "running": {}, "successful": {}, "unkown": {}, "failed": {}};
-      for (let i=0; i<resultArray.length; i++) {
-        let tempObject :any = {};
-        let podName = resultArray[i].metric.pod;
-        tempObject["node"] = resultArray[i].metric.namespace;
-        tempObject["status"] = resultArray[i].metric.phase;
-        tempObject["restart"] = 1;
-        tempObject["age"] = 5;
-        resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;
-      }
-      setPods(resultObject)
-    })
-}
+// function sendQuery(url: string, setPods: any) {
+//   const promql = '/api/v1/query?query=';
+//   let query = '(kube_pod_status_phase)==1';
+//   const finalUrl = url + promql + query;
+//   fetch('http://localhost:9090/api/v1/query?query=(kube_pod_status_phase)==1')
+//     .then(data => data.json())
+//     .then(data => {
+//       // format the data 
+//       let resultArray = data.data.result;
+//       let resultObject :any = {"pending": {}, "running": {}, "successful": {}, "unkown": {}, "failed": {}};
+//       for (let i=0; i<resultArray.length; i++) {
+//         let tempObject :any = {};
+//         let podName = resultArray[i].metric.pod;
+//         tempObject["node"] = resultArray[i].metric.namespace;
+//         tempObject["status"] = resultArray[i].metric.phase;
+//         tempObject["restart"] = 1;
+//         tempObject["age"] = 5;
+//         resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;
+//       }
+//       setPods(resultObject)
+//     })
+// }
 
 
 export default Dashboard

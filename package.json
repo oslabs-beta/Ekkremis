@@ -1,10 +1,11 @@
 {
   "name": "ekkremis",
   "version": "1.0.0",
+  "type": "module",
   "author": "Team sQuadro53",
   "description": "Kubernetes status dashboard in a React-TypeScript-Electron app with Electron Builder",
   "homepage": ".",
-  "main": "build/electron/main.js",
+  "main": "./electron/main.ts",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -15,25 +16,34 @@
     "@types/node": "^18.7.20",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.1",
     "electron-devtools-installer": "^3.2.0",
     "electron-reload": "^1.5.0",
     "express": "^4.18.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "node-fetch": "2.3",
     "nodemon": "^2.0.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.8.3"
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.3",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "postinstall": "electron-builder install-app-deps",
-    "electron:dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://127.0.0.1:3000 && tsc -p electron -w\" \"wait-on http://127.0.0.1:3000 && tsc -p electron && electron .\"",
+    "electron:dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://127.0.0.1:3000 && tsc -p electron -w\" \"wait-on http://127.0.0.1:3000 && tsc -p electron && electron .\" nodemon ./backend/server.cjs & webpack-dev-server",
     "electron:build": "yarn build && tsc -p electron && electron-builder",
     "eject": "react-scripts eject",
-    "backend": "nodemon ./backend/server.js"
+    "backend": "concurrently \"webpack-dev-server\" \"nodemon ./backend/server.cjs\"",
+    "build-webpack": ""
   },
   "build": {
     "extends": null,
@@ -55,7 +65,9 @@
     "cross-env": "^7.0.3",
     "electron": "^20.2.0",
     "electron-builder": "^23.3.3",
-    "wait-on": "^6.0.1"
+    "wait-on": "^6.0.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "browserslist": {
     "production": [

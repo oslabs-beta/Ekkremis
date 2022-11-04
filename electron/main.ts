@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import installExtension, { REACT_DEVELOPER_TOOLS } from "electron-devtools-installer";
+require('../backend/server.cjs');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -8,7 +9,7 @@ function createWindow() {
     height: 600,
     webPreferences: {
       // contextIsolation: false,
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.ts')
     }
   })
 

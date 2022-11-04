@@ -1,4 +1,5 @@
 import '../styles/chartsModal.css';
+import React from 'react';
 
 type ChartProps = {
   show: boolean,
