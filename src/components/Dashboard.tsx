@@ -8,6 +8,8 @@ import '../styles/dashboard.css';
 import QueryBar from './QueryBar';
 import ErrorModal from './ErrorModal';
 
+import sendQuery from '../utils';
+
 // import mock data 
 // import mockData from '../mock_data.json' assert { type: 'JSON' };
 // mockData = mockData.json();
@@ -98,7 +100,7 @@ const TopBar = (props: any) => {
     props.setCurrentUrl(inputValue);
     inputElement.value = '';
     // console.log(props.setAllPods)
-    sendQuery(inputValue, setAllPods);
+    setAllPods(sendQuery(inputValue));
   }
 
   let placeholder = 'your url here';
@@ -204,28 +206,28 @@ const PodInfo = (props: podType) => {
 }
 
 
-function sendQuery(url: string, setPods: any) {
-  const promql = '/api/v1/query?query=';
-  let query = '(kube_pod_status_phase)==1';
-  const finalUrl = url + promql + query;
-  fetch(finalUrl)
-    .then(data => data.json())
-    .then(data => {
-      // format the data 
-      let resultArray = data.data.result;
-      let resultObject :any = {"pending": {}, "running": {}, "successful": {}, "unkown": {}, "failed": {}};
-      for (let i=0; i<resultArray.length; i++) {
-        let tempObject :any = {};
-        let podName = resultArray[i].metric.pod;
-        tempObject["node"] = resultArray[i].metric.namespace;
-        tempObject["status"] = resultArray[i].metric.phase;
-        tempObject["restart"] = 1;
-        tempObject["age"] = 5;
-        resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;
-      }
-      setPods(resultObject)
-    })
-}
+// function sendQuery(url: string, setPods: any) {
+//   const promql = '/api/v1/query?query=';
+//   let query = '(kube_pod_status_phase)==1';
+//   const finalUrl = url + promql + query;
+//   fetch(finalUrl)
+//     .then(data => data.json())
+//     .then(data => {
+//       // format the data 
+//       let resultArray = data.data.result;
+//       let resultObject :any = {"pending": {}, "running": {}, "successful": {}, "unkown": {}, "failed": {}};
+//       for (let i=0; i<resultArray.length; i++) {
+//         let tempObject :any = {};
+//         let podName = resultArray[i].metric.pod;
+//         tempObject["node"] = resultArray[i].metric.namespace;
+//         tempObject["status"] = resultArray[i].metric.phase;
+//         tempObject["restart"] = 1;
+//         tempObject["age"] = 5;
+//         resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;
+//       }
+//       setPods(resultObject)
+//     })
+// }
 
 
 export default Dashboard
