@@ -91,7 +91,7 @@ const Dashboard = () => {
 
 // the top nav bar containing URL event listener and (potentially login?)
 const TopBar = (props: any) => {
-  const handleClick = (setAllPods: any) => {
+  async function handleClick(setAllPods: any) {
     console.log('inside handleClick')
     // document.getElementById() returns the type HTMLElement which does not contain a value property. The subtype HTMLInputElement does however contain the value property.
     const inputElement = (document.getElementById('endpoint-url') as HTMLInputElement);
@@ -100,7 +100,9 @@ const TopBar = (props: any) => {
     props.setCurrentUrl(inputValue);
     inputElement.value = '';
     // console.log(props.setAllPods)
-    setAllPods(sendQuery(inputValue));
+    // const result = await sendQuery(inputValue);
+    // await console.log(result)
+    sendQuery(inputValue, setAllPods);
   }
 
   let placeholder = 'your url here';
