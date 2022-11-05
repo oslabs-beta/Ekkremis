@@ -1,7 +1,8 @@
-export default function sendQuery(url: string) {
+export default function sendQuery(url: string, setAllPods: any) {
   const promql = '/api/v1/query?query=';
   let query = '(kube_pod_status_phase)==1';
   const finalUrl = url + promql + query;
+  console.log('sendQuery invoked', finalUrl)
   fetch(finalUrl)
     .then(data => data.json())
     .then(data => {
@@ -17,6 +18,8 @@ export default function sendQuery(url: string) {
         tempObject["age"] = 5;
         resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;
       }
-      return resultObject;
+      console.log('inside utils, resultObject: ', resultObject)
+      setAllPods(resultObject)
+      // return resultObject; 
     })
 }
