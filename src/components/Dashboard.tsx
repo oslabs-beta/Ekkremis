@@ -8,42 +8,12 @@ import '../styles/dashboard.css';
 import QueryBar from './QueryBar';
 import ErrorModal from './ErrorModal';
 
-import sendQuery from '../utils';
+import { test, getPodInfo } from '../utils';
 
 // import mock data 
 // import mockData from '../mock_data.json' assert { type: 'JSON' };
 // mockData = mockData.json();
-let mockData: any = {"pending" : {
-  "pendingPod1": {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  "pendingPod2": {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  "pendingPod3": {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"},
-  "pendingPod4": {"podName": "pending pod 4", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  "pendingPod5": {"podName": "pending pod 5", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  "pendingPod6": {"podName": "pending pod 6", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"},
-  "pendingPod7": {"podName": "pending pod 7", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  "pendingPod8": {"podName": "pending pod 8", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
-  "pendingPod9": {"podName": "pending pod 9", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
-},
-"unknown" : {
-  "unknownPod1": {"podName": "unknown pod 1", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
-  "unknownPod2": {"podName": "unknown pod 2", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}, 
-  "unknownPod3": {"podName": "unknown pod 3", "node": "minikube", "status": "unknown", "restarts": 0, "age": "27 minutes"}
-},
-"running" : {
-  "runningPod1": {"podName": "running pod 1", "node": "minikube", "status": "running", "restarts": 0, "age": "48 minutes"}, 
-  "runningPod2": {"podName": "running pod 2", "node": "minikube", "status": "running", "restarts": 0, "age": "52 minutes"}, 
-  "runningPod3": {"podName": "running pod 3", "node": "minikube", "status": "running", "restarts": 0, "age": "54 minutes"}
-},
-"failed" : {
-  "failedPod1": {"podName": "failed pod 1", "node": "minikube", "status": "failed", "restarts": 0, "age": "21 minutes"}, 
-  "failedPod2": {"podName": "failed pod 2", "node": "minikube", "status": "failed", "restarts": 0, "age": "25 minutes"}, 
-  "failedPod3": {"podName": "failed pod 3", "node": "minikube", "status": "failed", "restarts": 0, "age": "27 minutes"}
-},
-"successful" : {
-  "successfulPod1": {"podName": "successful pod 1", "node": "minikube", "status": "successful", "restarts": 0, "age": "27 minutes"}, 
-  "successfulPod2": {"podName": "successful pod 2", "node": "minikube", "status": "successful", "restarts": 0, "age": "36 minutes"}, 
-  "successfulPod3": {"podName": "successful pod 3", "node": "minikube", "status": "successful", "restarts": 0, "age": "29 minutes"}
-}};
+let mockData: any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}}
 
 // fetch('../mock_data.json')
 //   .then(response => response.json())
@@ -91,7 +61,7 @@ const Dashboard = () => {
 
 // the top nav bar containing URL event listener and (potentially login?)
 const TopBar = (props: any) => {
-  async function handleClick(setAllPods: any) {
+  function handleClick(setAllPods: any) {
     console.log('inside handleClick')
     // document.getElementById() returns the type HTMLElement which does not contain a value property. The subtype HTMLInputElement does however contain the value property.
     const inputElement = (document.getElementById('endpoint-url') as HTMLInputElement);
@@ -99,10 +69,18 @@ const TopBar = (props: any) => {
     // const url = inputValue.toString() + '/metrics'
     props.setCurrentUrl(inputValue);
     inputElement.value = '';
-    // console.log(props.setAllPods)
-    // const result = await sendQuery(inputValue);
-    // await console.log(result)
-    sendQuery(inputValue, setAllPods);
+    // this is the get real data from localhost 9090
+    // getPodInfo("actual", setAllPods, inputValue);
+
+    // this uses mock data
+    // getPodInfo("mock", setAllPods);
+
+    // declare a resultObject -> {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}};
+    // call our first fetch function to update result object, pass in resultObject as an argument 
+    // second fetch 
+    // third fetch
+    // setAllPods(resultObject)
+    test();
   }
 
   let placeholder = 'your url here';
@@ -208,7 +186,7 @@ const PodInfo = (props: podType) => {
 }
 
 
-// function sendQuery(url: string, setPods: any) {
+// function getPodInfo(url: string, setPods: any) {
 //   const promql = '/api/v1/query?query=';
 //   let query = '(kube_pod_status_phase)==1';
 //   const finalUrl = url + promql + query;

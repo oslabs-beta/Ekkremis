@@ -2,18 +2,23 @@ import { useState } from 'react';
 import './styles/App.css';
 import Dashboard from './components/Dashboard';
 import FrontPage from './components/FrontPage';
-// import errorModal from './components/ErrorModal';
+import NoPage from './components/smallComps/NoPage';
+import React from 'react';
+// import { BrowserRouter as Router, Routes, Route, RouteComponentProps } from "react-router-dom"; //
+import { HashRouter as Router, Route, Routes } from "react-router-dom"; //
+
+type TParams =  { id: string };
 
 function App() {
-  const[openModal, setOpenModal] = useState(false);
   return (
-    <div className="App">
-        <Dashboard />
-        {/* <button className ='errorModalbtn' onClick={() => {
-          setOpenModal(true);
-        }}>Error Log</button>
-          {openModal && <errorModal closeModal ={setOpenModal}/>} */}
-    </div>
+
+    <Router>
+      <Routes>
+        <Route index element={<FrontPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<NoPage />} />
+      </Routes>
+    </Router>
   );
 }
 
