@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita&family=Red+Hat+Text:wght@600&display=swap');
+/* #root {
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-image: linear-gradient(#013c64, #020849);
+  background-size: cover;
+  height: 100%;
+}
+
+ THESE MUST BE ADDED TO APP.CSS IT LOOKS LIKE    */
+
+.fp{
+  text-align: right;
+}
+
+.FPbutton{
+    background-color: rgb(222, 145, 41);
+    border-radius: 5px;
+    border: none;
+    height: 36px;
+    padding: 10px 15px;
+    margin: 15px 15px 50px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: thin;
+}
+
+.FPbutton:hover{
+  box-shadow: 0 0 10px 0 rgb(246, 209, 76);
+}
+
+@keyframes float {
+	0% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); grabs the whole div and not the image - makes the background gradient look weird*/
+		transform: translatey(0px);
+	}
+	50% {
+		/* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
+		transform: translatey(40px);
+	}
+	100% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+		transform: translatey(0px);
+	}
+}
+
+.fpLogo{
+  text-align: center;
+  transform: translatey(0px);
+	animation: float 3s ease-in-out infinite;
+}
+
+.fpH1{
+  text-align: center;
+  margin: 120px 10px 0px;
+}
+
+.fpH1 > h1 {
+  font-size: 75px;
+  color: rgb(222, 145, 41);
+  font-family: 'Amita', cursive;
+}

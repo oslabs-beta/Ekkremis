@@ -1,0 +1,2143 @@
+{
+  "(kube_pod_status_phase)==1": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Pending",
+            "pod": "cowclicker-7dbd496458-rpznx",
+            "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Pending",
+            "pod": "cowclicker-7dbd496458-fvq9w",
+            "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Pending",
+            "pod": "cowclicker-4dbe896458-dmqfq",
+            "uid": "45269121-81db-462a-bc2f-e42c355b7153"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Pending",
+            "pod": "cowclicker-7dbd496458-dmscq",
+            "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Running",
+            "pod": "cowclicker-7dbd496458-dmscq",
+            "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Running",
+            "pod": "cowclicker-7dbd496458-fvq9w",
+            "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Running",
+            "pod": "cowclicker-7dbd496458-rpznx",
+            "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "phase": "Running",
+            "pod": "coredns-565d847f94-g2m7t",
+            "uid": "2907549c-33cd-4a3e-90b6-a16c39547586"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "phase": "Running",
+            "pod": "etcd-minikube",
+            "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "phase": "Running",
+            "pod": "kube-apiserver-minikube",
+            "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "phase": "Running",
+            "pod": "kube-controller-manager-minikube",
+            "uid": "1743d56c-880b-47d9-8242-4dd3fca10867"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "phase": "Running",
+            "pod": "kube-proxy-hmwlw",
+            "uid": "bd789cec-581e-4f34-90ae-a0fce69fd225"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "phase": "Running",
+            "pod": "kube-scheduler-minikube",
+            "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "phase": "Running",
+            "pod": "kube-state-metrics-5897f6cf77-x98z6",
+            "uid": "6ce32cc6-4354-431d-ba53-996f9be4849d"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "phase": "Running",
+            "pod": "metrics-server-769cd898cd-wchcp",
+            "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "phase": "Running",
+            "pod": "storage-provisioner",
+            "uid": "1a37b3bd-b946-424c-9219-b764a09ee0b1"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "phase": "Running",
+            "pod": "dashboard-metrics-scraper-b74747df5-x8z7k",
+            "uid": "9e28954b-9cba-48f0-90ab-808d52ebbef1"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "phase": "Running",
+            "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7",
+            "uid": "54223b8b-c0c7-49b9-98f3-e63789021c6d"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "monitoring",
+            "phase": "Running",
+            "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Failed",
+            "pod": "experimental-pod-1",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "metrics",
+            "phase": "Failed",
+            "pod": "experimental-metrics-pod-1",
+            "uid": "d4804b22-a05p-4dc2-b724-810a58ac671f"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Succeeded",
+            "pod": "experimental-pod-2",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "metrics",
+            "phase": "Succeeded",
+            "pod": "experimental-metrics-pod-2",
+            "uid": "d4804b22-a05p-4dc2-b724-810a58ac671f"
+          },
+          "value": [1667258442.939, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_phase",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "phase": "Unknown",
+            "pod": "experimental-pod-3",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667258442.939, "1"]
+        }
+      ]
+    }
+  },
+  "(kube_pod_container_status_waiting_reason)": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_waiting_reason",
+            "container": "cowclicker-test4",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-97d4s",
+            "reason": "ImagePullBackOff",
+            "uid": "db0994e8-f6dd-43ac-a2aa-a0b3e4a71fa8"
+          },
+          "value": [1667666054.08, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_waiting_reason",
+            "container": "cowclicker-test4",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-k82f7",
+            "reason": "ImagePullBackOff",
+            "uid": "d314f9fc-009b-4bf3-aced-493cce8920ff"
+          },
+          "value": [1667666054.08, "1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_waiting_reason",
+            "container": "cowclicker-test4",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-xlsmq",
+            "reason": "ImagePullBackOff",
+            "uid": "84fc4668-591d-4ba0-9c62-8419bfeab5a0"
+          },
+          "value": [1667666054.08, "1"]
+        }
+      ]
+    }
+  },
+  "(kube_pod_container_status_restarts_total)": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "coredns",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "coredns-565d847f94-g2m7t",
+            "uid": "2907549c-33cd-4a3e-90b6-a16c39547586"
+          },
+          "value": [1667666222.644, "17"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "cowclicker",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-dmscq",
+            "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+          },
+          "value": [1667666222.644, "14"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "cowclicker",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-fvq9w",
+            "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+          },
+          "value": [1667666222.644, "14"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "cowclicker",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-rpznx",
+            "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+          },
+          "value": [1667666222.644, "14"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "cowclicker-test4",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-97d4s",
+            "uid": "db0994e8-f6dd-43ac-a2aa-a0b3e4a71fa8"
+          },
+          "value": [1667666222.644, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "cowclicker-test4",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-k82f7",
+            "uid": "d314f9fc-009b-4bf3-aced-493cce8920ff"
+          },
+          "value": [1667666222.644, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "cowclicker-test4",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-xlsmq",
+            "uid": "84fc4668-591d-4ba0-9c62-8419bfeab5a0"
+          },
+          "value": [1667666222.644, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "dashboard-metrics-scraper",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "dashboard-metrics-scraper-b74747df5-x8z7k",
+            "uid": "9e28954b-9cba-48f0-90ab-808d52ebbef1"
+          },
+          "value": [1667666222.644, "16"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "etcd",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "etcd-minikube",
+            "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec"
+          },
+          "value": [1667666222.644, "17"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "kube-apiserver",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-apiserver-minikube",
+            "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486"
+          },
+          "value": [1667666222.644, "17"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "kube-controller-manager",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-controller-manager-minikube",
+            "uid": "1743d56c-880b-47d9-8242-4dd3fca10867"
+          },
+          "value": [1667666222.644, "18"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "kube-proxy",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-proxy-hmwlw",
+            "uid": "bd789cec-581e-4f34-90ae-a0fce69fd225"
+          },
+          "value": [1667666222.644, "17"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "kube-scheduler",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-scheduler-minikube",
+            "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475"
+          },
+          "value": [1667666222.644, "17"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "kube-state-metrics",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-state-metrics-5897f6cf77-x98z6",
+            "uid": "6ce32cc6-4354-431d-ba53-996f9be4849d"
+          },
+          "value": [1667666222.644, "21"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "kubernetes-dashboard",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7",
+            "uid": "54223b8b-c0c7-49b9-98f3-e63789021c6d"
+          },
+          "value": [1667666222.644, "26"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "metrics-server",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "metrics-server-769cd898cd-wchcp",
+            "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e"
+          },
+          "value": [1667666222.644, "48"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "prometheus",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "monitoring",
+            "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667666222.644, "12"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_status_restarts_total",
+            "container": "storage-provisioner",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "storage-provisioner",
+            "uid": "1a37b3bd-b946-424c-9219-b764a09ee0b1"
+          },
+          "value": [1667666222.644, "36"]
+        }
+      ]
+    }
+  },
+  "(kube_pod_container_resource_requests)": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "coredns",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "node": "minikube",
+            "pod": "coredns-565d847f94-g2m7t",
+            "resource": "cpu",
+            "uid": "2907549c-33cd-4a3e-90b6-a16c39547586",
+            "unit": "core"
+          },
+          "value": [1667666307.868, "0.1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "coredns",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "node": "minikube",
+            "pod": "coredns-565d847f94-g2m7t",
+            "resource": "memory",
+            "uid": "2907549c-33cd-4a3e-90b6-a16c39547586",
+            "unit": "byte"
+          },
+          "value": [1667666307.868, "73400320"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "etcd",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "node": "minikube",
+            "pod": "etcd-minikube",
+            "resource": "cpu",
+            "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec",
+            "unit": "core"
+          },
+          "value": [1667666307.868, "0.1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "etcd",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "node": "minikube",
+            "pod": "etcd-minikube",
+            "resource": "memory",
+            "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec",
+            "unit": "byte"
+          },
+          "value": [1667666307.868, "104857600"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "kube-apiserver",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "node": "minikube",
+            "pod": "kube-apiserver-minikube",
+            "resource": "cpu",
+            "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486",
+            "unit": "core"
+          },
+          "value": [1667666307.868, "0.25"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "kube-controller-manager",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "node": "minikube",
+            "pod": "kube-controller-manager-minikube",
+            "resource": "cpu",
+            "uid": "1743d56c-880b-47d9-8242-4dd3fca10867",
+            "unit": "core"
+          },
+          "value": [1667666307.868, "0.2"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "kube-scheduler",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "node": "minikube",
+            "pod": "kube-scheduler-minikube",
+            "resource": "cpu",
+            "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475",
+            "unit": "core"
+          },
+          "value": [1667666307.868, "0.1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "metrics-server",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "node": "minikube",
+            "pod": "metrics-server-769cd898cd-wchcp",
+            "resource": "cpu",
+            "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e",
+            "unit": "core"
+          },
+          "value": [1667666307.868, "0.1"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "metrics-server",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "node": "minikube",
+            "pod": "metrics-server-769cd898cd-wchcp",
+            "resource": "memory",
+            "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e",
+            "unit": "byte"
+          },
+          "value": [1667666307.868, "209715200"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "prometheus",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "monitoring",
+            "node": "minikube",
+            "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+            "resource": "cpu",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f",
+            "unit": "core"
+          },
+          "value": [1667666307.868, "0.5"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_container_resource_requests",
+            "container": "prometheus",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "monitoring",
+            "node": "minikube",
+            "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+            "resource": "memory",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f",
+            "unit": "byte"
+          },
+          "value": [1667666307.868, "500000000"]
+        }
+      ]
+    }
+  },
+  "(kube_pod_status_reason)": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-dmscq",
+            "reason": "Evicted",
+            "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-dmscq",
+            "reason": "NodeAffinity",
+            "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-dmscq",
+            "reason": "NodeLost",
+            "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-dmscq",
+            "reason": "Shutdown",
+            "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-dmscq",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-fvq9w",
+            "reason": "Evicted",
+            "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-fvq9w",
+            "reason": "NodeAffinity",
+            "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-fvq9w",
+            "reason": "NodeLost",
+            "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-fvq9w",
+            "reason": "Shutdown",
+            "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-fvq9w",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-rpznx",
+            "reason": "Evicted",
+            "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-rpznx",
+            "reason": "NodeAffinity",
+            "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-rpznx",
+            "reason": "NodeLost",
+            "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-rpznx",
+            "reason": "Shutdown",
+            "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-7dbd496458-rpznx",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-97d4s",
+            "reason": "Evicted",
+            "uid": "db0994e8-f6dd-43ac-a2aa-a0b3e4a71fa8"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-97d4s",
+            "reason": "NodeAffinity",
+            "uid": "db0994e8-f6dd-43ac-a2aa-a0b3e4a71fa8"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-97d4s",
+            "reason": "NodeLost",
+            "uid": "db0994e8-f6dd-43ac-a2aa-a0b3e4a71fa8"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-97d4s",
+            "reason": "Shutdown",
+            "uid": "db0994e8-f6dd-43ac-a2aa-a0b3e4a71fa8"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-97d4s",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "db0994e8-f6dd-43ac-a2aa-a0b3e4a71fa8"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-k82f7",
+            "reason": "Evicted",
+            "uid": "d314f9fc-009b-4bf3-aced-493cce8920ff"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-k82f7",
+            "reason": "NodeAffinity",
+            "uid": "d314f9fc-009b-4bf3-aced-493cce8920ff"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-k82f7",
+            "reason": "NodeLost",
+            "uid": "d314f9fc-009b-4bf3-aced-493cce8920ff"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-k82f7",
+            "reason": "Shutdown",
+            "uid": "d314f9fc-009b-4bf3-aced-493cce8920ff"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-k82f7",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "d314f9fc-009b-4bf3-aced-493cce8920ff"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-xlsmq",
+            "reason": "Evicted",
+            "uid": "84fc4668-591d-4ba0-9c62-8419bfeab5a0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-xlsmq",
+            "reason": "NodeAffinity",
+            "uid": "84fc4668-591d-4ba0-9c62-8419bfeab5a0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-xlsmq",
+            "reason": "NodeLost",
+            "uid": "84fc4668-591d-4ba0-9c62-8419bfeab5a0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-xlsmq",
+            "reason": "Shutdown",
+            "uid": "84fc4668-591d-4ba0-9c62-8419bfeab5a0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "default",
+            "pod": "cowclicker-xlsmq",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "84fc4668-591d-4ba0-9c62-8419bfeab5a0"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "coredns-565d847f94-g2m7t",
+            "reason": "Evicted",
+            "uid": "2907549c-33cd-4a3e-90b6-a16c39547586"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "coredns-565d847f94-g2m7t",
+            "reason": "NodeAffinity",
+            "uid": "2907549c-33cd-4a3e-90b6-a16c39547586"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "coredns-565d847f94-g2m7t",
+            "reason": "NodeLost",
+            "uid": "2907549c-33cd-4a3e-90b6-a16c39547586"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "coredns-565d847f94-g2m7t",
+            "reason": "Shutdown",
+            "uid": "2907549c-33cd-4a3e-90b6-a16c39547586"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "coredns-565d847f94-g2m7t",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "2907549c-33cd-4a3e-90b6-a16c39547586"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "etcd-minikube",
+            "reason": "Evicted",
+            "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "etcd-minikube",
+            "reason": "NodeAffinity",
+            "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "etcd-minikube",
+            "reason": "NodeLost",
+            "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "etcd-minikube",
+            "reason": "Shutdown",
+            "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "etcd-minikube",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-apiserver-minikube",
+            "reason": "Evicted",
+            "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-apiserver-minikube",
+            "reason": "NodeAffinity",
+            "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-apiserver-minikube",
+            "reason": "NodeLost",
+            "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-apiserver-minikube",
+            "reason": "Shutdown",
+            "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-apiserver-minikube",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-controller-manager-minikube",
+            "reason": "Evicted",
+            "uid": "1743d56c-880b-47d9-8242-4dd3fca10867"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-controller-manager-minikube",
+            "reason": "NodeAffinity",
+            "uid": "1743d56c-880b-47d9-8242-4dd3fca10867"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-controller-manager-minikube",
+            "reason": "NodeLost",
+            "uid": "1743d56c-880b-47d9-8242-4dd3fca10867"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-controller-manager-minikube",
+            "reason": "Shutdown",
+            "uid": "1743d56c-880b-47d9-8242-4dd3fca10867"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-controller-manager-minikube",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "1743d56c-880b-47d9-8242-4dd3fca10867"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-proxy-hmwlw",
+            "reason": "Evicted",
+            "uid": "bd789cec-581e-4f34-90ae-a0fce69fd225"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-proxy-hmwlw",
+            "reason": "NodeAffinity",
+            "uid": "bd789cec-581e-4f34-90ae-a0fce69fd225"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-proxy-hmwlw",
+            "reason": "NodeLost",
+            "uid": "bd789cec-581e-4f34-90ae-a0fce69fd225"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-proxy-hmwlw",
+            "reason": "Shutdown",
+            "uid": "bd789cec-581e-4f34-90ae-a0fce69fd225"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-proxy-hmwlw",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "bd789cec-581e-4f34-90ae-a0fce69fd225"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-scheduler-minikube",
+            "reason": "Evicted",
+            "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-scheduler-minikube",
+            "reason": "NodeAffinity",
+            "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-scheduler-minikube",
+            "reason": "NodeLost",
+            "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-scheduler-minikube",
+            "reason": "Shutdown",
+            "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-scheduler-minikube",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-state-metrics-5897f6cf77-x98z6",
+            "reason": "Evicted",
+            "uid": "6ce32cc6-4354-431d-ba53-996f9be4849d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-state-metrics-5897f6cf77-x98z6",
+            "reason": "NodeAffinity",
+            "uid": "6ce32cc6-4354-431d-ba53-996f9be4849d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-state-metrics-5897f6cf77-x98z6",
+            "reason": "NodeLost",
+            "uid": "6ce32cc6-4354-431d-ba53-996f9be4849d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-state-metrics-5897f6cf77-x98z6",
+            "reason": "Shutdown",
+            "uid": "6ce32cc6-4354-431d-ba53-996f9be4849d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "kube-state-metrics-5897f6cf77-x98z6",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "6ce32cc6-4354-431d-ba53-996f9be4849d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "metrics-server-769cd898cd-wchcp",
+            "reason": "Evicted",
+            "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "metrics-server-769cd898cd-wchcp",
+            "reason": "NodeAffinity",
+            "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "metrics-server-769cd898cd-wchcp",
+            "reason": "NodeLost",
+            "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "metrics-server-769cd898cd-wchcp",
+            "reason": "Shutdown",
+            "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "metrics-server-769cd898cd-wchcp",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "storage-provisioner",
+            "reason": "Evicted",
+            "uid": "1a37b3bd-b946-424c-9219-b764a09ee0b1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "storage-provisioner",
+            "reason": "NodeAffinity",
+            "uid": "1a37b3bd-b946-424c-9219-b764a09ee0b1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "storage-provisioner",
+            "reason": "NodeLost",
+            "uid": "1a37b3bd-b946-424c-9219-b764a09ee0b1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "storage-provisioner",
+            "reason": "Shutdown",
+            "uid": "1a37b3bd-b946-424c-9219-b764a09ee0b1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kube-system",
+            "pod": "storage-provisioner",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "1a37b3bd-b946-424c-9219-b764a09ee0b1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "dashboard-metrics-scraper-b74747df5-x8z7k",
+            "reason": "Evicted",
+            "uid": "9e28954b-9cba-48f0-90ab-808d52ebbef1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "dashboard-metrics-scraper-b74747df5-x8z7k",
+            "reason": "NodeAffinity",
+            "uid": "9e28954b-9cba-48f0-90ab-808d52ebbef1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "dashboard-metrics-scraper-b74747df5-x8z7k",
+            "reason": "NodeLost",
+            "uid": "9e28954b-9cba-48f0-90ab-808d52ebbef1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "dashboard-metrics-scraper-b74747df5-x8z7k",
+            "reason": "Shutdown",
+            "uid": "9e28954b-9cba-48f0-90ab-808d52ebbef1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "dashboard-metrics-scraper-b74747df5-x8z7k",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "9e28954b-9cba-48f0-90ab-808d52ebbef1"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7",
+            "reason": "Evicted",
+            "uid": "54223b8b-c0c7-49b9-98f3-e63789021c6d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7",
+            "reason": "NodeAffinity",
+            "uid": "54223b8b-c0c7-49b9-98f3-e63789021c6d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7",
+            "reason": "NodeLost",
+            "uid": "54223b8b-c0c7-49b9-98f3-e63789021c6d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7",
+            "reason": "Shutdown",
+            "uid": "54223b8b-c0c7-49b9-98f3-e63789021c6d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "kubernetes-dashboard",
+            "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "54223b8b-c0c7-49b9-98f3-e63789021c6d"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "monitoring",
+            "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+            "reason": "Evicted",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "monitoring",
+            "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+            "reason": "NodeAffinity",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "monitoring",
+            "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+            "reason": "NodeLost",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "monitoring",
+            "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+            "reason": "Shutdown",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667666608.16, "0"]
+        },
+        {
+          "metric": {
+            "__name__": "kube_pod_status_reason",
+            "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+            "job": "kube-state-metrics",
+            "namespace": "monitoring",
+            "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+            "reason": "UnexpectedAdmissionError",
+            "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+          },
+          "value": [1667666608.16, "0"]
+        }
+      ]
+    }
+  },
+  "(sum(kube_pod_container_resource_limits{resource='cpu'}) - sum(kube_node_status_capacity{resource='cpu'}))": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {},
+          "value": [1667666812.015, "-7"]
+        }
+      ]
+    }
+  },
+  "sum(kube_pod_container_resource_limits{resource='memory'}) - sum(kube_node_status_capacity{resource='memory'})": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {},
+          "value": [1667666857.624, "-6989185024"]
+        }
+      ]
+    }
+  },
+  "min_over_time(sum by (namespace, pod) (kube_pod_status_phase{phase=~'Pending|Unknown|Failed'})[15m:1m]) > 0": {
+    "status": "success",
+    "data": {
+      "resultType": "vector",
+      "result": [
+        {
+          "metric": {
+            "namespace": "default",
+            "pod": "cowclicker-xlsmq"
+          },
+          "value": [1667667001.836, "1"]
+        },
+        {
+          "metric": {
+            "namespace": "default",
+            "pod": "cowclicker-97d4s"
+          },
+          "value": [1667667001.836, "1"]
+        },
+        {
+          "metric": {
+            "namespace": "default",
+            "pod": "cowclicker-k82f7"
+          },
+          "value": [1667667001.836, "1"]
+        }
+      ]
+    }
+  },
+  "(kube_pod_start_time)": {
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "default",
+                    "pod": "cowclicker-7dbd496458-dmscq",
+                    "uid": "09269111-81db-462a-bc2f-e42c355b7153"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666651186"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "default",
+                    "pod": "cowclicker-7dbd496458-fvq9w",
+                    "uid": "9d970f48-f193-4b1a-b2b7-e1b584d6604d"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666651181"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "default",
+                    "pod": "cowclicker-7dbd496458-rpznx",
+                    "uid": "01a73c03-993c-4cf1-96e5-e76974ac2ca0"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666651178"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "default",
+                    "pod": "cowclicker-97d4s",
+                    "uid": "db0994e8-f6dd-43ac-a2aa-a0b3e4a71fa8"
+                },
+                "value": [
+                    1667674455.495,
+                    "1667266957"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "default",
+                    "pod": "cowclicker-k82f7",
+                    "uid": "d314f9fc-009b-4bf3-aced-493cce8920ff"
+                },
+                "value": [
+                    1667674455.495,
+                    "1667266957"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "default",
+                    "pod": "cowclicker-xlsmq",
+                    "uid": "84fc4668-591d-4ba0-9c62-8419bfeab5a0"
+                },
+                "value": [
+                    1667674455.495,
+                    "1667266957"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kube-system",
+                    "pod": "coredns-565d847f94-g2m7t",
+                    "uid": "2907549c-33cd-4a3e-90b6-a16c39547586"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666312099"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kube-system",
+                    "pod": "etcd-minikube",
+                    "uid": "cdfeba8a-a60f-4b25-86b9-de5eb1e106ec"
+                },
+                "value": [
+                    1667674455.495,
+                    "1667606098"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kube-system",
+                    "pod": "kube-apiserver-minikube",
+                    "uid": "106b7ff2-5823-4ca0-a1ed-391e84752486"
+                },
+                "value": [
+                    1667674455.495,
+                    "1667665254"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kube-system",
+                    "pod": "kube-controller-manager-minikube",
+                    "uid": "1743d56c-880b-47d9-8242-4dd3fca10867"
+                },
+                "value": [
+                    1667674455.495,
+                    "1667665254"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kube-system",
+                    "pod": "kube-proxy-hmwlw",
+                    "uid": "bd789cec-581e-4f34-90ae-a0fce69fd225"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666312099"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kube-system",
+                    "pod": "kube-scheduler-minikube",
+                    "uid": "1cf660bc-b784-41a4-af88-5cf7b25a1475"
+                },
+                "value": [
+                    1667674455.495,
+                    "1667604769"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kube-system",
+                    "pod": "kube-state-metrics-5897f6cf77-x98z6",
+                    "uid": "6ce32cc6-4354-431d-ba53-996f9be4849d"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666636104"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kube-system",
+                    "pod": "metrics-server-769cd898cd-wchcp",
+                    "uid": "51a8d048-c425-4bf6-9ed3-648c3ece793e"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666480244"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kube-system",
+                    "pod": "storage-provisioner",
+                    "uid": "1a37b3bd-b946-424c-9219-b764a09ee0b1"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666312098"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kubernetes-dashboard",
+                    "pod": "dashboard-metrics-scraper-b74747df5-x8z7k",
+                    "uid": "9e28954b-9cba-48f0-90ab-808d52ebbef1"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666312207"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "kubernetes-dashboard",
+                    "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7",
+                    "uid": "54223b8b-c0c7-49b9-98f3-e63789021c6d"
+                },
+                "value": [
+                    1667674455.495,
+                    "1666312207"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "kube_pod_start_time",
+                    "instance": "kube-state-metrics.kube-system.svc.cluster.local:8080",
+                    "job": "kube-state-metrics",
+                    "namespace": "monitoring",
+                    "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4",
+                    "uid": "c8804b27-a08e-4dc4-b704-700a58ac671f"
+                },
+                "value": [
+                    1667674455.495,
+                    "1667243217"
+                ]
+            }
+        ]
+    }
+}
+}
