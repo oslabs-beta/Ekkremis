@@ -23,23 +23,48 @@ let mockData: any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {
 // the parent componeent that holds all states and puts all other components together 
 const Dashboard = () => {
   // state for current URL 
-  const [currentUrl, setCurrentUrl] = useState('')
+  const [currentUrl, setCurrentUrl] = useState('http://localhost:9090');
   // state for current active nav bar category 
-  const [status, setStatus] = useState("pending");
-  // state for current pods for display 
+  const [status, setStatus] = useState('');
+  // state for current pods for display - initialized by each button click - creates a subset of allPods based on status
   const [currentPods, setCurrentPods] = useState({
     "pendingPod1": {"podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
     "pendingPod2": {"podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}, 
     "pendingPod3": {"podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes"}
 });
+  // all pods looks like this: {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}}
   const [allPods, setAllPods] = useState(mockData);
 
+  // a state for all summary data 
+
+  // a state for actively 
+
+    async function generateSummary() {
+    // array of keys of allPods
+    let keysArray = Object.keys(allPods);
+    let resultObject = {};
+    for (let i=0; i<keysArray.length; i++) {
+      Object.assign(resultObject, allPods[keysArray[i]])
+    }
+    // return an object that's in an accepted format by currentPods
+    return resultObject;
+  }
+
+  if (!status) setStatus('summary');
+  
   useEffect(() => {
-
-      setCurrentPods(allPods[status])
+    // reshape all pod data to fit status - resets current pods
+    if (status!=='summary') setCurrentPods(allPods[status]);
+    else {
+      (async() => {
+        getPodInfo("actual", setAllPods, currentUrl);
+        const summary: any = await generateSummary();
+        console.log(summary);
+        setCurrentPods(summary);
+      })();
+    }
       console.log(currentPods)
-
-  }, [status])
+  }, [status]);
 
 
   return(
@@ -51,7 +76,7 @@ const Dashboard = () => {
         </div>
         <div className='right-side'>
           <Display />
-          <AllPodInfo currentPods={currentPods} currentUrl={currentUrl}/>
+          <AllPodInfo currentPods={currentPods} currentUrl={currentUrl} status={status} allPods={allPods}/>
         </div>
       </div>
     </div>
@@ -65,9 +90,11 @@ const TopBar = (props: any) => {
     console.log('inside handleClick')
     // document.getElementById() returns the type HTMLElement which does not contain a value property. The subtype HTMLInputElement does however contain the value property.
     const inputElement = (document.getElementById('endpoint-url') as HTMLInputElement);
-    const inputValue = inputElement.value
+    let inputValue = inputElement.value
     // const url = inputValue.toString() + '/metrics'
-    props.setCurrentUrl(inputValue);
+    if (inputValue) props.setCurrentUrl(inputValue);
+    else inputValue = 'http://localhost:9090';
+   
     inputElement.value = '';
     // this is the get real data from localhost 9090
     getPodInfo("actual", setAllPods, inputValue);
@@ -84,7 +111,7 @@ const TopBar = (props: any) => {
   }
 
   let placeholder = 'your url here';
-  if (props.currentUrl) placeholder = props.currentUrl;
+  // if (props.currentUrl) placeholder = props.currentUrl;
 
   return(
     <div className='top-bar'>
@@ -128,7 +155,7 @@ const AllPodInfo = (props: any) => {
 
   useEffect(() => {
     populateArray();
-  }, [props.currentPods])
+  }, [props.currentPods, props.status, props.allPods])
 
   return(
       <div>

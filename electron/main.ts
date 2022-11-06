@@ -13,7 +13,7 @@ function createWindow() {
       // contextIsolation: false,
       preload: path.join(__dirname, 'preload.js'),
       webSecurity: false,
-      // nodeIntegration: true
+      nodeIntegration: true
     }
   })
 
@@ -50,6 +50,7 @@ app.whenReady().then(() => {
     const pathname = decodeURI(request.url.replace('file:///', ''));
     callback(pathname);
     });
+    
   createWindow();
 
   app.on('activate', () => {
