@@ -1,6 +1,9 @@
 import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import installExtension, { REACT_DEVELOPER_TOOLS } from "electron-devtools-installer";
+import { protocol } from "electron";
+
+
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -8,7 +11,9 @@ function createWindow() {
     height: 600,
     webPreferences: {
       // contextIsolation: false,
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      webSecurity: false,
+      // nodeIntegration: true
     }
   })
 
@@ -35,11 +40,16 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+  console.log('path: ', app.getPath('userData'))
   // DevTools
   installExtension(REACT_DEVELOPER_TOOLS)
     .then((name) => console.log(`Added Extension:  ${name}`))
     .catch((err) => console.log('An error occurred: ', err));
 
+  protocol.registerFileProtocol('file', (request, callback) => {
+    const pathname = decodeURI(request.url.replace('file:///', ''));
+    callback(pathname);
+    });
   createWindow();
 
   app.on('activate', () => {
