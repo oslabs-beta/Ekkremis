@@ -51,7 +51,7 @@ const Dashboard = () => {
         </div>
         <div className='right-side'>
           <Display />
-          <AllPodInfo currentPods={currentPods}/>
+          <AllPodInfo currentPods={currentPods} currentUrl={currentUrl}/>
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@ const TopBar = (props: any) => {
     props.setCurrentUrl(inputValue);
     inputElement.value = '';
     // this is the get real data from localhost 9090
-    // getPodInfo("actual", setAllPods, inputValue);
+    getPodInfo("actual", setAllPods, inputValue);
 
     // this uses mock data
     // getPodInfo("mock", setAllPods);
@@ -80,7 +80,7 @@ const TopBar = (props: any) => {
     // second fetch 
     // third fetch
     // setAllPods(resultObject)
-    test();
+
   }
 
   let placeholder = 'your url here';
@@ -120,7 +120,7 @@ const AllPodInfo = (props: any) => {
 
   const populateArray = () => {
     for (const key in props.currentPods) {
-      podsArray.push(<PodInfo key={key} podName={key} podNode={props.currentPods[key].node} podStatus={props.currentPods[key].status} podRestarts={props.currentPods[key].restarts} podAge={props.currentPods[key].age} />)
+      podsArray.push(<PodInfo key={key} podName={key} podNamespace={props.currentPods[key].namespace} podStatus={props.currentPods[key].status} podRestart={props.currentPods[key].restart} podAge={props.currentPods[key].age} currentUrl={props.currentUrl}/>)
     }
   }
 
@@ -149,10 +149,12 @@ const AllPodInfo = (props: any) => {
 // type for props for podInfo 
 type podType = {
   podName: string,
-  podNode: string,
+  podNamespace: string,
   podStatus: string,
-  podRestarts: number,
-  podAge: number
+  podRestart: number,
+  podAge: number,
+  podReason?: string,
+  currentUrl: string
 }
 // component for individual pod info 
 const PodInfo = (props: podType) => {
@@ -173,14 +175,14 @@ const PodInfo = (props: podType) => {
   return(
     <div className='pod-info'>
       <h5>{props.podName}</h5>
-      <h5>{props.podNode}</h5>
+      <h5>{props.podNamespace}</h5>
       <h5>{props.podStatus}</h5>
-      <h5>{props.podRestarts}</h5>
+      <h5>{props.podRestart}</h5>
       <h5>{props.podAge}</h5>
       <button onClick={toggleChartsModal}>charts</button>
       <button onClick={toggleErrorModal}>logs</button>
       <ChartsModal show={showChartsModal} toggleChartsModal={toggleChartsModal} />
-      <ErrorModal show={showErrorModal} toggleErrorModal={toggleErrorModal} />
+      <ErrorModal show={showErrorModal} toggleErrorModal={toggleErrorModal} podName={props.podName} currentUrl={props.currentUrl}/>
     </div>
   )
 }
