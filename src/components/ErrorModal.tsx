@@ -58,9 +58,9 @@ const Logs = (props: any) => {
   return (
     <div className="log-info">
       {props.logInfo ?
-          <h5>{props.logInfo}</h5> : 
-          <h5>NO ERRORS LOL</h5>
-        }  
+        <h5>{props.logInfo}</h5> : 
+        <h5>NO ERRORS LOL</h5>
+      }  
     </div>
   )
 }  
