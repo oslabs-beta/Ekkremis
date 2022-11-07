@@ -51,7 +51,7 @@
   height: 290px;
   width: 650px;
   margin-top: 20px;
-  overflow-y: auto
+  overflow-y: scroll;
 }
 
 .pod-info {
