@@ -1,0 +1,36 @@
+.url-input {
+    display: flex;
+    justify-content: space-around;
+    height: 50%;
+    margin-left: 250px;
+    margin-right: 20px;
+    align-self: center;
+  }
+  
+  .url-input h5 {
+    position: relative;
+    top: -18px;
+    color: white;
+    font-weight: 800;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-left:5px;
+  }
+  
+  .url-button {
+    position: relative;
+    top: -15px;
+  }
+  
+  #endpoint-url{
+    width: 280px;
+    background-color: #eceaeb;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+  }
+  
+  .login-button-container{
+    display: flex;
+    margin-top: 30px;
+  }
