@@ -1,7 +1,7 @@
 .display {
     border: 1.2px solid #ec633677;
     flex: 0.3;
-    height: 200px;
+    height: 300px;
     width: 650px;
     margin-top: 50px;
     background-color: #E2E0E1;
@@ -14,7 +14,7 @@
   }
 
   .display button {
-    position: absolute;
+
     margin-top: 0px;
     margin-left: 0px;
     font-size: 12px;
@@ -22,6 +22,18 @@
     width: 100px;
     padding: 0px;
     vertical-align: center;
+  }
+
+  .display-menu {
+    display: flex;
+    justify-content: left;
+
+    height: 50px;
+    position:absolute; 
+    top: 19px;
+
+    z-index: -1;
+    border: 5px solid #ec633677;
   }
 
   #myChart {

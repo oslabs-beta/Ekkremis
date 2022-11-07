@@ -54,7 +54,12 @@ const Display = (props) => {
 
   return (
     <div className='display'>
-      <button className='chartButton FPbutton' onClick={() => { handleClick() }}>SHOW CHART</button>
+      <div className='display-menu'>
+        <button className='chartButton FPbutton' onClick={() => { handleClick() }}>SHOW CPU USAGE</button>
+        <button className='chartButton FPbutton' onClick>SHOW MEMORY USAGE</button>
+        <button className='chartButton FPbutton' onClick>SHOW PENDING PODS</button>
+        <button className='chartButton FPbutton' onClick>SHOW SUMMARY</button>
+      </div>
       {/* <img src="https://miro.medium.com/max/1400/1*QwGqOMObJd7oFHCfe1AvxA.png" alt="" /> */}
       <canvas id="myChart"></canvas>
     </div>
