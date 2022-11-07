@@ -1,4 +1,4 @@
-import '../styles/chartsModal.css';
+import '../../styles/chartsModal.css';
 
 type ChartProps = {
   show: boolean,
@@ -12,7 +12,7 @@ const ChartsModal = (props: ChartProps) => {
   return (
     <div className={showModalClassName}>
       <section className="modal-main">
-        <img src={require('../img/charts.png')} alt="charts" className="chartImage" />
+        <img src={require('../../img/charts.png')} alt="charts" className="chartImage" />
         <button type="button" onClick={props.toggleChartsModal}>
           Close
         </button>

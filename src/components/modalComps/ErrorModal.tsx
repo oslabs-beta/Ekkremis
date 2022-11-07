@@ -1,25 +1,8 @@
-// Rilo
-import App from "../App";
+import App from "../../App";
 import React, { useState } from "react";
-import "../styles/errorModal.css";
-import "../styles/chartsModal.css";
+import "../../styles/errorModal.css";
 
-import { getPendingReason } from '../utils';
-
-// function errorModal({ closeModal }){
-//   return(
-//     <div className="errorModalBg">
-//       <div className="modalContainer">
-//         <button className="close" onClick={() =>{closeModal(false)}}>Close</button>
-//         <div className="title"><h2>Error Log</h2></div>
-//         <div className="body">
-//           <p>image of error log goes here</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
+import { getPendingReason } from '../../utils';
 
 type ErrorProps = {
     show: boolean,
@@ -28,13 +11,19 @@ type ErrorProps = {
     currentUrl: string
   }
   
+// ErrorModal is a popup modal within each PodInfo component that displays error info
 const ErrorModal = (props: ErrorProps) => {
+  // ran checks if getPendingReason has been ran to be able to toggle off the Loading component.
   const [ran, setRan] = useState(false);
+  // logInfo will store the fetched error info if available. If logInfo remains falsey, then no errors will be displayed
   const [logInfo, setLogInfo] = useState();
+  // noError is another option to store a default 'no errors found!' message. If an error is found, then it will change to 'yes error'. This could be a redundant stateful object.
   const [noError, setNoError] = useState('no errors found!');
 
+  // showModalClassName toggles the classname of the component to toggle the css property display between 'block' and 'none'.
   const showModalClassName = props.show ? "modal display-block" : "modal display-none";
 
+  // The ErrorModal will invoke getPendingReason to grab the pod status waiting reason
   getPendingReason('actual', setRan, setLogInfo, setNoError, props.podName, props.currentUrl);
 
   return (
@@ -52,6 +41,7 @@ const ErrorModal = (props: ErrorProps) => {
   )
 }
 
+// This is a Logs component that will display error logs within the ErrorModal
 const Logs = (props: any) => {
   // render different sh*t based on noError prop
   
@@ -63,8 +53,9 @@ const Logs = (props: any) => {
       }  
     </div>
   )
-}  
+}
 
+// This is a Loading component that will display a 'LOADING' message while the fetch for the pod status waiting reason is happening.
 const Loading = () => {
   
   return (
@@ -74,5 +65,4 @@ const Loading = () => {
   )
 }
 
-  
 export default ErrorModal;

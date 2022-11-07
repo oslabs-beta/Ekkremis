@@ -11,10 +11,6 @@
     padding: 10px;
   }
 
-  .sub {
-
-  }
-
 /* // Popup Texts & button */
   .query-bar {
     display: flex;
@@ -23,10 +19,9 @@
   }
 
   /* //Button Link */
-  .query-btn {
+  .query-btn-unselected {
     display: block;
     text-align: center;
-    text-decoration: none;
     font-weight: 800;
     font-size: 1em;
     text-transform: uppercase;
@@ -36,22 +31,19 @@
     padding: 1.4em 3.5em;
     background-size: 200% auto;
     border: none;
-    box-shadow: 0 4px 6px #f7bd58df, 0 1px 3px #EC6536;
-    background-image: linear-gradient(to right, #ec6336a4 0%, #f7bd58df 50%, #ec6336a4 100%);
+    background-image: linear-gradient(to right, rgb(222, 145, 41) 0%, #f7bd58df 50%, rgb(222, 145, 41)100%);
     transition: 0.5s;
   }
 
-  .query-btn:hover {
+  .query-btn-unselected:hover {
     background-position: right center;
   }
 
-  .query-btn:active {
-    transform: scale(0.98);
-    box-shadow: 0 4px 6px #3A36C2, 0 1px 3px #EC6536;
-    /* Lowering the shadow */
+  .query-btn-unselected:focus {
+    background-position: right center;
   }
 
-  @media only screen and (max-width: 600px) {
+  /* @media only screen and (max-width: 600px) {
     .query-btn {
       padding: 1.4em 1em;
       margin-left: 0;
@@ -67,4 +59,4 @@
     .query-container {
       width: 160px;
     }
-  }
+  } */

@@ -1,9 +1,18 @@
+
 // import { app } from 'electron';
 import path from 'path';
 
+/*
+This function is a test to see if mock data can be fetched from a local json file, in order to reuse the fetch functionality for actual Prometheus metrics.
+The fetch funtionality works for the json file when hardcoded as 'file:///Users/z/codesmith/Ekkremis/src/mock_data.json'.
+Still need to find a way to dynamically build the file path to the mock data.
+The app tries to fetch from localhost unless specifying 'file://'.
+__dirname returns '/' from within this file.
+Within main.ts, app.getPath('userData') returns the path that can be combined with 'file://' + app.getPath('userData') + '/src/mock_data.json'.
+*/
 
 export function test() {
-  console.log(__dirname)
+  // console.log(__dirname) // returns '/'
   // const string = ('file:///Users/z/codesmith/Ekkremis/src/mock_data.json')
   const string = 'file://' + 'static';
   console.log(string);
@@ -14,10 +23,15 @@ export function test() {
     })
 }
 
+// UseCase allows for only two accepted types for data source useCase, 'mock' & 'actual' .
 type UseCase = "mock" | "actual";
 
+// getPodInfo fetches the current phase of the pods along with total restarts and age in hours.
 export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
+  // this promql is the initial portion of the Prometheus query string.
   const promql = '/api/v1/query?query=';
+
+  // These are queries for the current phase of the pods along with total restarts and age in seconds.
   let statusPhaseQuery = '(kube_pod_status_phase)==1';
   let restartQuery = '(kube_pod_container_status_restarts_total)';
   let ageQuery = '(kube_pod_start_time)';
@@ -32,6 +46,8 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
   } 
   console.log('sendQuery invoked', finalStatusUrl)
 
+  // Three separate fetch requests are made here to build up a restart object that stores restarts and the pod age converted from seconds to hours.
+  // The last fetch request gets the pod status object and then maps the restarts and age to each pod before setting the allPods state.
   let resultObject :any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}};
   let restartObject :any = {};
   fetch(finalRestartUrl)
@@ -86,7 +102,11 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
       })
 }
 
-
+/*
+getPendingReason queries for the pod's waiting reason.
+If the pod is not waiting, a waiting reason is not set.
+If the pod is waiting, a waiting reason is set.
+*/
 export function getPendingReason(useCase: UseCase, setRan: any, setLogInfo: any, setNoError: any, podName: string, url?: string) {
   const promql = '/api/v1/query?query=';
   const pendingReasonQuery = `(kube_pod_container_status_waiting_reason{pod="${podName}"})`;
@@ -101,12 +121,16 @@ export function getPendingReason(useCase: UseCase, setRan: any, setLogInfo: any,
     .then(data => data.json())
     .then(data => {
       if (data.data.result.length===0) {
+        // setRan to true so the Log component renders in place of the Loading component.
         setRan(true);  
         return 'no';
       };
       const reason = data.data.result[0].metric.reason;
+      // Set the error log reason to be the reason.
       setLogInfo(reason);
+      // Set the noError state to have an error.
       setNoError('yes error');
+      // setRan to true so the Log component renders in place of the Loading component.
       setRan(true);  
     })
 }
