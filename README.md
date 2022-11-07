@@ -1,7 +1,7 @@
 <h1 align="left"> Ekkremis </h1> <br>
 <p align="left">
-  <a href="https://gitpoint.co/"> 
-    <img alt="Ekkremis Banner" title="Ekkremis Banner" src="./src/img/Ekkremis_Banner.jpg" width="450">
+  <a href="[https://gitpoint.co/](https://github.com/oslabs-beta/Ekkremis)"> 
+    <img alt="Ekkremis Banner" title="Ekkremis Banner" src="./src/img/Ekkremis_Banner.jpg" width="650">
   </a>
 </p>
 
@@ -17,24 +17,24 @@
 - [Features](#features)
 - [Feedback](#feedback)
 - [Contributors](#contributors)
-- [Dashboard Build Process](#dashboard-build-process)
+- [Alerts Setup](#alerts-setup)
+- [Dashboard Build](#dashboard-build)
 - [Acknowledgments](#acknowledgments)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ## Introduction
 
-[![Build Status](https://img.shields.io/travis/gitpoint/git-point.svg?style=flat-square)](https://travis-ci.org/gitpoint/git-point)
-[![Coveralls](https://img.shields.io/coveralls/github/gitpoint/git-point.svg?style=flat-square)](https://coveralls.io/github/gitpoint/git-point)
-[![All Contributors](https://img.shields.io/badge/all_contributors-73-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
-[![Gitter chat](https://img.shields.io/badge/chat-on_gitter-008080.svg?style=flat-square)](https://gitter.im/git-point)
+<!-- [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) -->
+Some Kubernetes pods can't be scheduled and get stuck in a pending phase. The status of pending pods has to be manually queried to proceed with resolving them, which slows down the deployment workflow. 
 
-This repository contains the code for Ekkremis: a prometheus-based alertmanager to resolve kubernetes pods stuck in pending phase complete with optional lifecycle dashboard and alerts. 
+This repository contains the code for Ekkremis: a prometheus-based alertmanager to resolve kubernetes pods pending issues. Ekkremis leverages prometheus data scraping and reports back when issues interfere with scheduling along with tailored solutions. Additionally, Ekkremis has an optional lifecycle dashboard where DevOps engineers will find a consolidated view of pod metrics by state. Solutions provided by Ekkremis (greek for pending) increases Kubernetes deployment efficiency by providing updates on pending and other unhealthy pods to get them up and running faster. 
+
 ## Requirements
-- Prometheus
-- npm
-- yarn
+- Prometheus (can run demo without)
+- npm (web view only)
+- yarn (web or electron app)
+
 ## Features
 
 A few of the things you can do with Ekkremis:
@@ -43,7 +43,7 @@ A few of the things you can do with Ekkremis:
 * Receive alerts by email or slack when your pods are stuck in pending
 * Implement tailored solutions suggested by Ekkremis to get your pods up and running
 
-<p align="left">
+<!-- <p align="left">
   <img src = "./src/img/Ekkremis-logo-dark.png" width=700>
 </p>
 
@@ -55,25 +55,27 @@ A few of the things you can do with Ekkremis:
 
 <p align="left">
   <img src = "./src/img/charts.png" width=700>
-</p>
+</p> -->
 
 
-## Alert Manager Installation Steps
-
+## Alerts Setup
+<!-- 
 1. `npm install` will download dependencies..
-2. `pendingPods-PrometheusRulesFile.yml` contains ....
+2. `pendingPods-PrometheusRulesFile.yml` contains .... -->
 
 ## Dashboard Build Process
 
-- Follow the [React Native Guide](https://facebook.github.io/react-native/docs/getting-started.html) for getting started building a project with native code. **A Mac is required if you wish to develop for iOS.**
+<!-- - Follow the [React Native Guide](https://facebook.github.io/react-native/docs/getting-started.html) for getting started building a project with native code. **A Mac is required if you wish to develop for iOS.**
 - Clone or download the repo
 - `yarn` to install dependencies
 - `yarn run link` to link react-native dependencies
 - `yarn start:ios` to start the packager and run the app in the iOS simulator (`yarn start:ios:logger` will boot the application with [redux-logger](<https://github.com/evgenyrodionov/redux-logger>))
-- `yarn start:android` to start the packager and run the app in the the Android device/emulator (`yarn start:android:logger` will boot the application with [redux-logger](https://github.com/evgenyrodionov/redux-logger))
+- `yarn start:android` to start the packager and run the app in the the Android device/emulator (`yarn start:android:logger` will boot the application with [redux-logger](https://github.com/evgenyrodionov/redux-logger)) -->
+
 ## Running the DEMO with Mock Data
 
 1. 
+
 ## Feedback
 
 If something is not behaving intuitively, it is a bug and should be reported.
