@@ -19,7 +19,7 @@ export function test() {
   fetch(string)
     .then(data => data.json())
     .then(data => {
-      console.log(data)
+
     })
 }
 
@@ -44,7 +44,7 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
     finalRestartUrl = url + promql + restartQuery;
     finalAgeUrl = url + promql + ageQuery;
   } 
-  console.log('sendQuery invoked', finalStatusUrl)
+  // console.log('sendQuery invoked', finalStatusUrl)
 
   // Three separate fetch requests are made here to build up a restart object that stores restarts and the pod age converted from seconds to hours.
   // The last fetch request gets the pod status object and then maps the restarts and age to each pod before setting the allPods state.
@@ -60,7 +60,7 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
           restartObject[resultArray[i].metric.pod] = {};
           restartObject[resultArray[i].metric.pod]['restart'] = Number(resultArray[i].value[1]);
         }
-        console.log('after first fetch:', restartObject)
+        // console.log('after first fetch:', restartObject)
       })
       .then(()=> {
         fetch(finalAgeUrl)
@@ -74,7 +74,7 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
               restartObject[resultArray[i].metric.pod]['age'] = Math.round((currentTime - Number(resultArray[i].value[1]))/3600);
             }
           })
-          console.log('after second fetch:',restartObject)
+          // console.log('after second fetch:',restartObject)
       })
       .then(()=> {
         fetch(finalStatusUrl)
@@ -97,7 +97,8 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
               resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;    
             }
             // call the set state function to update the allPods state
-            setAllPods(resultObject)
+            setAllPods(resultObject);
+            
           })
       })
 }

@@ -10,13 +10,14 @@ const AllPodInfo = (props: any) => {
     // console.log(props.currentPods)
   
     const populateArray = () => {
+      console.log('inside populateArray()... status: ', props.status)
       for (const key in props.currentPods) {
         podsArray.push(<PodInfo key={key} podName={key} podNamespace={props.currentPods[key].namespace} podStatus={props.currentPods[key].status} podRestart={props.currentPods[key].restart} podAge={props.currentPods[key].age} currentUrl={props.currentUrl}/>)
       }
     }
   
     // does this call still make sense when useEffect runs on the initial load? 
-    // populateArray();
+    populateArray();
   
     useEffect(() => {
       // for cleanup function

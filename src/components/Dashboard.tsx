@@ -25,7 +25,7 @@ const Dashboard = () => {
   // state for current URL 
   const [currentUrl, setCurrentUrl] = useState('http://localhost:9090');
   // state for current active nav bar category 
-  const [status, setStatus] = useState('summary');
+  const [status, setStatus] = useState('');
   // state for current pods for display - initialized by each button click - creates a subset of allPods based on status
   const [currentPods, setCurrentPods] = useState({
     "pendingPod1": { "podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes" },
@@ -34,6 +34,7 @@ const Dashboard = () => {
   });
   // all pods looks like this: {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}}
   const [allPods, setAllPods] = useState(mockData);
+
 
   // function to convert all pod data to summary format
   async function generateSummary() {
@@ -55,7 +56,11 @@ const Dashboard = () => {
     let hasBeenRun = false;
     if (!hasBeenRun) {
       // reshape all pod data to fit status - resets current pods
-      if (status !== 'summary') setCurrentPods(allPods[status]);
+      console.log('inside useEffect, status: ', status)
+      if (status !== 'summary') {  
+        setCurrentPods(allPods[status]);
+        console.log('setting current pods to...', allPods[status]) 
+      }
       else {
         (async () => {
           getPodInfo("actual", setAllPods, currentUrl);
@@ -65,12 +70,13 @@ const Dashboard = () => {
         })();
       }
     }
-    console.log(currentPods);
+    console.log('in useEffect, currentPods: ', currentPods);
     // cleanup function to aviod looping
     return () => {
       hasBeenRun = true;
     }
   }, [status, currentUrl]); // update current pods when status or url changes
+
 
 
   return(

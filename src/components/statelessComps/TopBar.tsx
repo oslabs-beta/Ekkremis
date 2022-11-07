@@ -4,6 +4,7 @@ import Button from '../smallComps/Button'; // this should be button
 import '../../styles/topBar.css';
 // inpoting functiosn from utils
 import { getPodInfo } from '../../utils';
+import { nextTick } from 'process';
 
 // the top nav bar containing URL event listener and (potentially login?)
 const TopBar = (props: any) => {
@@ -17,6 +18,11 @@ const TopBar = (props: any) => {
       else inputValue = 'http://localhost:9090';
      
       inputElement.value = '';
+
+      function helperClick() {
+        document.getElementById('summary-button')?.click();
+      }
+
       // this is the get real data from localhost 9090
       getPodInfo("actual", setAllPods, inputValue);
   
@@ -28,7 +34,9 @@ const TopBar = (props: any) => {
       // second fetch 
       // third fetch
       // setAllPods(resultObject)
-  
+      setTimeout(() => {helperClick()}, 500)
+
+      // document.getElementById('summary-button')?.click();
     }
   
     let placeholder = ' enter your url here';
