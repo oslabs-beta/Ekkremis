@@ -32,16 +32,27 @@
     border: none;
     background-size: 200% auto;
     background-image: linear-gradient(to right, rgb(222, 145, 41) 0%, #f7bd58df 50%, rgb(222, 145, 41)100%);
-    transition: 0.5s;
+    transition: height 1.7s linear;
   }
 
   .query-btn-unselected:hover {
     background-position: right center;
   }
 
-  .query-btn-unselected:focus {
-    background-position: right center;
+  .active {
+    height: 20%;
+    transition: height 1.7s linear;
+    background-image: linear-gradient(to right, rgb(118, 244, 127) 0%, #f7bd58df 50%, rgb(218, 131, 18)100%);
   }
+
+  .active:hover {
+    background-position: right center;
+    background-image: linear-gradient(to right, rgb(118, 244, 127) 0%, #f7bd58df 50%, rgb(218, 131, 18)100%);
+  }
+
+  /* .query-btn-unselected:focus {
+    background-position: right center;
+  } */
 
   /* @media only screen and (max-width: 600px) {
     .query-btn {
