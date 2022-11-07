@@ -28,12 +28,12 @@
     display: flex;
     justify-content: left;
 
-    height: 50px;
+    height: 25px;
     position:absolute; 
     top: 19px;
 
-    z-index: -1;
-    border: 5px solid #ec633677;
+
+    border: 3px solid #ec633677;
   }
 
   #myChart {
