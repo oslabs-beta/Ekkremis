@@ -54,7 +54,7 @@ const Display = (props) => {
 
   return (
     <div className='display'>
-      <button className='chartButton' onClick={() => { handleClick() }}>SHOW CHART</button>
+      <button className='chartButton FPbutton' onClick={() => { handleClick() }}>SHOW CHART</button>
       {/* <img src="https://miro.medium.com/max/1400/1*QwGqOMObJd7oFHCfe1AvxA.png" alt="" /> */}
       <canvas id="myChart"></canvas>
     </div>

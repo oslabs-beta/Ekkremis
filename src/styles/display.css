@@ -15,6 +15,13 @@
 
   .display button {
     position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    font-size: 12px;
+    height: 25px;
+    width: 100px;
+    padding: 0px;
+    vertical-align: center;
   }
 
   #myChart {

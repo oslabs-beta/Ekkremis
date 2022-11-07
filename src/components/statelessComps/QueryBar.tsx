@@ -8,19 +8,25 @@ function QueryBar(props: any) {
   // updates status upon button click
   const handleClick = (string: string) => {
     // console.log('inside status button handleclick', string)
-    props.setStatus(string)
+    props.setStatus(string)    
+    // change every other button's class back to 'query-btn-unselected'
+    const previousActive = document.getElementsByClassName('active');
+    if (previousActive[0]) previousActive[0].classList.remove('active');
+    // figure out how to change the current button's class to 'active' 
+    let activeButton = document.getElementById(string + '-button');
+    activeButton?.classList.add('active');
   };
 
   return (
     <div className="query-container">
       <div className='query-bar'>
         <img className='sub' src={require('../../img/Ekkremis-sm.png')} alt={'EkkremisSubmarine'} />
-        <button onClick={() => { handleClick('summary') }} className='query-btn-unselected'>Summary</button>
-        <button onClick={() => { handleClick('pending') }} className='query-btn-unselected'>Pending</button>
-        <button onClick={() => { handleClick('unknown') }} className='query-btn-unselected'>Unknown</button>
-        <button onClick={() => { handleClick('running') }} className='query-btn-unselected'>Running</button>
-        <button onClick={() => { handleClick('failed') }} className='query-btn-unselected'>Failed</button>
-        <button onClick={() => { handleClick('successful') }} className='query-btn-unselected'>Successful</button>
+        <button onClick={() => { handleClick('summary') }} id='summary-button' className='query-btn-unselected'>Summary</button>
+        <button onClick={() => { handleClick('pending') }} id='pending-button'className='query-btn-unselected'>Pending</button>
+        <button onClick={() => { handleClick('unknown') }} id='unknown-button' className='query-btn-unselected'>Unknown</button>
+        <button onClick={() => { handleClick('running') }} id='running-button' className='query-btn-unselected'>Running</button>
+        <button onClick={() => { handleClick('failed') }} id='failed-button' className='query-btn-unselected'>Failed</button>
+        <button onClick={() => { handleClick('successful') }} id='successful-button' className='query-btn-unselected'>Successful</button>
       </div>
     </div>
   );
