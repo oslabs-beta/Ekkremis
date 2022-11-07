@@ -11,6 +11,7 @@ const AllPodInfo = (props: any) => {
   
     const populateArray = () => {
       console.log('inside populateArray()... status: ', props.status)
+      document.getElementById('testClick')?.click();
       for (const key in props.currentPods) {
         podsArray.push(<PodInfo key={key} podName={key} podNamespace={props.currentPods[key].namespace} podStatus={props.currentPods[key].status} podRestart={props.currentPods[key].restart} podAge={props.currentPods[key].age} currentUrl={props.currentUrl}/>)
       }

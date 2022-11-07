@@ -70,7 +70,7 @@ const Dashboard = () => {
         })();
       }
     }
-    console.log('in useEffect, currentPods: ', currentPods);
+    console.log('inside useEffect, currentPods: ', currentPods);
     // cleanup function to aviod looping
     return () => {
       hasBeenRun = true;
