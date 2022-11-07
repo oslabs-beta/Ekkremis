@@ -1,0 +1,23 @@
+.display {
+    border: 1.2px solid #ec633677;
+    flex: 0.3;
+    height: 200px;
+    width: 650px;
+    margin-top: 50px;
+    background-color: #E2E0E1;
+  }
+  
+  .display img {
+    height: 200px;
+    width: 550px;
+    margin-top: -58px;
+  }
+
+  .display button {
+    position: absolute;
+  }
+
+  #myChart {
+    max-height: 100%;
+    width: 100%;
+  }
