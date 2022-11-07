@@ -1,6 +1,6 @@
 <h1 align="left"> Ekkremis </h1> <br>
 <p align="left">
-  <a href="[https://gitpoint.co/](https://github.com/oslabs-beta/Ekkremis)"> 
+  <a href="[https://github.com/oslabs-beta/Ekkremis](https://github.com/oslabs-beta/Ekkremis)"> 
     <img alt="Ekkremis Banner" title="Ekkremis Banner" src="./src/img/Ekkremis_Banner.jpg" width="650">
   </a>
 </p>
@@ -24,13 +24,10 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ## Introduction
 
-<!-- [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](./CONTRIBUTORS.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) -->
-
 Some Kubernetes pods can't be scheduled and get stuck in a pending phase of the pod lifecycle. 
 
 <p align="left">
-  <img src = "./src/img/pod_lifecycle.jpg" width=650>
+  <img src = "./src/img/pod_lifecycle.jpeg" width="650">
 </p>
 
 The status of pending pods has to be manually queried to proceed with resolving them, which slows down the deployment workflow. 
@@ -52,6 +49,9 @@ A few of the things you can do with Ekkremis:
 
 
 **Optional Ekkremis Lifecycle Dashboard.**
+
+Lots of great screenshots coming! 
+
 <!-- 
 <p align="left">
   <img src = "./src/img/charts.png" width=350>
@@ -68,17 +68,29 @@ A few of the things you can do with Ekkremis:
 2. `pendingPods-PrometheusRulesFile.yml` contains .... -->
 
 ## Dashboard Build Process
+<!-- - Follow the [React Native Guide](https://facebook.github.io/react-native/docs/getting-started.html) for getting started building a project with native code. **A Mac is required if you wish to develop for iOS.** -->
 
-<!-- - Follow the [React Native Guide](https://facebook.github.io/react-native/docs/getting-started.html) for getting started building a project with native code. **A Mac is required if you wish to develop for iOS.**
+**Initial Setup**
 - Clone or download the repo
-- `yarn` to install dependencies
-- `yarn run link` to link react-native dependencies
-- `yarn start:ios` to start the packager and run the app in the iOS simulator (`yarn start:ios:logger` will boot the application with [redux-logger](<https://github.com/evgenyrodionov/redux-logger>))
-- `yarn start:android` to start the packager and run the app in the the Android device/emulator (`yarn start:android:logger` will boot the application with [redux-logger](https://github.com/evgenyrodionov/redux-logger)) -->
+- `npm install` to install dependencies
+
+**If running Ekkremis on Web App**
+- `npm run build` to create a build folder
+
+**If running Ekkremis on Electron App**
+- install yarn if you don't already have it (required for the following steps)
+- `npm run postinstall` to install electron-specific dependencies
+- `npm run electron:build` to build the Electron app for current platform and current architecture using default target
+
+**Once running the app**
+- Add your prometheus metrics endpoint for Kubernetes pods to the metrics input (Ekkremis defaults to http://localhost:9090)
+- Navigate between pod status metric displays through the navigation bar on the left
+- Gain more information about individual unhealthy or pending pods by selecting the 'error' and 'charts' buttons
+- Implement solutions suggested in Ekkremis for pending pods
 
 ## Running the DEMO with Mock Data
 
-1. 
+- Add this mock promethus endpoint to the metrics input
 
 ## Feedback
 
