@@ -11,10 +11,12 @@ function FrontPage() {
   return (
     <div>
         <div className="fp">
+        <Link to='/dashboard'>
           <Button 
             className="FPbutton"
             children="Continue to Dashboard"
           /> 
+        </Link>
         </div>
         
         <div className="fpLogo">
