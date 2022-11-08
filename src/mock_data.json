@@ -2139,5 +2139,1328 @@
             }
         ]
     }
+},
+"(container_memory_working_set_bytes)" :
+{
+  "status": "success",
+  "data": {
+      "resultType": "vector",
+      "result": [
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "2068271104"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "1389854720"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "636694528"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod01a73c03_993c_4cf1_96e5_e76974ac2ca0.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "default",
+                  "pod": "cowclicker-7dbd496458-rpznx"
+              },
+              "value": [
+                  1667937694.178,
+                  "187703296"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod01a73c03_993c_4cf1_96e5_e76974ac2ca0.slice/docker-40c3de1cd9b482f75c0467fb3c9188ba6055b1a535bd1057dfa695bf0269bd77.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "187416576"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod01a73c03_993c_4cf1_96e5_e76974ac2ca0.slice/docker-573810d643d3a31e1b571ece34768984705a83f677c3595eeebd46b413b0866d.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "245760"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod09269111_81db_462a_bc2f_e42c355b7153.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "default",
+                  "pod": "cowclicker-7dbd496458-dmscq"
+              },
+              "value": [
+                  1667937694.178,
+                  "196829184"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod09269111_81db_462a_bc2f_e42c355b7153.slice/docker-1deb7b112f9b2c78423c01127b4833d3ecc870117e7b927103d9a6e0c8ff7567.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "196485120"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod09269111_81db_462a_bc2f_e42c355b7153.slice/docker-90e9224fec55582e08424f0a1dae97477adcd746ed482963ded402efc8838c9b.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "294912"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod1a37b3bd_b946_424c_9219_b764a09ee0b1.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kube-system",
+                  "pod": "storage-provisioner"
+              },
+              "value": [
+                  1667937694.178,
+                  "10772480"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod1a37b3bd_b946_424c_9219_b764a09ee0b1.slice/docker-8495a4b7ab335a3f9fb3883cccd9140c8015ec8b5a9342a5725852f550447f73.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "10203136"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod1a37b3bd_b946_424c_9219_b764a09ee0b1.slice/docker-ab5e97c1c09b50272018a1c5b0a206429097d477f31eb7c8ce4f7db6a3088c5e.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "163840"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod2b9ccb53_e5de_4650_8d74_cc43fd8acc11.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "default",
+                  "pod": "dummy-pod3"
+              },
+              "value": [
+                  1667937694.178,
+                  "3837952"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod2b9ccb53_e5de_4650_8d74_cc43fd8acc11.slice/docker-374f5bbb7bbcc37358d33b8ca065293163100c9526711c13e7bd1b3e3751c7d6.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "245760"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod54223b8b_c0c7_49b9_98f3_e63789021c6d.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kubernetes-dashboard",
+                  "pod": "kubernetes-dashboard-57bbdc5f89-4hrl7"
+              },
+              "value": [
+                  1667937694.178,
+                  "10297344"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod54223b8b_c0c7_49b9_98f3_e63789021c6d.slice/docker-615fa04bf3cae9b9e2e73a05d1c0e2779aa918a17a410fe8e2114a0789ca336e.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "241664"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod54223b8b_c0c7_49b9_98f3_e63789021c6d.slice/docker-61d26366fa8c9cd5a160f4bc693f0ab5463537cf18e40a558485954500d26289.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "10010624"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod6ce32cc6_4354_431d_ba53_996f9be4849d.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kube-system",
+                  "pod": "kube-state-metrics-5897f6cf77-x98z6"
+              },
+              "value": [
+                  1667937694.178,
+                  "14057472"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod6ce32cc6_4354_431d_ba53_996f9be4849d.slice/docker-4006fcb4af124f7b4c200c645e5e5696ca0ab4072247263525a70e1fae0682be.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "13246464"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod6ce32cc6_4354_431d_ba53_996f9be4849d.slice/docker-9b926a0ad88ef54452e353ce7549e0c6145e21e1ae8cbf98bf7e5ac46415a4a0.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "245760"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod84fc4668_591d_4ba0_9c62_8419bfeab5a0.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "default",
+                  "pod": "cowclicker-xlsmq"
+              },
+              "value": [
+                  1667937694.178,
+                  "270336"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod84fc4668_591d_4ba0_9c62_8419bfeab5a0.slice/docker-5c570a56098ea21f6abb0ef4a3911d65f17f51cb2dd6ae8e2105de7dcf13031b.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "245760"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod9d970f48_f193_4b1a_b2b7_e1b584d6604d.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "default",
+                  "pod": "cowclicker-7dbd496458-fvq9w"
+              },
+              "value": [
+                  1667937694.178,
+                  "188866560"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod9d970f48_f193_4b1a_b2b7_e1b584d6604d.slice/docker-1850e17ea5cefa675cf5f507eef0420b4ed15b0f18f78f1fc2cddcc8ad5fd6af.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "188571648"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod9d970f48_f193_4b1a_b2b7_e1b584d6604d.slice/docker-7d372a61d51f28535744ec14a7c74bfc0068fb9a48261ebf79e04e343fabbe20.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "245760"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod9e28954b_9cba_48f0_90ab_808d52ebbef1.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kubernetes-dashboard",
+                  "pod": "dashboard-metrics-scraper-b74747df5-x8z7k"
+              },
+              "value": [
+                  1667937694.178,
+                  "7913472"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod9e28954b_9cba_48f0_90ab_808d52ebbef1.slice/docker-971b4fc2417c702e5a5f05c18528e768c8ad7c5d117da15a1e831f5ff69e92f5.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "245760"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-pod9e28954b_9cba_48f0_90ab_808d52ebbef1.slice/docker-c38e74df99ef50eeb12a2da4169d1f60289d8f0515513a4232b2e2b6f66eb964.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "7622656"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podbd789cec_581e_4f34_90ae_a0fce69fd225.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kube-system",
+                  "pod": "kube-proxy-hmwlw"
+              },
+              "value": [
+                  1667937694.178,
+                  "15433728"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podbd789cec_581e_4f34_90ae_a0fce69fd225.slice/docker-ca922d5b4fecee200e09d0dead03d08bcc91501284e8c89d6b51b80cc02d0a0b.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "315392"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podbd789cec_581e_4f34_90ae_a0fce69fd225.slice/docker-f336981542f4aeb760449069a7a4ebae50a67e9ff6d0afdfa6ce13b9a85e4c33.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "15073280"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podd314f9fc_009b_4bf3_aced_493cce8920ff.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "default",
+                  "pod": "cowclicker-k82f7"
+              },
+              "value": [
+                  1667937694.178,
+                  "266240"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-podd314f9fc_009b_4bf3_aced_493cce8920ff.slice/docker-e8ff14533108129a1db77aa044e07b58c08e0eb74667d395edd9870a52629cd6.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "241664"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-poddb0994e8_f6dd_43ac_a2aa_a0b3e4a71fa8.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "default",
+                  "pod": "cowclicker-97d4s"
+              },
+              "value": [
+                  1667937694.178,
+                  "262144"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-besteffort.slice/kubepods-besteffort-poddb0994e8_f6dd_43ac_a2aa_a0b3e4a71fa8.slice/docker-baa7b54fe9de10fcc2a7e26df20aa1c9f2b895c526dcf6503e65c60fa90d2c9b.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "237568"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "753598464"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod0043f0e06f8033573472a91b2322f830.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kube-system",
+                  "pod": "kube-apiserver-minikube"
+              },
+              "value": [
+                  1667937694.178,
+                  "312184832"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod0043f0e06f8033573472a91b2322f830.slice/docker-435f518686c2c5822e1ce4bf25e55a047faa3eaa190b101dded39a46aa90f7fc.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "311738368"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod0043f0e06f8033573472a91b2322f830.slice/docker-ef3088feabbe3c3df41e3a3f152bb664cd41245084c7f479c8294b6b68bf7eda.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "270336"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod2907549c_33cd_4a3e_90b6_a16c39547586.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kube-system",
+                  "pod": "coredns-565d847f94-g2m7t"
+              },
+              "value": [
+                  1667937694.178,
+                  "26050560"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod2907549c_33cd_4a3e_90b6_a16c39547586.slice/docker-302c24a2c45507bf465c4d14d89314959408bd8d048e7b1041b338268962789d.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "25759744"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod2907549c_33cd_4a3e_90b6_a16c39547586.slice/docker-6254d3c57198c8f5fd760850e91d1d2d2a7027f01d9af614eaeb36de64b2acdb.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "241664"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod2e75927e0fd852156c6691ad3046836e.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kube-system",
+                  "pod": "kube-controller-manager-minikube"
+              },
+              "value": [
+                  1667937694.178,
+                  "45879296"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod2e75927e0fd852156c6691ad3046836e.slice/docker-1679a1609542a4859a44ba35db82f19d8d2315bc2c7d3c001f66d93f8e430e10.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "237568"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod2e75927e0fd852156c6691ad3046836e.slice/docker-62e36f2822844510e7f65551770c94a2602c4a310d351128ce0a9c43bd584729.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "45600768"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod51a8d048_c425_4bf6_9ed3_648c3ece793e.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kube-system",
+                  "pod": "metrics-server-769cd898cd-wchcp"
+              },
+              "value": [
+                  1667937694.178,
+                  "17952768"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod51a8d048_c425_4bf6_9ed3_648c3ece793e.slice/docker-18b32390fa19bd3beaab185f7c418e8ef021554faa047202cde52df9e9caeae4.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "245760"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod51a8d048_c425_4bf6_9ed3_648c3ece793e.slice/docker-b25366d641e14afa3c66f773e133d89008050a0df99725c38db221f17af7d743.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "17731584"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podbd495b7643dfc9d3194bd002e968bc3d.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kube-system",
+                  "pod": "etcd-minikube"
+              },
+              "value": [
+                  1667937694.178,
+                  "55377920"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podbd495b7643dfc9d3194bd002e968bc3d.slice/docker-6bb7817f141c5a189e564858b50c0a193c990dbf5c2a364d82f61c4ce702a7d2.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "167936"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podbd495b7643dfc9d3194bd002e968bc3d.slice/docker-ae568ccf15f4abb636282806b4a3532b3ed8f71ddc35823903d28200c96efa85.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "55037952"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podc8804b27_a08e_4dc4_b704_700a58ac671f.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "monitoring",
+                  "pod": "prometheus-deployment-6c8c5bb6cc-rjvg4"
+              },
+              "value": [
+                  1667937694.178,
+                  "279498752"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podc8804b27_a08e_4dc4_b704_700a58ac671f.slice/docker-48147acd50a80185164dd1785d7a023370cb9e3a348d470202359963ef868a56.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "241664"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podc8804b27_a08e_4dc4_b704_700a58ac671f.slice/docker-73b3c6c9ef8099e85309034f10f8329f7df3cf386b2f068dd34756eafc90b4fa.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "279248896"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podd9e39786b2e03d044abb6c68064d5241.slice",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1",
+                  "namespace": "kube-system",
+                  "pod": "kube-scheduler-minikube"
+              },
+              "value": [
+                  1667937694.178,
+                  "16343040"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podd9e39786b2e03d044abb6c68064d5241.slice/docker-6b83b3a5d2cc424a33f27ca9653c43942878ecf298ad7df2dafe32f2749e618e.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "167936"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-podd9e39786b2e03d044abb6c68064d5241.slice/docker-d11edca27e7bd1f878b649df2a885234ca1ea568afa1f12889d333800f8a897c.scope",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "16130048"
+              ]
+          },
+          {
+              "metric": {
+                  "__name__": "container_memory_working_set_bytes",
+                  "beta_kubernetes_io_arch": "amd64",
+                  "beta_kubernetes_io_os": "linux",
+                  "id": "/system.slice/kubelet.service",
+                  "instance": "minikube",
+                  "job": "kubernetes-cadvisor",
+                  "kubernetes_io_arch": "amd64",
+                  "kubernetes_io_hostname": "minikube",
+                  "kubernetes_io_os": "linux",
+                  "minikube_k8s_io_commit": "fe869b5d4da11ba318eb84a3ac00f336411de7ba",
+                  "minikube_k8s_io_name": "minikube",
+                  "minikube_k8s_io_primary": "true",
+                  "minikube_k8s_io_updated_at": "2022_10_20T17_28_06_0700",
+                  "minikube_k8s_io_version": "v1.27.1"
+              },
+              "value": [
+                  1667937694.178,
+                  "61489152"
+              ]
+          }
+      ]
+  }
 }
 }

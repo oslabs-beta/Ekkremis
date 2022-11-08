@@ -34,7 +34,10 @@ const TopBar = (props: any) => {
       // second fetch 
       // third fetch
       // setAllPods(resultObject)
-      setTimeout(() => {helperClick()}, 500)
+      setTimeout(() => {
+        helperClick();
+        props.setPreventChartLooping(true);
+      }, 500)
 
       // document.getElementById('summary-button')?.click();
     }

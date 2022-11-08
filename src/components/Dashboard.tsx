@@ -35,6 +35,9 @@ const Dashboard = () => {
   // all pods looks like this: {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}}
   const [allPods, setAllPods] = useState(mockData);
 
+  // state for making sure the useEffect doesn't loop
+  const [preventChartLooping, setPreventChartLooping] = useState(false);
+
 
   // function to convert all pod data to summary format
   async function generateSummary() {
@@ -56,21 +59,21 @@ const Dashboard = () => {
     let hasBeenRun = false;
     if (!hasBeenRun) {
       // reshape all pod data to fit status - resets current pods
-      console.log('inside useEffect, status: ', status)
+      // console.log('inside useEffect, status: ', status)
       if (status !== 'summary') {  
         setCurrentPods(allPods[status]);
-        console.log('setting current pods to...', allPods[status]) 
+        // console.log('setting current pods to...', allPods[status]) 
       }
       else {
         (async () => {
           getPodInfo("actual", setAllPods, currentUrl);
           const summary: any = await generateSummary();
-          console.log(summary);
+          // console.log(summary);
           setCurrentPods(summary);
         })();
       }
     }
-    console.log('inside useEffect, currentPods: ', currentPods);
+    // console.log('inside useEffect, currentPods: ', currentPods);
     // cleanup function to aviod looping
     return () => {
       hasBeenRun = true;
@@ -81,13 +84,13 @@ const Dashboard = () => {
 
   return(
     <div className='dashboard'>
-      <TopBar currentUrl={currentUrl} setCurrentUrl={setCurrentUrl} setAllPods={setAllPods}/>
+      <TopBar currentUrl={currentUrl} setCurrentUrl={setCurrentUrl} setAllPods={setAllPods} setPreventChartLooping={setPreventChartLooping}/>
       <div className='main'>
         <div className='query-bar'>
           <QueryBar status={status} setStatus={setStatus}/>
         </div>
         <div className='right-side'>
-          <Display allPods={allPods}/>
+          <Display allPods={allPods} preventChartLooping={preventChartLooping} setPreventChartLooping={setPreventChartLooping}/>
           <AllPodInfo currentPods={currentPods} currentUrl={currentUrl} status={status} allPods={allPods}/>
         </div>
       </div>

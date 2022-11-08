@@ -111,32 +111,30 @@ const configDoughnut = {
 // component for displaying modals based on active pod 
 const Display = (props) => {
   const [startChart, setStartChart] = useState(false);
-  // state for making sure the useEffect doesn't loop
-  const [preventLooping, setPreventLooping] = useState(false);
 
   // state for logging current charts to be displayed
-  const [currentChartObject, setCurrentChartObject] = useState({'test': configTest});
-  const [currentChart, setCurrentChart] = useState('test');
+  const [currentChartObject, setCurrentChartObject] = useState({'doughnutChart': configDoughnut});
+  const [currentChart, setCurrentChart] = useState('doughnutChart');
 
   let myChart; 
 
 
   // this use effect listens to startChart state, which is changed by the handleClick function, invoked when the show chart button is clicked. this ensures the chart never tries to load before the canvas DOM element is created
   useEffect(() => {
-    console.log('inside Display useEffect')
-    console.log(document.getElementById('myChart'))
-    console.log(currentChartObject[currentChart])
+    // console.log("inside Display useEffect");
+    // console.log(document.getElementById("myChart"));
+    // console.log(currentChartObject[currentChart]);
 
-    // geenrate summary object - maybe use caching here to improve performance? or this would be executed every time 
+    // geenrate summary object - maybe use caching here to improve performance? or this would be executed every time
     const doughnutSummaryObject = {};
     for (let key in props.allPods) {
       let count = 0;
       for (let innerKey in props.allPods[key]) {
         count++;
-      };
+      }
       doughnutSummaryObject[key] = count;
     }
-    console.log(doughnutSummaryObject)
+    console.log(doughnutSummaryObject);
 
     // generate summary arrays
     const doughnutSummaryKeysArray = [];
@@ -146,33 +144,33 @@ const Display = (props) => {
       doughnutSummaryValuesArray.push(doughnutSummaryObject[key]);
     }
 
-    // count total pods 
+    // count total pods
     let podSum = 0;
-    for (let i=0; i<doughnutSummaryValuesArray.length; i++) {
+    for (let i = 0; i < doughnutSummaryValuesArray.length; i++) {
       podSum += doughnutSummaryValuesArray[i];
     }
 
-    // update the values for doughnut chart 
+    // update the values for doughnut chart object
     dataDoughnut.labels = doughnutSummaryKeysArray;
-    dataDoughnut.datasets[0].data = doughnutSummaryValuesArray;
     if (props.allPods.initial) doughnutSummaryValuesArray = [0, 0, 0, 100, 0];
+    dataDoughnut.datasets[0].data = doughnutSummaryValuesArray;
     totalPods = podSum;
+    configDoughnut.options.plugins.title.text =
+      "Total Pods in Your Kubernetes Cluster: " + totalPods;
 
-
-    if (preventLooping) {
+    if (props.preventChartLooping) {
       // console.log('currentChartObject: ', currentChartObject)
       let config = currentChartObject[currentChart];
-      console.log('config object: ', config)
-      // on initial load 
+      // on initial load
       if (props.allPods.initial) config = configDoughnut;
-      
-        myChart = new Chart(
-        document.getElementById('myChart'),
+      destroyChart();
+      myChart = new Chart(
+        document.getElementById("myChart"), 
         config
       );
-      setPreventLooping(false);
+      props.setPreventChartLooping(false);
     }
-  }, [startChart, currentChart, props.allPods])
+  }, [startChart, currentChart, props.allPods]);
 
   // modularizing destroy chart 
   const destroyChart = () => {
@@ -187,12 +185,8 @@ const Display = (props) => {
   }
 
   const handleClick = (str) => {
-    console.log('inside Display handleClick')
-    destroyChart();
-
-    console.log('after destroy: ', myChart)
     setStartChart(true);
-    setPreventLooping(true);
+    props.setPreventChartLooping(true);
     setCurrentChart(str)
     if (str==='doughnutChart') setCurrentChartObject({'doughnutChart': configDoughnut});
     if (str==='testChart') setCurrentChartObject({'testChart' : configTest});
