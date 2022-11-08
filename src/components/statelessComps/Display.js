@@ -29,7 +29,7 @@ const configTest = {
   options: {}
 };
 
-
+let totalPods = 0;
 const dataDoughnut = {
   labels: [
     'Red',
@@ -38,19 +38,33 @@ const dataDoughnut = {
   ],
   datasets: [{
     label: 'Pod Status',
-    data: [300, 50, 100],
+    data: [0, 0, 0,100, 0],
     backgroundColor: [
-      'rgb(255, 99, 132)',
+      'rgb(255, 205, 1)',
+      'rgb(112, 229, 178)',
       'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
+      'rgb(156, 156, 156)',
+      'rgb(255, 99, 132)'
     ],
-    hoverOffset: 4
-  }]
+    hoverOffset: 5
+  }],
 };
 
 const configDoughnut = {
   type: 'doughnut',
   data: dataDoughnut,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Total Pods in Your Kubernetes Cluster: ' + totalPods
+      }
+    }
+  },
 };
 
 
@@ -111,20 +125,58 @@ const Display = (props) => {
   useEffect(() => {
     console.log('inside Display useEffect')
     console.log(document.getElementById('myChart'))
+    console.log(currentChartObject[currentChart])
+
+    // geenrate summary object - maybe use caching here to improve performance? or this would be executed every time 
+    const doughnutSummaryObject = {};
+    for (let key in props.allPods) {
+      let count = 0;
+      for (let innerKey in props.allPods[key]) {
+        count++;
+      };
+      doughnutSummaryObject[key] = count;
+    }
+    console.log(doughnutSummaryObject)
+
+    // generate summary arrays
+    const doughnutSummaryKeysArray = [];
+    let doughnutSummaryValuesArray = [];
+    for (let key in doughnutSummaryObject) {
+      doughnutSummaryKeysArray.push(key);
+      doughnutSummaryValuesArray.push(doughnutSummaryObject[key]);
+    }
+
+    // count total pods 
+    let podSum = 0;
+    for (let i=0; i<doughnutSummaryValuesArray.length; i++) {
+      podSum += doughnutSummaryValuesArray[i];
+    }
+
+    // update the values for doughnut chart 
+    dataDoughnut.labels = doughnutSummaryKeysArray;
+    dataDoughnut.datasets[0].data = doughnutSummaryValuesArray;
+    if (props.allPods.initial) doughnutSummaryValuesArray = [0, 0, 0, 100, 0];
+    totalPods = podSum;
+
+
     if (preventLooping) {
-      console.log('currentChartObject: ', currentChartObject)
+      // console.log('currentChartObject: ', currentChartObject)
+      let config = currentChartObject[currentChart];
+      console.log('config object: ', config)
+      // on initial load 
+      if (props.allPods.initial) config = configDoughnut;
+      
         myChart = new Chart(
         document.getElementById('myChart'),
-        currentChartObject[currentChart]
+        config
       );
       setPreventLooping(false);
     }
-  }, [startChart, currentChart])
+  }, [startChart, currentChart, props.allPods])
 
-
-  const handleClick = (str) => {
-    console.log('inside Display handleClick')
-    // remove chart using canvas 
+  // modularizing destroy chart 
+  const destroyChart = () => {
+    // remove chart that is currently using canvas 
     if(myChart) myChart.destroy();
     const oldCanvas = document.getElementById('myChart');
     oldCanvas.remove();
@@ -132,6 +184,11 @@ const Display = (props) => {
     newCanvas.setAttribute('id', 'myChart');
     const parent = document.getElementById('display');
     parent.append(newCanvas);
+  }
+
+  const handleClick = (str) => {
+    console.log('inside Display handleClick')
+    destroyChart();
 
     console.log('after destroy: ', myChart)
     setStartChart(true);

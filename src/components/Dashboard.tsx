@@ -13,7 +13,7 @@ import { getPodInfo } from '../utils';
 // import mock data 
 // import mockData from '../mock_data.json' assert { type: 'JSON' };
 // mockData = mockData.json();
-let mockData: any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}}
+let mockData: any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}, "initial": true}
 
 // fetch('../mock_data.json')
 //   .then(response => response.json())
@@ -87,7 +87,7 @@ const Dashboard = () => {
           <QueryBar status={status} setStatus={setStatus}/>
         </div>
         <div className='right-side'>
-          <Display />
+          <Display allPods={allPods}/>
           <AllPodInfo currentPods={currentPods} currentUrl={currentUrl} status={status} allPods={allPods}/>
         </div>
       </div>
