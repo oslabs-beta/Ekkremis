@@ -1,6 +1,7 @@
 
 // import { app } from 'electron';
 import path from 'path';
+import { getPositionOfLineAndCharacter } from 'typescript';
 
 /*
 This function is a test to see if mock data can be fetched from a local json file, in order to reuse the fetch functionality for actual Prometheus metrics.
@@ -27,7 +28,7 @@ export function test() {
 type UseCase = "mock" | "actual";
 
 // getPodInfo fetches the current phase of the pods along with total restarts and age in hours.
-export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
+export function getPodInfo(useCase: UseCase, setAllPods: any, setCurrentPods: any, url?: string) {
   // this promql is the initial portion of the Prometheus query string.
   const promql = '/api/v1/query?query=';
 
@@ -35,14 +36,17 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
   let statusPhaseQuery = '(kube_pod_status_phase)==1';
   let restartQuery = '(kube_pod_container_status_restarts_total)';
   let ageQuery = '(kube_pod_start_time)';
+  let memoryQuery = '(container_memory_working_set_bytes)';
 
   let finalStatusUrl: string = '';
   let finalRestartUrl: string = '';
   let finalAgeUrl: string = '';
+  let finalMemoryUrl: string = '';
   if (useCase==='actual') {
     finalStatusUrl = url + promql + statusPhaseQuery;
     finalRestartUrl = url + promql + restartQuery;
     finalAgeUrl = url + promql + ageQuery;
+    finalMemoryUrl = url + promql + memoryQuery;
   } 
   // console.log('sendQuery invoked', finalStatusUrl)
 
@@ -50,58 +54,139 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
   // The last fetch request gets the pod status object and then maps the restarts and age to each pod before setting the allPods state.
   let resultObject :any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}};
   let restartObject :any = {};
-  fetch(finalRestartUrl)
+
+    fetchRestart(finalRestartUrl, 'actual', restartObject)
+      .then(async () => {
+        await fetchAge(finalAgeUrl, 'actual', restartObject)
+      })
+      .then(async () => {
+        await fetchStatus(finalStatusUrl, 'actual', resultObject, restartObject)
+      })
+      .then(async () => {
+        await fetchMemory(finalMemoryUrl, 'actual', resultObject, setAllPods, setCurrentPods)
+      })
+      .then(async() => {
+        console.log('4th .then()')
+      })
+      .then(async() => {
+        await setPods(setAllPods, setCurrentPods, resultObject)
+      })
+      .then(() => {
+        console.log('end of getPodInfo()')
+      })
+      .catch((error) => {
+        console.log('catching error in promise chain in getPodInfo: ', error)
+      })
+}
+
+
+// modularizing fetch functions required for getPodInfo() 
+async function fetchRestart(finalRestartUrl: string, useCase: string, restartObject: any) {
+  console.log("started fetchRestart: ");
+  await fetch(finalRestartUrl)
       .then(data => data.json())
       .then(data => {
         let resultArray;
-        if (useCase==='mock') resultArray = data[restartQuery].data.result;
-        else if (useCase==='actual') resultArray = data.data.result;
+        // if (useCase==='mock') resultArray = data[restartQuery].data.result;
+        if (useCase==='actual') resultArray = data.data.result;
         for (let i=0; i<resultArray.length; i++) {
           restartObject[resultArray[i].metric.pod] = {};
           restartObject[resultArray[i].metric.pod]['restart'] = Number(resultArray[i].value[1]);
         }
-        // console.log('after first fetch:', restartObject)
-      })
-      .then(()=> {
-        fetch(finalAgeUrl)
-          .then(data => data.json())
-          .then(data => {
-            let resultArray;
-            if (useCase==='mock') resultArray = data[restartQuery].data.result;
-            else if (useCase==='actual') resultArray = data.data.result;
-            const currentTime = Math.floor(Date.now() / 1000); 
-            for (let i=0; i<resultArray.length; i++) {
-              restartObject[resultArray[i].metric.pod]['age'] = Math.round((currentTime - Number(resultArray[i].value[1]))/3600);
-            }
-          })
-          // console.log('after second fetch:',restartObject)
-      })
-      .then(()=> {
-        fetch(finalStatusUrl)
-          .then(data => data.json())
-          .then(data => {
-            // format the data 
-            let resultArray;
-            if (useCase==='mock') resultArray = data[statusPhaseQuery].data.result;
-            else if (useCase==='actual') resultArray = data.data.result;
-            for (let i=0; i<resultArray.length; i++) {
-              let tempObject :any = {};
-              let podName = resultArray[i].metric.pod;
-              tempObject["namespace"] = resultArray[i].metric.namespace;
-              tempObject["status"] = resultArray[i].metric.phase;
-              // check if the current pod name wasn't fetched by the first 2 fetch requests, skip if it doesnt exist
-              if (restartObject.hasOwnProperty(podName)) {
-                tempObject["restart"] = restartObject[podName].restart ? restartObject[podName].restart : 0
-                tempObject["age"] = restartObject[podName].age ? restartObject[podName].age : 0
-              }
-              resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;    
-            }
-            // call the set state function to update the allPods state
-            setAllPods(resultObject);
-            
-          })
+        console.log('finished fetchRestart: ', restartObject)
       })
 }
+
+async function fetchAge(finalAgeUrl: string, useCase: string, restartObject: any) {
+  console.log("started fetchAge: ");
+  await fetch(finalAgeUrl)
+    .then((data) => data.json())
+    .then((data) => {
+      let resultArray;
+      // if (useCase === "mock") resultArray = data[restartQuery].data.result;
+      if (useCase === "actual") resultArray = data.data.result;
+      const currentTime = Math.floor(Date.now() / 1000);
+      for (let i = 0; i < resultArray.length; i++) {
+        console.log(resultArray[i].metric.pod)
+        restartObject[resultArray[i].metric.pod]["age"] = Math.round(
+          (currentTime - Number(resultArray[i].value[1])) / 3600
+        );
+      }
+      console.log('finished fetchAge: ', restartObject)
+    });
+}
+
+async function fetchStatus(finalStatusUrl: string, useCase: string, resultObject: any, restartObject: any) {
+  console.log("started fetchStatus: ");
+  await fetch(finalStatusUrl)
+    .then((data) => data.json())
+    .then((data) => {
+      // format the data
+      let resultArray;
+      // if (useCase === "mock") resultArray = data[statusPhaseQuery].data.result;
+      if (useCase === "actual") resultArray = data.data.result;
+      for (let i = 0; i < resultArray.length; i++) {
+        let tempObject: any = {};
+        let podName = resultArray[i].metric.pod;
+        tempObject["namespace"] = resultArray[i].metric.namespace;
+        tempObject["status"] = resultArray[i].metric.phase;
+        // check if the current pod name wasn't fetched by the first 2 fetch requests, skip if it doesnt exist
+        if (restartObject.hasOwnProperty(podName)) {
+          tempObject["restart"] = restartObject[podName].restart
+            ? restartObject[podName].restart
+            : 0;
+          tempObject["age"] = restartObject[podName].age
+            ? restartObject[podName].age
+            : 0;
+        }
+        resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;
+      }
+      console.log('finished fetchStatus: ', resultObject)
+    });
+}
+
+async function fetchMemory(finalMemoryUrl: string, useCase: string, resultObject: any, setAllPods: any, setCurrentPods: any) {
+  console.log("started fetchMemory: ");
+  await fetch(finalMemoryUrl)
+    .then((data) => data.json())
+    .then((data) => {
+      let resultArray;
+      // if (useCase === "mock") resultArray = data[memoryQuery].data.result;
+      if (useCase === "actual") resultArray = data.data.result;
+      // loop thru resultArray to create an object storing key values pairs of podName : value
+      const podMemoryObject: any = {};
+      for (let i = 0; i < resultArray.length; i++) {
+        if (resultArray[i].metric.hasOwnProperty("pod")) {
+          // converting the metric from bytes to megabytes and store it in podMemoryObject
+          podMemoryObject[resultArray[i].metric.pod] =
+            resultArray[i].value[1] / 10 ** 6;
+        }
+      }
+      // console.log(podMemoryObject);
+      // loop thru resultObject to add the new value to each pod
+      for (let statusKey in resultObject) {
+        for (let podName in resultObject[statusKey]) {
+          if (podMemoryObject.hasOwnProperty(podName))
+            resultObject[statusKey][podName]["memoryUse"] =
+              podMemoryObject[podName];
+          else resultObject[statusKey][podName]["memoryUse"] = 0;
+        }
+      }
+      console.log('finished fetchMemory: ', resultObject)
+    })
+}
+
+async function setPods(setAllPods: any, setCurrentPods: any, resultObject: any) {
+  console.log("in setPods, before setAllPods: ", resultObject);
+  await setAllPods(resultObject);
+
+  const summary = generateSummary(resultObject);
+  await setCurrentPods(summary);
+  console.log("in setPods, finished setting currentPods");
+  document.getElementById("summary-button")?.click();
+}
+
+
 
 /*
 getPendingReason queries for the pod's waiting reason.
@@ -135,3 +220,20 @@ export function getPendingReason(useCase: UseCase, setRan: any, setLogInfo: any,
       setRan(true);  
     })
 }
+
+
+  // function to convert all pod data to summary format
+  function generateSummary(allPods: any) {
+    console.log("inside generateSummary(): data: ", allPods)
+    // array of keys of allPods
+    let keysArray = Object.keys(allPods);
+    // console.log(keysArray, allPods[keysArray[0]])
+    let resultObject = {};
+    for (let i = 0; i < keysArray.length; i++) {
+      // console.log('in for loop', i, resultObject)
+      Object.assign(resultObject, allPods[keysArray[i]]);
+    }
+    // console.log("inside generateSummary(): return: ", resultObject);
+    // return an object that's in an accepted format by currentPods
+    return resultObject;
+  }

@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: space-around;
     padding: 10px;
+    font-size: 20px;
   }
 
 /* Popup Texts & button */
@@ -16,7 +17,15 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    height: 80%;
+    min-height: 900px;
+    padding-left: 55px;
   }
+
+  .query-bar img {
+    height: 20%
+  }
+  
 
   /* //Button Link */
   .query-btn-unselected {
@@ -28,7 +37,7 @@
     color: white;
     border-radius: 5%;
     margin: 10px;
-    padding: 1.4em 3.5em;
+    padding: 1.4em 3em;
     border: none;
     background-size: 200% auto;
     background-image: linear-gradient(to right, rgb(222, 145, 41) 0%, #f7bd58df 50%, rgb(222, 145, 41)100%);

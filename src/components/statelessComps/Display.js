@@ -30,7 +30,7 @@ const configTest = {
 };
 
 let totalPods = 0;
-const dataDoughnut = {
+const dataSummaryDoughnut = {
   labels: [
     'Red',
     'Blue',
@@ -50,9 +50,9 @@ const dataDoughnut = {
   }],
 };
 
-const configDoughnut = {
+const configSummaryDoughnut = {
   type: 'doughnut',
-  data: dataDoughnut,
+  data: dataSummaryDoughnut,
   options: {
     responsive: true,
     plugins: {
@@ -68,111 +68,90 @@ const configDoughnut = {
 };
 
 
-// const labelsBar = Utils.months({count: 7});
-// const dataBar = {
-//   labels: labelsBar,
-//   datasets: [{
-//     label: 'My First Dataset',
-//     data: [65, 59, 80, 81, 56, 55, 40],
-//     backgroundColor: [
-//       'rgba(255, 99, 132, 0.2)',
-//       'rgba(255, 159, 64, 0.2)',
-//       'rgba(255, 205, 86, 0.2)',
-//       'rgba(75, 192, 192, 0.2)',
-//       'rgba(54, 162, 235, 0.2)',
-//       'rgba(153, 102, 255, 0.2)',
-//       'rgba(201, 203, 207, 0.2)'
-//     ],
-//     borderColor: [
-//       'rgb(255, 99, 132)',
-//       'rgb(255, 159, 64)',
-//       'rgb(255, 205, 86)',
-//       'rgb(75, 192, 192)',
-//       'rgb(54, 162, 235)',
-//       'rgb(153, 102, 255)',
-//       'rgb(201, 203, 207)'
-//     ],
-//     borderWidth: 1
-//   }]
-// };
 
-// const configBar = {
-//   type: 'bar',
-//   data: data,
-//   options: {
-//     scales: {
-//       y: {
-//         beginAtZero: true
-//       }
-//     }
-//   },
-// };
+const dataMemoryBar = {
+  labels: ['jan', 'feb', 'marshfghdfasdafsdghrhsahfgh', 'blah', 'blah2', 'blah3fdghdfghsfghfdfgsdfgdfgjfghjgfgjghfjghkfghkkfgghkrdhs', 'wow', 'wham', 'great'],
+  datasets: [{
+    label: 'Memory Usage by Pod',
+    data: [65, 59, 80, 81, 56, 55, 40, 50, 750],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.5)',
+      'rgba(255, 159, 64, 0.5)',
+      'rgba(255, 205, 86, 0.5)',
+      'rgba(75, 192, 192, 0.5)',
+      'rgba(54, 162, 235, 0.5)',
+      'rgba(153, 102, 255, 0.5)'
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+      'rgb(153, 102, 255)'
+    ],
+    borderWidth: 1
+  }]
+};
+
+const configMemoryBar = {
+  type: 'bar',
+  data: dataMemoryBar,
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          callback: function(value, index, ticks) {
+            return value + 'MB';
+          }
+        }
+      }
+    }
+  },
+};
+
 
 // component for displaying modals based on active pod 
 const Display = (props) => {
   const [startChart, setStartChart] = useState(false);
-  // state for making sure the useEffect doesn't loop
-  const [preventLooping, setPreventLooping] = useState(false);
 
   // state for logging current charts to be displayed
-  const [currentChartObject, setCurrentChartObject] = useState({'test': configTest});
-  const [currentChart, setCurrentChart] = useState('test');
+  const [currentChartObject, setCurrentChartObject] = useState({'summaryDoughnutChart': configSummaryDoughnut});
+  const [currentChart, setCurrentChart] = useState('summaryDoughnutChart');
 
   let myChart; 
 
 
   // this use effect listens to startChart state, which is changed by the handleClick function, invoked when the show chart button is clicked. this ensures the chart never tries to load before the canvas DOM element is created
   useEffect(() => {
-    console.log('inside Display useEffect')
-    console.log(document.getElementById('myChart'))
-    console.log(currentChartObject[currentChart])
+    // console.log("inside Display useEffect");
+    // console.log(document.getElementById("myChart"));
+    // console.log(currentChartObject[currentChart]);
 
-    // geenrate summary object - maybe use caching here to improve performance? or this would be executed every time 
-    const doughnutSummaryObject = {};
-    for (let key in props.allPods) {
-      let count = 0;
-      for (let innerKey in props.allPods[key]) {
-        count++;
-      };
-      doughnutSummaryObject[key] = count;
+    // update chart data depending on current chart state 
+   
+    switch (currentChart) {
+      case "memoryBarChart" :
+        updateMemoryChartData();
+      default : 
+        updateSummaryChartData();
     }
-    console.log(doughnutSummaryObject)
+    // setting config to the one corresponding to the current chart state
+    let config = currentChartObject[currentChart];
 
-    // generate summary arrays
-    const doughnutSummaryKeysArray = [];
-    let doughnutSummaryValuesArray = [];
-    for (let key in doughnutSummaryObject) {
-      doughnutSummaryKeysArray.push(key);
-      doughnutSummaryValuesArray.push(doughnutSummaryObject[key]);
-    }
-
-    // count total pods 
-    let podSum = 0;
-    for (let i=0; i<doughnutSummaryValuesArray.length; i++) {
-      podSum += doughnutSummaryValuesArray[i];
-    }
-
-    // update the values for doughnut chart 
-    dataDoughnut.labels = doughnutSummaryKeysArray;
-    dataDoughnut.datasets[0].data = doughnutSummaryValuesArray;
-    if (props.allPods.initial) doughnutSummaryValuesArray = [0, 0, 0, 100, 0];
-    totalPods = podSum;
-
-
-    if (preventLooping) {
-      // console.log('currentChartObject: ', currentChartObject)
-      let config = currentChartObject[currentChart];
-      console.log('config object: ', config)
-      // on initial load 
-      if (props.allPods.initial) config = configDoughnut;
-      
-        myChart = new Chart(
-        document.getElementById('myChart'),
+    if (props.preventChartLooping) {
+      console.log('current config: ', config)
+      // on initial load
+      if (props.allPods.initial) config = configSummaryDoughnut;
+      destroyChart();
+      myChart = new Chart(
+        document.getElementById("myChart"), 
         config
       );
-      setPreventLooping(false);
+      props.setPreventChartLooping(false);
     }
-  }, [startChart, currentChart, props.allPods])
+  }, [startChart, currentChart, props.currentPods]);
 
   // modularizing destroy chart 
   const destroyChart = () => {
@@ -186,26 +165,79 @@ const Display = (props) => {
     parent.append(newCanvas);
   }
 
-  const handleClick = (str) => {
-    console.log('inside Display handleClick')
-    destroyChart();
-
-    console.log('after destroy: ', myChart)
-    setStartChart(true);
-    setPreventLooping(true);
-    setCurrentChart(str)
-    if (str==='doughnutChart') setCurrentChartObject({'doughnutChart': configDoughnut});
-    if (str==='testChart') setCurrentChartObject({'testChart' : configTest});
+  
+  const updateSummaryChartData = () => {
+    // generate summary object - maybe use caching here to improve performance? or this would be executed every time
+    const doughnutSummaryObject = {};
+    for (let key in props.allPods) {
+      let count = 0;
+      for (let innerKey in props.allPods[key]) {
+        count++;
+      }
+      doughnutSummaryObject[key] = count;
+    }
+    console.log(doughnutSummaryObject);
+    
+    // generate summary arrays
+    const doughnutSummaryKeysArray = [];
+    let doughnutSummaryValuesArray = [];
+    for (let key in doughnutSummaryObject) {
+      doughnutSummaryKeysArray.push(key);
+      doughnutSummaryValuesArray.push(doughnutSummaryObject[key]);
+    }
+    
+    // count total pods
+    let podSum = 0;
+    for (let i = 0; i < doughnutSummaryValuesArray.length; i++) {
+      podSum += doughnutSummaryValuesArray[i];
+    }
+    
+    // update the values for doughnut chart object
+    dataSummaryDoughnut.labels = doughnutSummaryKeysArray;
+    if (props.allPods.initial) doughnutSummaryValuesArray = [0, 0, 0, 100, 0];
+    dataSummaryDoughnut.datasets[0].data = doughnutSummaryValuesArray;
+    totalPods = podSum;
+    configSummaryDoughnut.options.plugins.title.text =
+    "Total Pods in Your Kubernetes Cluster: " + totalPods;
   }
+  
+  // modularizing updating data for memory use chart by parsing thru the currentPods state that's passed down 
+  const updateMemoryChartData = () => {
+    const labelsArray = [];
+    const dataArray = [];
 
-
+    for (let key in props.currentPods) {
+      labelsArray.push(key);
+      dataArray.push(props.currentPods[key].memoryUse)
+    };
+    dataMemoryBar.labels = labelsArray;
+    dataMemoryBar.datasets[0].data = dataArray;
+  }
+  
+  // toggle between different charts 
+  const handleClick = (str) => {
+    // update states 
+    setStartChart(true);
+    props.setPreventChartLooping(true);
+    setCurrentChart(str)
+    // giving currently active button a 'active' class 
+    const previousActive = document.getElementsByClassName('activeChartButton');
+    if (previousActive[0]) previousActive[0].classList.remove('activeChartButton');
+    // figure out how to change the current button's class to 'active' 
+    let activeButton = document.getElementById(str + 'Button');
+    activeButton?.classList.add('activeChartButton');
+    if (str==='summaryDoughnutChart') setCurrentChartObject({'summaryDoughnutChart': configSummaryDoughnut});
+    if (str==='testChart') setCurrentChartObject({'testChart' : configTest});
+    if (str==='memoryBarChart') setCurrentChartObject({'memoryBarChart': configMemoryBar});
+  }
+  
   return (
     <div id='display' className='display'>
       <div className='display-menu'>
-        <button className='chartButton FPbutton' onClick={() => { handleClick('testChart') }}>SHOW CPU USAGE</button>
-        <button className='chartButton FPbutton' onClick>SHOW MEMORY USAGE</button>
-        <button className='chartButton FPbutton' onClick>SHOW PENDING PODS</button>
-        <button id='doughnutChart' className='chartButton FPbutton' onClick={() => { handleClick('doughnutChart') }}>SHOW SUMMARY</button>
+        <button id='summaryDoughnutChartButton' className='chartButton' onClick={() => { handleClick('summaryDoughnutChart') }}>SUMMARY</button>
+        <button id='testChartButton' className='chartButton' onClick={() => { handleClick('testChart') }}>CPU USAGE</button>
+        <button id='memoryBarChartButton' className='chartButton' onClick={() => { handleClick('memoryBarChart') }}>MEMORY USAGE</button>
+        <button id='pendingButton'className='chartButton' onClick>SHOW PENDING</button>
       </div>
       {/* <img src="https://miro.medium.com/max/1400/1*QwGqOMObJd7oFHCfe1AvxA.png" alt="" /> */}
       <canvas id="myChart"></canvas>

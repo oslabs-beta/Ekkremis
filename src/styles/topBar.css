@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+
 .top-bar {
   position: fixed;
   top: 0;
@@ -9,6 +11,7 @@
   height: 75px;
   border: 1.2px solid #ec633677;
   box-shadow: 0 1px 3px #ec6336b5;
+  font-family: "Nunito";
 }
 
 .header-logo {
@@ -40,6 +43,7 @@
   .url-button {
     position: relative;
     top: -15px;
+    font-family: "Nunito";
   }
   
   #endpoint-url{
@@ -55,6 +59,8 @@
     margin-top: 30px;
   }
 
-  /* .top-bar button {
-    background-color: red;
-  } */
+  .top-bar button {
+    font-family: "Nunito";
+    font-weight: 700;
+    text-align: center;
+  }
