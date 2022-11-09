@@ -15,6 +15,7 @@
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    border: 5.2px solid #ec633677;
   }
   
   .display-block {
@@ -28,3 +29,20 @@
   .logImage {
     width: 100%;
   }
+
+.modal-main h3 {
+  text-align: center;
+}
+
+.modal-main h5 {
+  text-align: center;
+  color: rgb(103, 140, 140);
+}
+
+.modal-main button {
+  float: right;
+  background-color: #ec633677;
+  font-weight: 700;
+  color: white;
+  border-radius: 0.5rem;
+}

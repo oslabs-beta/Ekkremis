@@ -10,6 +10,11 @@ type ErrorProps = {
     podName: string,
     currentUrl: string
   }
+
+  const suggestionObject : any = {
+    'ImagePullBackOff': `Kubernetes couldn't pull the specified container image. Please check the pod specification and ensure the repository and image are specified correctly!`,
+    'CrashLoopBackOff': `Common causes of CrashLoopBackoff include: insufficient resources, failed reference, setup error, config loading error, and misconfigurations`
+  }
   
 // ErrorModal is a popup modal within each PodInfo component that displays error info
 const ErrorModal = (props: ErrorProps) => {
@@ -44,16 +49,20 @@ const ErrorModal = (props: ErrorProps) => {
 // This is a Logs component that will display error logs within the ErrorModal
 const Logs = (props: any) => {
   // render different sh*t based on noError prop
-  
   return (
     <div className="log-info">
       {props.logInfo ?
-        <h5>{props.logInfo}</h5> : 
+        <div className="log-info-inner">
+          <h3>Error:</h3>
+          <h5>{props.logInfo}</h5> 
+          <h3>Suggestion from Ekkremis:</h3>
+          <h5>{suggestionObject[props.logInfo]}</h5>
+        </div> : 
         <h5>NO ERRORS LOL</h5>
       }  
     </div>
   )
-}
+}  
 
 // This is a Loading component that will display a 'LOADING' message while the fetch for the pod status waiting reason is happening.
 const Loading = () => {

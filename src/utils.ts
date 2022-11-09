@@ -27,7 +27,7 @@ export function test() {
 type UseCase = "mock" | "actual";
 
 // getPodInfo fetches the current phase of the pods along with total restarts and age in hours.
-export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
+export async function getPodInfo(useCase: UseCase, setAllPods: any, setCurrentPods: any, url?: string) {
   // this promql is the initial portion of the Prometheus query string.
   const promql = '/api/v1/query?query=';
 
@@ -119,15 +119,25 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
                 podMemoryObject[resultArray[i].metric.pod] = (resultArray[i].value[1])/(10**6)
               }
             }
+            console.log(podMemoryObject);
             // loop thru resultObject to add the new value to each pod 
             for (let statusKey in resultObject) {
               for (let podName in resultObject[statusKey]) {
                 if (podMemoryObject.hasOwnProperty(podName)) resultObject[statusKey][podName]['memoryUse'] = podMemoryObject[podName];
-                else resultObject[statusKey][podName]['memoryUse'] = 0
+                else resultObject[statusKey][podName]['memoryUse'] = 0;
+                console.log(resultObject[statusKey][podName])
               }
             }
-            console.log('in utils, resultObject: ', resultObject);
-            setAllPods(resultObject);
+            return resultObject
+          })
+          .then(data => {
+            console.log('in utils, resultObject: ', data);
+            setAllPods(data);
+          })
+          .then (()=> {
+            const summary = generateSummary(resultObject);
+            setCurrentPods(summary)
+            document.getElementById('summary-button')?.click();
           })
       })
 }
@@ -164,3 +174,20 @@ export function getPendingReason(useCase: UseCase, setRan: any, setLogInfo: any,
       setRan(true);  
     })
 }
+
+
+  // function to convert all pod data to summary format
+  function generateSummary(allPods: any) {
+    console.log("inside generateSummary(): data: ", allPods)
+    // array of keys of allPods
+    let keysArray = Object.keys(allPods);
+    console.log(keysArray)
+    let resultObject = {};
+    for (let i = 0; i < keysArray.length; i++) {
+      console.log('in for loop', i, resultObject)
+      Object.assign(resultObject, allPods[keysArray[i]]);
+    }
+    console.log("inside generateSummary(): return: ", resultObject);
+    // return an object that's in an accepted format by currentPods
+    return resultObject;
+  }

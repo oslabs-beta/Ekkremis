@@ -24,20 +24,16 @@ const TopBar = (props: any) => {
       }
 
       // this is the get real data from localhost 9090
-      getPodInfo("actual", setAllPods, inputValue);
+      // getPodInfo("actual", setAllPods, inputValue);
+      props.setStatus('summary')
   
       // this uses mock data
       // getPodInfo("mock", setAllPods);
-  
-      // declare a resultObject -> {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}};
-      // call our first fetch function to update result object, pass in resultObject as an argument 
-      // second fetch 
-      // third fetch
-      // setAllPods(resultObject)
-      setTimeout(() => {
-        helperClick();
+
+      // setTimeout(() => {
+      //   helperClick();
         props.setPreventChartLooping(true);
-      }, 500)
+      // }, 1000)
 
       // document.getElementById('summary-button')?.click();
     }
