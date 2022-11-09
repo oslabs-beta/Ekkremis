@@ -35,14 +35,17 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
   let statusPhaseQuery = '(kube_pod_status_phase)==1';
   let restartQuery = '(kube_pod_container_status_restarts_total)';
   let ageQuery = '(kube_pod_start_time)';
+  let memoryQuery = '(container_memory_working_set_bytes)';
 
   let finalStatusUrl: string = '';
   let finalRestartUrl: string = '';
   let finalAgeUrl: string = '';
+  let finalMemoryQuery: string = '';
   if (useCase==='actual') {
     finalStatusUrl = url + promql + statusPhaseQuery;
     finalRestartUrl = url + promql + restartQuery;
     finalAgeUrl = url + promql + ageQuery;
+    finalMemoryQuery = url + promql + memoryQuery;
   } 
   // console.log('sendQuery invoked', finalStatusUrl)
 
@@ -50,6 +53,7 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
   // The last fetch request gets the pod status object and then maps the restarts and age to each pod before setting the allPods state.
   let resultObject :any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}};
   let restartObject :any = {};
+
   fetch(finalRestartUrl)
       .then(data => data.json())
       .then(data => {
@@ -97,8 +101,33 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, url?: string) {
               resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;    
             }
             // call the set state function to update the allPods state
-            setAllPods(resultObject);
             
+          })
+      })
+      .then(() => {
+        fetch(finalMemoryQuery)
+          .then(data => data.json())
+          .then(data => {
+            let resultArray;
+            if (useCase==='mock') resultArray = data[memoryQuery].data.result;
+            else if (useCase==='actual') resultArray = data.data.result;
+            // loop thru resultArray to create an object storing key values pairs of podName : value 
+            const podMemoryObject : any = {};
+            for (let i=0; i<resultArray.length; i++) {
+              if (resultArray[i].metric.hasOwnProperty('pod')) {
+                // converting the metric from bytes to megabytes and store it in podMemoryObject
+                podMemoryObject[resultArray[i].metric.pod] = (resultArray[i].value[1])/(10**6)
+              }
+            }
+            // loop thru resultObject to add the new value to each pod 
+            for (let statusKey in resultObject) {
+              for (let podName in resultObject[statusKey]) {
+                if (podMemoryObject.hasOwnProperty(podName)) resultObject[statusKey][podName]['memoryUse'] = podMemoryObject[podName];
+                else resultObject[statusKey][podName]['memoryUse'] = 0
+              }
+            }
+            console.log('in utils, resultObject: ', resultObject);
+            setAllPods(resultObject);
           })
       })
 }

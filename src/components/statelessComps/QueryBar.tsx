@@ -15,6 +15,7 @@ function QueryBar(props: any) {
     // figure out how to change the current button's class to 'active' 
     let activeButton = document.getElementById(string + '-button');
     activeButton?.classList.add('active');
+    props.setPreventChartLooping(true);
   };
 
   return (

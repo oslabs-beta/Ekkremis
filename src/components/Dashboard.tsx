@@ -47,6 +47,7 @@ const Dashboard = () => {
     for (let i = 0; i < keysArray.length; i++) {
       Object.assign(resultObject, allPods[keysArray[i]])
     }
+    console.log('inside generateSummary(): ', resultObject)
     // return an object that's in an accepted format by currentPods
     return resultObject;
   }
@@ -87,10 +88,10 @@ const Dashboard = () => {
       <TopBar currentUrl={currentUrl} setCurrentUrl={setCurrentUrl} setAllPods={setAllPods} setPreventChartLooping={setPreventChartLooping}/>
       <div className='main'>
         <div className='query-bar'>
-          <QueryBar status={status} setStatus={setStatus}/>
+          <QueryBar status={status} setStatus={setStatus} setPreventChartLooping={setPreventChartLooping}/>
         </div>
         <div className='right-side'>
-          <Display allPods={allPods} preventChartLooping={preventChartLooping} setPreventChartLooping={setPreventChartLooping}/>
+          <Display allPods={allPods} currentPods={currentPods} preventChartLooping={preventChartLooping} setPreventChartLooping={setPreventChartLooping}/>
           <AllPodInfo currentPods={currentPods} currentUrl={currentUrl} status={status} allPods={allPods}/>
         </div>
       </div>
