@@ -205,7 +205,7 @@ const Display = (props) => {
   const updateMemoryChartData = () => {
     const labelsArray = [];
     const dataArray = [];
-    console.log(props.currentPods)
+
     for (let key in props.currentPods) {
       labelsArray.push(key);
       dataArray.push(props.currentPods[key].memoryUse)
@@ -216,6 +216,7 @@ const Display = (props) => {
   
   // toggle between different charts 
   const handleClick = (str) => {
+    // update states 
     setStartChart(true);
     props.setPreventChartLooping(true);
     setCurrentChart(str)
@@ -233,10 +234,10 @@ const Display = (props) => {
   return (
     <div id='display' className='display'>
       <div className='display-menu'>
-        <button id='summaryDoughnutChartButton' className='chartButton' onClick={() => { handleClick('summaryDoughnutChart') }}>SHOW SUMMARY</button>
-        <button id='testChartButton' className='chartButton' onClick={() => { handleClick('testChart') }}>SHOW CPU USAGE</button>
-        <button id='memoryBarChartButton' className='chartButton' onClick={() => { handleClick('memoryBarChart') }}>SHOW MEMORY USAGE</button>
-        <button className='chartButton' onClick>SHOW PENDING PODS</button>
+        <button id='summaryDoughnutChartButton' className='chartButton' onClick={() => { handleClick('summaryDoughnutChart') }}>SUMMARY</button>
+        <button id='testChartButton' className='chartButton' onClick={() => { handleClick('testChart') }}>CPU USAGE</button>
+        <button id='memoryBarChartButton' className='chartButton' onClick={() => { handleClick('memoryBarChart') }}>MEMORY USAGE</button>
+        <button id='pendingButton'className='chartButton' onClick>SHOW PENDING</button>
       </div>
       {/* <img src="https://miro.medium.com/max/1400/1*QwGqOMObJd7oFHCfe1AvxA.png" alt="" /> */}
       <canvas id="myChart"></canvas>

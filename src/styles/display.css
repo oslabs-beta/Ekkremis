@@ -1,42 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
+
 .display {
-    border: 1.2px solid #ec633677;
-    flex: 0.3;
-    height: 300px;
-    width: 650px;
-    margin-top: 50px;
-    background-color: #E2E0E1;
-  }
-  
-  .display img {
-    height: 200px;
-    width: 550px;
-    margin-top: -58px;
-  }
+  border: 1.2px solid #ec633677;
+  flex: 0.3;
+  height: 350px;
+  width: 650px;
+  margin-top: 80px;
+  background-color: #d3d3d3;
+}
 
-  .display button {
+.display img {
+  height: 200px;
+  width: 550px;
+  margin-top: -58px;
+}
 
-    margin-top: 0px;
-    margin-left: 0px;
-    font-size: 12px;
-    height: 25px;
-    width: 100px;
-    padding: 0px;
-    vertical-align: center;
-  }
+.display button {
+  margin-top: 0px;
+  margin-left: 0px;
+  height: 25px;
+  width: 100px;
+  padding: 0px;
+  vertical-align: center;
+  border-radius: 0.2rem;
 
-  .display-menu {
-    display: flex;
-    justify-content: left;
+  color: white;
+  background-color: rgb(117, 117, 117);
 
-    height: 25px;
-    position:absolute; 
-    top: 19px;
+  font-family: 'Nunito';
+  font-weight: 700;
+  font-size: 12px;
+}
 
+.display-menu {
+  display: flex;
+  justify-content: left;
 
-    border: 3px solid #ec633677;
-  }
+  height: 25px;
+  position: absolute;
+  top: 49px;
+  right: 0px;
 
-  #myChart {
-    max-height: 100%;
-    width: 100%;
-  }
+  border: 3px solid #ec633677;
+}
+
+#myChart {
+  max-height: 100%;
+  width: 100%;
+}
+
+#memoryBarChartButton {
+  font-size: 12px;
+  line-height: 11px;
+}
+
+#pendingButton {
+  font-size: 12px;
+  line-height: 11px;
+}

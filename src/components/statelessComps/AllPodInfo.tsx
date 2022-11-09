@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 // importing other components
 import PodInfo from './PodInfo';
-
+import '../../styles/allPodInfo.css';
 
 // component for all pods info 
 const AllPodInfo = (props: any) => {
@@ -34,7 +34,7 @@ const AllPodInfo = (props: any) => {
 
 
     return(
-        <div>
+        <div className='pod-info-container'>
             <div className='pods-header'>
               <h5>pod name</h5>
               <h5>node</h5>

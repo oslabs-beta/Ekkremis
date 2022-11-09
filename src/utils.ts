@@ -137,6 +137,7 @@ export async function getPodInfo(useCase: UseCase, setAllPods: any, setCurrentPo
           .then (()=> {
             const summary = generateSummary(resultObject);
             setCurrentPods(summary)
+            console.log('in last .then()  finished setting currentPods')
             document.getElementById('summary-button')?.click();
           })
       })
@@ -181,7 +182,7 @@ export function getPendingReason(useCase: UseCase, setRan: any, setLogInfo: any,
     console.log("inside generateSummary(): data: ", allPods)
     // array of keys of allPods
     let keysArray = Object.keys(allPods);
-    console.log(keysArray)
+    console.log(keysArray, allPods[keysArray[0]])
     let resultObject = {};
     for (let i = 0; i < keysArray.length; i++) {
       console.log('in for loop', i, resultObject)
