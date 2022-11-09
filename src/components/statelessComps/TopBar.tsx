@@ -32,10 +32,8 @@ const TopBar = (props: any) => {
 
       // setTimeout(() => {
       //   helperClick();
-        props.setPreventChartLooping(true);
+      props.setPreventChartLooping(true);
       // }, 1000)
-
-      // document.getElementById('summary-button')?.click();
     }
   
     let placeholder = ' enter your url here';

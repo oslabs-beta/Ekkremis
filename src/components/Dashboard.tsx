@@ -84,20 +84,14 @@ const Dashboard = () => {
     if (!hasBeenRun) {
       // reshape all pod data to fit status - resets current pods
       console.log("inside Dashboard useEffect, status: ", status);
-      if (status !== "summary") {
-        setCurrentPods(allPods[status]);
-        // console.log('setting current pods to...', allPods[status])
-      } else {
-        // (async () => {
-        getPodInfo("actual", setAllPods, setCurrentPods, currentUrl);
-        // })();
+      if (status === "summary") getPodInfo("actual", setAllPods, setCurrentPods, currentUrl);
+      else setCurrentPods(allPods[status]);
+
+      // cleanup function to aviod looping
+      return () => {
+        hasBeenRun = true;
       }
-    }
-    return () => {
-      hasBeenRun = true;
     };
-    console.log("inside useEffect, currentPods: ", currentPods);
-    // cleanup function to aviod looping
   }, [status, currentUrl]); // update current pods when status or url changes
 
   return (
