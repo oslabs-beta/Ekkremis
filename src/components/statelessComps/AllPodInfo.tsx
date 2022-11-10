@@ -30,7 +30,7 @@ const AllPodInfo = (props: any) => {
       return () => {
         hasBeenCalled = true;
       }
-    }, [props.currentPods, props.currentUrl]); // update current pods when curent pods or url changes
+    }, [props.currentPods, props.currentUrl, props.status]); // update current pods when curent pods or url changes
 
 
     return(

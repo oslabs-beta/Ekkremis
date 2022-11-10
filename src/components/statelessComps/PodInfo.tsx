@@ -56,7 +56,7 @@ type podType = {
           {/* <button onClick={toggleChartsModal}>charts</button> */}
         <div><button className={buttonClassName} onClick={toggleErrorModal}>logs</button></div>
         {/* <ChartsModal show={showChartsModal} toggleChartsModal={toggleChartsModal} /> */}
-        <ErrorModal show={showErrorModal} toggleErrorModal={toggleErrorModal} podName={props.podName} currentUrl={props.currentUrl}/>
+        <ErrorModal show={showErrorModal} toggleErrorModal={toggleErrorModal} podName={props.podName} podStatus={props.podStatus} currentUrl={props.currentUrl} />
       </div>
     )
   }

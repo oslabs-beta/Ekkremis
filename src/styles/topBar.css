@@ -66,3 +66,9 @@
     text-align: center;
     line-height: 100%;
   }
+
+  input {
+    font-family: "Nunito";
+    font-size: 20px;
+    text-indent: 10px;
+  }

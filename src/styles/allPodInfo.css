@@ -58,17 +58,34 @@
   display: grid;
   grid-template-columns: 4fr 3fr 2fr 1fr 1.5fr 1.5fr;
   justify-content: center;
-  background-color: #E2E0E1;
+  /* background-color: #E2E0E1; */
+  background-color: rgb(159,225, 179);
   border: 1.2px solid #ec633677;
   border-radius: 5px;
   margin: 5px;  
-
+  
   font-size: 18px;
   font-weight: 600;
   text-align: center;
 
   line-height: 15px;
   align-items: center;
+
+
+  /* animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
+
+
+  opacity: 0;
+
+  transform: rotateX(-90deg);
+  transform-origin: top center; */
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .pod-info button {
@@ -79,7 +96,8 @@
   font-weight: 600;
 
   border-radius: 0.2rem;
-  background-color: #ec633677;;
+  /* background-color: #ec633677;; */
+  background-color: rgb(119, 132, 158);
   box-shadow: 4px 10px 18px -6px rgba(92,92,92,1);
   
 }
@@ -90,7 +108,7 @@
 }
 
 .pod-info-pending {
-  background-color: rgb(251, 229, 121);  
+  background-color: rgb(252, 240, 178);  
 }
 
 

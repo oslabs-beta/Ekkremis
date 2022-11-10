@@ -167,12 +167,11 @@ async function fetchMemory(finalMemoryUrl: string, useCase: string, resultObject
 }
 
 async function setPods(setAllPods: any, setCurrentPods: any, setLastUpdate: any, resultObject: any) {
-  console.log(5)
   await setAllPods(resultObject);
 
   const currentTime = Math.floor(Date.now() / 1000);
   console.log('in utils: ', currentTime)
-  setLastUpdate(currentTime);
+  await setLastUpdate(currentTime);
 
   const summary = generateSummary(resultObject);
   await setCurrentPods(summary);
@@ -188,7 +187,7 @@ getPendingReason queries for the pod's waiting reason.
 If the pod is not waiting, a waiting reason is not set.
 If the pod is waiting, a waiting reason is set.
 */
-export function getPendingReason(useCase: UseCase, setRan: any, setLogInfo: any, setNoError: any, podName: string, url?: string) {
+export function getPendingReason(useCase: UseCase, setRan: any, setLogInfo: any, setNoError: any, podName: string, podStatus: string, url?: string) {
   const promql = '/api/v1/query?query=';
   const pendingReasonQuery = `(kube_pod_container_status_waiting_reason{pod="${podName}"})`;
   const example = '(kube_pod_container_status_waiting_reason{pod="cowclicker-xlsmq"})'
@@ -202,6 +201,8 @@ export function getPendingReason(useCase: UseCase, setRan: any, setLogInfo: any,
     .then(data => data.json())
     .then(data => {
       if (data.data.result.length===0) {
+        // check if the pod is pending, because if it's pending and has no apparent errors it needs a closer look 
+        if (podStatus==='Pending') setLogInfo('PodPending...')
         // setRan to true so the Log component renders in place of the Loading component.
         setRan(true);  
         return 'no';

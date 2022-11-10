@@ -19,25 +19,42 @@ const TopBar = (props: any) => {
      
       inputElement.value = '';
 
-      (function destroyLoadingLogo() {
-        const loadingLogo = document.getElementById('loading-logo'); 
-        loadingLogo?.remove();
-      })();
+      const loadingLogo : any = document.getElementById('loading-logo'); 
+      async function destroyLoadingLogo(speed: number) {
+        // loadingLogo?.remove();
+        var seconds = speed/1000;
+        loadingLogo.style.transition = "opacity "+seconds+"s ease";
+
+        loadingLogo.style.opacity = 0;
+        setTimeout(function() {
+          loadingLogo.parentNode.removeChild(loadingLogo);
+        }, speed);
+      };
+      
+      // removing logo and loding data
+      if (loadingLogo) {
+        (async () => {
+          await destroyLoadingLogo(1000);
+          setTimeout(()=> {
+            props.setStatus('summary');
+            props.setPreventChartLooping(true);
+          }, 500)
+        })()
+      } else {
+        props.setStatus('summary');
+        props.setPreventChartLooping(true);
+      }
+      
 
       // this is the get real data from localhost 9090
       // getPodInfo("actual", setAllPods, inputValue);
-      props.setStatus('summary')
+     
   
       // this uses mock data
       // getPodInfo("mock", setAllPods);
-
-      // setTimeout(() => {
-      //   helperClick();
-      props.setPreventChartLooping(true);
-      // }, 1000)
     }
   
-    let placeholder = ' enter your url here';
+    let placeholder = 'Enter your url here';
     // if (props.currentUrl) placeholder = props.currentUrl;
   
     return(
