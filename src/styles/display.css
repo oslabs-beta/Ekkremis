@@ -5,7 +5,7 @@
   flex: 0.3;
   height: 400px;
   width: 85%;
-  margin-top: 80px;
+  margin-top: 45px;
   background-color: #d3d3d3;
 }
 
@@ -45,8 +45,18 @@
 	animation: float 3s ease-in-out infinite;
 }
 
+.display-menu {
+  display: flex;
+  justify-content: right;
 
-.display button {
+  height: 0px;
+  position: relative;
+  left: 0px;
+  top: -7%;
+  /* border: 3px solid #ec633677; */
+}
+
+.display-menu button {
   margin-top: 0px;
   margin-left: 0px;
   height: 25px;
@@ -63,15 +73,12 @@
   font-size: 12px;
 }
 
-.display-menu {
-  display: flex;
-  justify-content: right;
+.display-menu button:hover {
+  color: rgb(217, 197, 171);
+}
 
-  height: 0px;
-  position: relative;
-  left: 0px;
-  top: -7%;
-  /* border: 3px solid #ec633677; */
+.activeChartButton {
+  color: rgb(166, 184, 218) !important;
 }
 
 #myChart {
@@ -87,4 +94,21 @@
 #pendingButton {
   font-size: 12px;
   line-height: 11px;
+}
+
+.time-tracker {
+  position: relative;
+  display: flex;
+  font-size: 10px;
+  margin-top: -8px;
+  margin-bottom: -32px;
+  color:rgb(68, 68, 68); 
+}
+
+.time-tracker h4 {
+  margin-top: 12px;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 12px;
+  color: rgb(135, 156, 171);
 }

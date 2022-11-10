@@ -13,9 +13,9 @@ const TopBar = (props: any) => {
       // document.getElementById() returns the type HTMLElement which does not contain a value property. The subtype HTMLInputElement does however contain the value property.
       const inputElement = (document.getElementById('endpoint-url') as HTMLInputElement);
       let inputValue = inputElement.value
-      // const url = inputValue.toString() + '/metrics'
+      
       if (inputValue) props.setCurrentUrl(inputValue);
-      else inputValue = 'http://localhost:9090';
+      else props.setCurrentUrl('http://localhost:9090');
      
       inputElement.value = '';
 
@@ -47,8 +47,8 @@ const TopBar = (props: any) => {
             <input id='endpoint-url' type="text" placeholder={placeholder}/>
             <h5>/metrics</h5>
             <Button 
-              className="FPbutton url-button"
-              children="Update Url"
+              className="FPbutton update-button"
+              children="Update"
               onClick={()=>{handleClick(props.setAllPods)}}
             />
             {/* <button className='url-btn' onClick={()=>{handleClick(props.setAllPods)}}>update url</button> */}

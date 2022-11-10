@@ -15,6 +15,11 @@ function QueryBar(props: any) {
     // figure out how to change the current button's class to 'active' 
     let activeButton = document.getElementById(string + '-button');
     activeButton?.classList.add('active');
+    // clean up the loading submarine in case the user clicks on them before loading data. otherwise this would trigger a chart render and it would be pushed down by the submarine
+    (function destroyLoadingLogo() {
+      const loadingLogo = document.getElementById('loading-logo'); 
+      loadingLogo?.remove();
+    })();
     props.setPreventChartLooping(true);
   };
 

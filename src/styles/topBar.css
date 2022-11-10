@@ -40,10 +40,11 @@
     margin-left:5px;
   }
   
-  .url-button {
+  .update-button {
     position: relative;
     top: -15px;
     font-family: "Nunito";
+    width: 100px;
   }
   
   #endpoint-url{

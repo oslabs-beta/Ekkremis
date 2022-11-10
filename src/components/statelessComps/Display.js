@@ -1,5 +1,6 @@
 // importing dependencies 
 import React, { useState, useEffect } from 'react';
+import TimeTracker from '../smallComps/TimeTracker'
 import './../../styles/display.css';
 import Chart from 'chart.js/auto'
 import { displayPartsToString } from 'typescript';
@@ -91,7 +92,8 @@ const dataMemoryBar = {
       'rgb(54, 162, 235)',
       'rgb(153, 102, 255)'
     ],
-    borderWidth: 1
+    borderWidth: 1,
+    // minBarLength: '500px'
   }]
 };
 
@@ -224,12 +226,17 @@ const Display = (props) => {
     // giving currently active button a 'active' class 
     const previousActive = document.getElementsByClassName('activeChartButton');
     if (previousActive[0]) previousActive[0].classList.remove('activeChartButton');
-    // figure out how to change the current button's class to 'active' 
+    // add 'active' class to the currently selected button 
     let activeButton = document.getElementById(str + 'Button');
     activeButton?.classList.add('activeChartButton');
     if (str==='summaryDoughnutChart') setCurrentChartObject({'summaryDoughnutChart': configSummaryDoughnut});
     if (str==='testChart') setCurrentChartObject({'testChart' : configTest});
     if (str==='memoryBarChart') setCurrentChartObject({'memoryBarChart': configMemoryBar});
+     // clean up the loading submarine in case the user clicks on them before loading data. otherwise this would trigger a chart render and it would be pushed down by the submarine
+    (function destroyLoadingLogo() {
+      const loadingLogo = document.getElementById('loading-logo'); 
+      loadingLogo?.remove();
+    })();
   }
   
   return (
@@ -245,6 +252,14 @@ const Display = (props) => {
         <img id='loading-logo' src={logo} alt="Ekkremis Logo"/> 
       </div>
       <canvas id="myChart"></canvas>
+      <div>
+        {props.status ?
+          <TimeTracker lastUpdate={props.lastUpdate}/> :
+          null
+      }
+      </div>
+      
+      
     </div>
   )
 }

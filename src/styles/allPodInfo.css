@@ -2,7 +2,7 @@
 
 .pods-header .smaller-header{
   font-size: 17px;
-  margin-top: 3px;
+  margin-top: 1px;
 }
 
 .pod-info-container{
@@ -13,26 +13,26 @@
 
 
 .pods-header {
-  height: 55px;
+  height: 45px;
   width: 85%;
   display: grid;
   grid-template-columns: 4.3fr 3.2fr 1.8fr 1fr 1.5fr 2fr;
   border: none;
   border-radius: 5px;
-  background-color: rgb(137, 120, 99);
+  background-color: rgb(117, 117, 117);
   box-shadow: 22px 21px 19px -12px rgba(56,56,56,0.63);
   transition: 0.5s;
-  margin-top: 50px;
+  margin-top: 42px;
   margin-bottom: -15px;
 
   color: whitesmoke;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 700;
   text-align: center;
 }
 
 .pods-header p {
-  margin-top: 13px;
+  margin-top: 11px;
 }
 
 /* .pods-header h5 {

@@ -28,7 +28,7 @@ export function test() {
 type UseCase = "mock" | "actual";
 
 // getPodInfo fetches the current phase of the pods along with total restarts and age in hours.
-export function getPodInfo(useCase: UseCase, setAllPods: any, setCurrentPods: any, url?: string) {
+export function getPodInfo(useCase: UseCase, setAllPods: any, setCurrentPods: any, setLastUpdate: any, url?: string) {
   // this promql is the initial portion of the Prometheus query string.
   const promql = '/api/v1/query?query=';
 
@@ -48,7 +48,6 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, setCurrentPods: an
     finalAgeUrl = url + promql + ageQuery;
     finalMemoryUrl = url + promql + memoryQuery;
   } 
-  // console.log('sendQuery invoked', finalStatusUrl)
 
   // Three separate fetch requests are made here to build up a restart object that stores restarts and the pod age converted from seconds to hours.
   // The last fetch request gets the pod status object and then maps the restarts and age to each pod before setting the allPods state.
@@ -66,7 +65,7 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, setCurrentPods: an
         await fetchMemory(finalMemoryUrl, 'actual', resultObject, setAllPods, setCurrentPods)
       })
       .then(async() => {
-        await setPods(setAllPods, setCurrentPods, resultObject)
+        await setPods(setAllPods, setCurrentPods, setLastUpdate, resultObject)
       })
       .then(() => {
         console.log('end of getPodInfo()')
@@ -152,8 +151,7 @@ async function fetchMemory(finalMemoryUrl: string, useCase: string, resultObject
       for (let i = 0; i < resultArray.length; i++) {
         if (resultArray[i].metric.hasOwnProperty("pod")) {
           // converting the metric from bytes to megabytes and store it in podMemoryObject
-          podMemoryObject[resultArray[i].metric.pod] =
-            resultArray[i].value[1] / 10 ** 6;
+          podMemoryObject[resultArray[i].metric.pod] = resultArray[i].value[1] / 10 ** 6;
         }
       }
       // loop thru resultObject to add the new value to each pod
@@ -168,12 +166,19 @@ async function fetchMemory(finalMemoryUrl: string, useCase: string, resultObject
     })
 }
 
-async function setPods(setAllPods: any, setCurrentPods: any, resultObject: any) {
+async function setPods(setAllPods: any, setCurrentPods: any, setLastUpdate: any, resultObject: any) {
+  console.log(5)
   await setAllPods(resultObject);
+
+  const currentTime = Math.floor(Date.now() / 1000);
+  console.log('in utils: ', currentTime)
+  setLastUpdate(currentTime);
 
   const summary = generateSummary(resultObject);
   await setCurrentPods(summary);
+  // set default to summary tab 
   document.getElementById("summary-button")?.click();
+  console.log('just before time ')
 }
 
 
