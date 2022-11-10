@@ -13,7 +13,8 @@ type ErrorProps = {
 
   const suggestionObject : any = {
     'ImagePullBackOff': `Kubernetes couldn't pull the specified container image. Please check the pod specification and ensure the repository and image are specified correctly!`,
-    'CrashLoopBackOff': `Common causes of CrashLoopBackoff include: insufficient resources, failed reference, setup error, config loading error, and misconfigurations`
+    'CrashLoopBackOff': `Common causes of CrashLoopBackoff include: insufficient resources, failed reference, setup error, config loading error, and misconfigurations`,
+    'ContainerCreating': `Common causes of ContainerCreating include: errors in configmap, unmountable configmap, exceeding memory limits, and liveliness probes`
   }
   
 // ErrorModal is a popup modal within each PodInfo component that displays error info

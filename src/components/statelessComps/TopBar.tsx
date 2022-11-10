@@ -19,9 +19,10 @@ const TopBar = (props: any) => {
      
       inputElement.value = '';
 
-      function helperClick() {
-        document.getElementById('summary-button')?.click();
-      }
+      (function destroyLoadingLogo() {
+        const loadingLogo = document.getElementById('loading-logo'); 
+        loadingLogo?.remove();
+      })();
 
       // this is the get real data from localhost 9090
       // getPodInfo("actual", setAllPods, inputValue);

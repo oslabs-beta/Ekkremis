@@ -15,7 +15,8 @@
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    border: 5.2px solid #ec633677;
+    border: 3.2px solid #ec633677;
+    box-shadow: 8px 7px 17px 0px rgba(56,56,56,0.63);
   }
   
   .display-block {
@@ -32,17 +33,23 @@
 
 .modal-main h3 {
   text-align: center;
+  font-size: 30px;
 }
 
 .modal-main h5 {
   text-align: center;
   color: rgb(103, 140, 140);
+  font-size:18px;
+  line-height: 20px;
 }
 
 .modal-main button {
   float: right;
+  margin-right: 10px;
+  margin-bottom: 5px;
   background-color: #ec633677;
   font-weight: 700;
   color: white;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem !important;
+  width: 100px !important;
 }

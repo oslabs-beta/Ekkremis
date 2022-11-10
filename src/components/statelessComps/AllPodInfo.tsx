@@ -36,11 +36,12 @@ const AllPodInfo = (props: any) => {
     return(
         <div className='pod-info-container'>
             <div className='pods-header'>
-              <h5>pod name</h5>
-              <h5>node</h5>
-              <h5>status</h5>
-              <h5>restarts</h5>
-              <h5>age</h5>
+              <div><p>POD NAME</p></div>
+              <div><p>NAMESPACE</p></div>
+              <div><p>STATUS</p></div>
+              <div className='smaller-header'><p>RESTARTS</p></div>
+              <div className='smaller-header'><p>AGE(H)</p></div>
+              <div><p></p></div>
             </div>
             <div className='all-pod-info'>
               {podsArray}

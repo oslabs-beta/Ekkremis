@@ -66,9 +66,6 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, setCurrentPods: an
         await fetchMemory(finalMemoryUrl, 'actual', resultObject, setAllPods, setCurrentPods)
       })
       .then(async() => {
-        console.log('4th .then()')
-      })
-      .then(async() => {
         await setPods(setAllPods, setCurrentPods, resultObject)
       })
       .then(() => {
@@ -82,7 +79,6 @@ export function getPodInfo(useCase: UseCase, setAllPods: any, setCurrentPods: an
 
 // modularizing fetch functions required for getPodInfo() 
 async function fetchRestart(finalRestartUrl: string, useCase: string, restartObject: any) {
-  console.log("started fetchRestart: ");
   await fetch(finalRestartUrl)
       .then(data => data.json())
       .then(data => {
@@ -93,12 +89,10 @@ async function fetchRestart(finalRestartUrl: string, useCase: string, restartObj
           restartObject[resultArray[i].metric.pod] = {};
           restartObject[resultArray[i].metric.pod]['restart'] = Number(resultArray[i].value[1]);
         }
-        console.log('finished fetchRestart: ', restartObject)
       })
 }
 
 async function fetchAge(finalAgeUrl: string, useCase: string, restartObject: any) {
-  console.log("started fetchAge: ");
   await fetch(finalAgeUrl)
     .then((data) => data.json())
     .then((data) => {
@@ -107,17 +101,14 @@ async function fetchAge(finalAgeUrl: string, useCase: string, restartObject: any
       if (useCase === "actual") resultArray = data.data.result;
       const currentTime = Math.floor(Date.now() / 1000);
       for (let i = 0; i < resultArray.length; i++) {
-        console.log(resultArray[i].metric.pod)
         restartObject[resultArray[i].metric.pod]["age"] = Math.round(
           (currentTime - Number(resultArray[i].value[1])) / 3600
         );
       }
-      console.log('finished fetchAge: ', restartObject)
     });
 }
 
 async function fetchStatus(finalStatusUrl: string, useCase: string, resultObject: any, restartObject: any) {
-  console.log("started fetchStatus: ");
   await fetch(finalStatusUrl)
     .then((data) => data.json())
     .then((data) => {
@@ -138,15 +129,18 @@ async function fetchStatus(finalStatusUrl: string, useCase: string, resultObject
           tempObject["age"] = restartObject[podName].age
             ? restartObject[podName].age
             : 0;
+        } 
+        let status = resultArray[i].metric.phase.toLowerCase();
+        resultObject[status][podName] = tempObject;
+        if (!resultObject[status][podName].hasOwnProperty('restart')) {
+          resultObject[status][podName]['restart'] = 0; 
+          resultObject[status][podName]['age'] = 0;
         }
-        resultObject[resultArray[i].metric.phase.toLowerCase()][podName] = tempObject;
       }
-      console.log('finished fetchStatus: ', resultObject)
     });
 }
 
 async function fetchMemory(finalMemoryUrl: string, useCase: string, resultObject: any, setAllPods: any, setCurrentPods: any) {
-  console.log("started fetchMemory: ");
   await fetch(finalMemoryUrl)
     .then((data) => data.json())
     .then((data) => {
@@ -162,7 +156,6 @@ async function fetchMemory(finalMemoryUrl: string, useCase: string, resultObject
             resultArray[i].value[1] / 10 ** 6;
         }
       }
-      // console.log(podMemoryObject);
       // loop thru resultObject to add the new value to each pod
       for (let statusKey in resultObject) {
         for (let podName in resultObject[statusKey]) {
@@ -172,17 +165,14 @@ async function fetchMemory(finalMemoryUrl: string, useCase: string, resultObject
           else resultObject[statusKey][podName]["memoryUse"] = 0;
         }
       }
-      console.log('finished fetchMemory: ', resultObject)
     })
 }
 
 async function setPods(setAllPods: any, setCurrentPods: any, resultObject: any) {
-  console.log("in setPods, before setAllPods: ", resultObject);
   await setAllPods(resultObject);
 
   const summary = generateSummary(resultObject);
   await setCurrentPods(summary);
-  console.log("in setPods, finished setting currentPods");
   document.getElementById("summary-button")?.click();
 }
 
@@ -220,20 +210,40 @@ export function getPendingReason(useCase: UseCase, setRan: any, setLogInfo: any,
       setRan(true);  
     })
 }
+// set return type to any because function can return string or undefined 
+export async function checkRunningPodError(podName: string, currentUrl: string, setClassName: any, setButtonClassName: any) :Promise<any> {
+  const promql = '/api/v1/query?query=';
+  const pendingReasonQuery = `(kube_pod_container_status_waiting_reason{pod="${podName}"})`;
+
+  const finalUrl = currentUrl + promql + pendingReasonQuery;
+  await fetch(finalUrl)
+    .then(data => data.json())
+    .then(data => {
+      if (data.data.result.length) {
+        const reason = data.data.result[0].metric.reason;
+        console.log("podName: ", podName, 'REASON:', reason);
+        setClassName('pod-info pod-info-pending');  
+        setButtonClassName('log-button-pending')                                                                                              
+      }
+    })
+    .catch((error) => {
+      console.log('error occured in checRunningPodError: ', error)
+    })
+}
 
 
-  // function to convert all pod data to summary format
-  function generateSummary(allPods: any) {
-    console.log("inside generateSummary(): data: ", allPods)
-    // array of keys of allPods
-    let keysArray = Object.keys(allPods);
-    // console.log(keysArray, allPods[keysArray[0]])
-    let resultObject = {};
-    for (let i = 0; i < keysArray.length; i++) {
-      // console.log('in for loop', i, resultObject)
-      Object.assign(resultObject, allPods[keysArray[i]]);
-    }
-    // console.log("inside generateSummary(): return: ", resultObject);
-    // return an object that's in an accepted format by currentPods
-    return resultObject;
+// function to convert all pod data to summary format
+function generateSummary(allPods: any) {
+  console.log("inside generateSummary(): data: ", allPods)
+  // array of keys of allPods
+  let keysArray = Object.keys(allPods);
+  // console.log(keysArray, allPods[keysArray[0]])
+  let resultObject = {};
+  for (let i = 0; i < keysArray.length; i++) {
+    // console.log('in for loop', i, resultObject)
+    Object.assign(resultObject, allPods[keysArray[i]]);
   }
+  // console.log("inside generateSummary(): return: ", resultObject);
+  // return an object that's in an accepted format by currentPods
+  return resultObject;
+}

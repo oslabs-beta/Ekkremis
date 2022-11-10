@@ -23,7 +23,8 @@
   }
 
   .query-bar img {
-    height: 20%
+    height: 20%;
+    margin-top: 20px;
   }
   
 

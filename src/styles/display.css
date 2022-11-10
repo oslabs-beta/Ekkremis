@@ -3,17 +3,48 @@
 .display {
   border: 1.2px solid #ec633677;
   flex: 0.3;
-  height: 350px;
-  width: 650px;
+  height: 400px;
+  width: 85%;
   margin-top: 80px;
   background-color: #d3d3d3;
 }
 
-.display img {
-  height: 200px;
-  width: 550px;
-  margin-top: -58px;
+.logo-container {
+  position: relative;
+  top: 5%;
+  left: 20%;
+  right: auto;
+  bottom: 5%;
+  width: 85%;
 }
+
+.display img {
+  height: 65%;
+  width: 75%;
+}
+
+
+@keyframes float {
+	0% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); grabs the whole div and not the image - makes the background gradient look weird*/
+		transform: translatey(0px);
+	}
+	50% {
+		/* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
+		transform: translatey(40px);
+	}
+	100% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+		transform: translatey(0px);
+	}
+}
+
+#loading-logo{
+  text-align: center;
+  transform: translatey(0px);
+	animation: float 3s ease-in-out infinite;
+}
+
 
 .display button {
   margin-top: 0px;
@@ -34,14 +65,13 @@
 
 .display-menu {
   display: flex;
-  justify-content: left;
+  justify-content: right;
 
-  height: 25px;
-  position: absolute;
-  top: 49px;
-  right: 0px;
-
-  border: 3px solid #ec633677;
+  height: 0px;
+  position: relative;
+  left: 0px;
+  top: -7%;
+  /* border: 3px solid #ec633677; */
 }
 
 #myChart {

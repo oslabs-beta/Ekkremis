@@ -1,8 +1,115 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
 
+.pods-header .smaller-header{
+  font-size: 17px;
+  margin-top: 3px;
+}
+
 .pod-info-container{
   font-family: "Nunito";
   font-weight: 500;
   font-size: 20px;
+}
+
+
+.pods-header {
+  height: 55px;
+  width: 85%;
+  display: grid;
+  grid-template-columns: 4.3fr 3.2fr 1.8fr 1fr 1.5fr 2fr;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(137, 120, 99);
+  box-shadow: 22px 21px 19px -12px rgba(56,56,56,0.63);
+  transition: 0.5s;
+  margin-top: 50px;
+  margin-bottom: -15px;
+
+  color: whitesmoke;
+  font-size: 21px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pods-header p {
+  margin-top: 13px;
+}
+
+/* .pods-header h5 {
+  padding-left: 10px;
+  margin: 30px;
+  margin-top: 10px;
+  color: white;
+} */
+
+.all-pod-info {
+  border: 1.2px solid #ec633677;
+  border-radius: 5px;
+  flex: 0.3;
+  height: 350px;
+  width: 85%;
+  margin-top: 20px;
+  overflow-y: scroll;
+}
+
+.pod-info {
+  height: 60px;
+  width: 97%;
+  display: grid;
+  grid-template-columns: 4fr 3fr 2fr 1fr 1.5fr 1.5fr;
+  justify-content: center;
+  background-color: #E2E0E1;
+  border: 1.2px solid #ec633677;
+  border-radius: 5px;
+  margin: 5px;  
+
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+
+  line-height: 15px;
   align-items: center;
+}
+
+.pod-info button {
+  height: 35px;
+  width: 65px;
+  font-family: "Nunito";
+  font-size: 18px;
+  font-weight: 600;
+
+  border-radius: 0.2rem;
+  background-color: #ec633677;;
+  box-shadow: 4px 10px 18px -6px rgba(92,92,92,1);
+  
+}
+
+.pod-info button:hover {
+  transition: 0.4s;
+  transform: scale(1.25)
+}
+
+.pod-info-pending {
+  background-color: rgb(251, 229, 121);  
+}
+
+
+
+@keyframes glowing {
+  0% {
+    background-color: rgb(226, 19, 19);
+    box-shadow: 0 0 5px rgb(191, 17, 17);
+  }
+  50% {
+    background-color: rgb(182, 16, 16);
+    box-shadow: 0 0 20px rgb(165, 15, 15);
+  }
+  100% {
+    background-color: rgb(179, 4, 4);
+    box-shadow: 0 0 5px rgb(195, 5, 5);
+  }
+}
+
+.pod-info-pending button {
+  animation: glowing 1300ms infinite;
 }

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './../../styles/display.css';
 import Chart from 'chart.js/auto'
 import { displayPartsToString } from 'typescript';
+const logo = require('../../img/Ekkremis-md.png')
 
 const labelsTest = [
   '18:50',
@@ -240,6 +241,9 @@ const Display = (props) => {
         <button id='pendingButton'className='chartButton' onClick>SHOW PENDING</button>
       </div>
       {/* <img src="https://miro.medium.com/max/1400/1*QwGqOMObJd7oFHCfe1AvxA.png" alt="" /> */}
+      <div className='logo-container'>
+        <img id='loading-logo' src={logo} alt="Ekkremis Logo"/> 
+      </div>
       <canvas id="myChart"></canvas>
     </div>
   )

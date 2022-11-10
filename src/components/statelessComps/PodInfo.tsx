@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 // importing other components 
 import ChartsModal from '../modalComps/ChartsModal';
 import ErrorModal from '../modalComps/ErrorModal';
+import { checkRunningPodError } from '../../utils';
+import { useEffect } from 'react';
 
 // type for props for podInfo 
 type podType = {
@@ -22,24 +24,38 @@ type podType = {
     const toggleChartsModal = () => {
       setShowChartsModal(!showChartsModal);
     }
-    
-  
+
     const [showErrorModal, setShowErrorModal] = useState(false);
   
     const toggleErrorModal = () => {
       setShowErrorModal(!showErrorModal);
     }
+
+    const [className, setClassName] = useState('pod-info');
+    const [buttonClassName, setButtonClassName] = useState('log-button');
+
+    useEffect(() => {
+      if (props.podStatus === 'Pending') {
+        setClassName('pod-info pod-info-pending');
+        setButtonClassName('log-button-pending')
+      }
+      if (props.podStatus === 'Running') {
+        console.log('inside pod info async')
+        checkRunningPodError(props.podName, props.currentUrl, setClassName, setButtonClassName)
+      }
+    },[props.podStatus])
+
   
     return(
-      <div className='pod-info'>
-        <h5>{props.podName}</h5>
-        <h5>{props.podNamespace}</h5>
-        <h5>{props.podStatus}</h5>
-        <h5>{props.podRestart}</h5>
-        <h5>{props.podAge}</h5>
-        <button onClick={toggleChartsModal}>charts</button>
-        <button onClick={toggleErrorModal}>logs</button>
-        <ChartsModal show={showChartsModal} toggleChartsModal={toggleChartsModal} />
+      <div className={className}>
+        <div><p>{props.podName}</p></div>
+        <div><p>{props.podNamespace}</p></div>
+        <div><p>{props.podStatus}</p></div>
+        <div><p>{props.podRestart}</p></div>
+        <div><p>{props.podAge}</p></div>
+          {/* <button onClick={toggleChartsModal}>charts</button> */}
+        <div><button className={buttonClassName} onClick={toggleErrorModal}>logs</button></div>
+        {/* <ChartsModal show={showChartsModal} toggleChartsModal={toggleChartsModal} /> */}
         <ErrorModal show={showErrorModal} toggleErrorModal={toggleErrorModal} podName={props.podName} currentUrl={props.currentUrl}/>
       </div>
     )
