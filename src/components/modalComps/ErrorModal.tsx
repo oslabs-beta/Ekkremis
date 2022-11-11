@@ -15,6 +15,7 @@ type ErrorProps = {
   // creating a solution object mapped to different error keys 
   const suggestionObject : any = {
     'ImagePullBackOff': `Kubernetes couldn't pull the specified container image. Please check the pod specification and ensure the repository and image are specified correctly!`,
+    'ErrImagePull' :`Kubernetes couldn't pull the specified container image. Please check the pod specification and ensure the repository and image are specified correctly!`,
     'CrashLoopBackOff': `Common causes of CrashLoopBackoff include: insufficient resources, failed reference, setup error, config loading error, and misconfigurations`,
     'ContainerCreating': `Common causes of ContainerCreating include: errors in configmap, unmountable configmap, exceeding memory limits, and liveliness probes`,
   
@@ -32,8 +33,8 @@ type ErrorProps = {
     // showModalClassName toggles the classname of the component to toggle the css property display between 'block' and 'none'.
     const showModalClassName = props.show ? "modal display-block" : "modal display-none";
     
-    suggestionObject['PodPending...'] = `${props.podName} is pending but Prometheus was unable to diagnose the root cause. Ekkremis recommends running the following commmand in your terminal to get a more detailed reason: \n kubectl describe pod ${props.podName}`
-   
+    suggestionObject['PodPending...'] = `${props.podName} is pending but Prometheus was unable to diagnose the root cause. Ekkremis recommends running the following commmand in your terminal to get a more detailed reason: `
+    const command = `kubectl describe pod ${props.podName}`
 
   // The ErrorModal will invoke getPendingReason to grab the pod status waiting reason
   getPendingReason('actual', setRan, setLogInfo, setNoError, props.podName, props.podStatus, props.currentUrl);
@@ -42,7 +43,7 @@ type ErrorProps = {
     <div className={showModalClassName}>
       <section className="modal-main">
         {ran ?
-          <Logs logInfo={logInfo} noError={noError} /> : 
+          <Logs logInfo={logInfo} noError={noError} command={command}/> : 
           <Loading />
         }
         <button type="button" onClick={props.toggleErrorModal}>
@@ -64,6 +65,13 @@ const Logs = (props: any) => {
           <h5>{props.logInfo}</h5> 
           <h3>Suggestion from Ekkremis:</h3>
           <h5>{suggestionObject[props.logInfo]}</h5>
+            {(props.logInfo==='PodPending...') ?
+              <div className="code-block"> 
+                <h6>{props.command}</h6> 
+              </div>  :
+              null
+            }
+            
         </div> : 
         <h5>NO ERRORS LOL</h5>
       }  

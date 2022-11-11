@@ -59,3 +59,15 @@
   width: 100px !important;
   animation: none !important;
 }
+
+.code-block {
+  width: 50%;
+  height: 28px;
+  font-size: 25px;
+  background-color: rgb(193, 193, 193);
+  text-align: center;
+  line-height: 100%;
+  border-radius: 0.3rem;
+  margin: auto;
+  margin-top: -15px;
+}
