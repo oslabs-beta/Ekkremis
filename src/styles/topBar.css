@@ -40,10 +40,11 @@
     margin-left:5px;
   }
   
-  .url-button {
+  .update-button {
     position: relative;
     top: -15px;
     font-family: "Nunito";
+    width: 100px;
   }
   
   #endpoint-url{
@@ -63,4 +64,11 @@
     font-family: "Nunito";
     font-weight: 700;
     text-align: center;
+    line-height: 100%;
+  }
+
+  input {
+    font-family: "Nunito";
+    font-size: 20px;
+    text-indent: 10px;
   }

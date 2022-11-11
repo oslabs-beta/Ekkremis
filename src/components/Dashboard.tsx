@@ -56,6 +56,8 @@ const Dashboard = () => {
   // state for making sure the useEffect doesn't loop
   const [preventChartLooping, setPreventChartLooping] = useState(false);
 
+  const [lastUpdate, setLastUpdate] = useState(Math.floor(Date.now() / 1000))
+
   // function to convert all pod data to summary format
   function generateSummary() {
     // array of keys of allPods
@@ -69,11 +71,7 @@ const Dashboard = () => {
     return resultObject;
   }
 
-  function helperSetCurrentPods() {
-    const summary: any = generateSummary();
-    console.log("summary: ", summary);
-    setCurrentPods(summary);
-  }
+
 
   // failed attempt to get the data to render on first load...
   // if (!status) setStatus('summary');
@@ -84,7 +82,7 @@ const Dashboard = () => {
     if (!hasBeenRun) {
       // reshape all pod data to fit status - resets current pods
       console.log("inside Dashboard useEffect, status: ", status);
-      if (status === "summary") getPodInfo("actual", setAllPods, setCurrentPods, currentUrl);
+      if (status === "summary") getPodInfo("actual", setAllPods, setCurrentPods, setLastUpdate, currentUrl);
       else setCurrentPods(allPods[status]);
 
       // cleanup function to aviod looping
@@ -117,6 +115,8 @@ const Dashboard = () => {
             currentPods={currentPods}
             preventChartLooping={preventChartLooping}
             setPreventChartLooping={setPreventChartLooping}
+            lastUpdate={lastUpdate}
+            status={status}
           />
           <AllPodInfo
             currentPods={currentPods}

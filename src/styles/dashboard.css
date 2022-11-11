@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
+
+
 body {
   height: 90%;
 }
@@ -25,59 +28,18 @@ body {
 }
 
 .right-side {
-  margin-left: 500px;
+  margin-left: 550px;
   margin-top: 30px;
   position: relative;
   height: 100%;
 }
 
-.pods-header {
-  height: 35px;
-  width: 100%;
-  display: flex;
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(222, 145, 41);
-  transition: 0.5s;
-  margin-top: 30px;
-  margin-bottom: -15px;
-}
 
-.pods-header h5 {
-  padding-left: 10px;
-  margin: 30px;
-  margin-top: 10px;
-  color: white;
-}
-
-.all-pod-info {
-  border: 1.2px solid #ec633677;
-  border-radius: 5px;
-  flex: 0.3;
-  height: 350px;
-  width: 650px;
-  margin-top: 20px;
-  overflow-y: scroll;
-}
-
-.pod-info {
-  height: 50px;
-  width: 97%;
-  display: flex;
-  justify-content: center;
-  background-color: #E2E0E1;
-  border: 1.2px solid #ec633677;
-  border-radius: 5px;
-  margin: 5px;
-  padding-bottom: 10px;
-  padding-top: -10px;
-}
-
-.pod-info h5 {
+/* .pod-info h5 {
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
-}
+} */
 
 /* @media only screen and (max-width: 600px) {
   .right-side {

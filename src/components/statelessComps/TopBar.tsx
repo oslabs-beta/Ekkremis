@@ -13,30 +13,48 @@ const TopBar = (props: any) => {
       // document.getElementById() returns the type HTMLElement which does not contain a value property. The subtype HTMLInputElement does however contain the value property.
       const inputElement = (document.getElementById('endpoint-url') as HTMLInputElement);
       let inputValue = inputElement.value
-      // const url = inputValue.toString() + '/metrics'
+      
       if (inputValue) props.setCurrentUrl(inputValue);
-      else inputValue = 'http://localhost:9090';
+      else props.setCurrentUrl('http://localhost:9090');
      
       inputElement.value = '';
 
-      function helperClick() {
-        document.getElementById('summary-button')?.click();
+      const loadingLogo : any = document.getElementById('loading-logo'); 
+      async function destroyLoadingLogo(speed: number) {
+        // loadingLogo?.remove();
+        var seconds = speed/1000;
+        loadingLogo.style.transition = "opacity "+seconds+"s ease";
+
+        loadingLogo.style.opacity = 0;
+        setTimeout(function() {
+          loadingLogo.parentNode.removeChild(loadingLogo);
+        }, speed);
+      };
+      
+      // removing logo and loding data
+      if (loadingLogo) {
+        (async () => {
+          await destroyLoadingLogo(1000);
+          setTimeout(()=> {
+            props.setStatus('summary');
+            props.setPreventChartLooping(true);
+          }, 500)
+        })()
+      } else {
+        props.setStatus('summary');
+        props.setPreventChartLooping(true);
       }
+      
 
       // this is the get real data from localhost 9090
       // getPodInfo("actual", setAllPods, inputValue);
-      props.setStatus('summary')
+     
   
       // this uses mock data
       // getPodInfo("mock", setAllPods);
-
-      // setTimeout(() => {
-      //   helperClick();
-      props.setPreventChartLooping(true);
-      // }, 1000)
     }
   
-    let placeholder = ' enter your url here';
+    let placeholder = 'Enter your url here';
     // if (props.currentUrl) placeholder = props.currentUrl;
   
     return(
@@ -46,8 +64,8 @@ const TopBar = (props: any) => {
             <input id='endpoint-url' type="text" placeholder={placeholder}/>
             <h5>/metrics</h5>
             <Button 
-              className="FPbutton url-button"
-              children="Update Url"
+              className="FPbutton update-button"
+              children="Update"
               onClick={()=>{handleClick(props.setAllPods)}}
             />
             {/* <button className='url-btn' onClick={()=>{handleClick(props.setAllPods)}}>update url</button> */}

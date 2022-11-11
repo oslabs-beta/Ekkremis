@@ -1,8 +1,10 @@
 // importing dependencies 
 import React, { useState, useEffect } from 'react';
+import TimeTracker from '../smallComps/TimeTracker'
 import './../../styles/display.css';
 import Chart from 'chart.js/auto'
 import { displayPartsToString } from 'typescript';
+const logo = require('../../img/logo-with-kubernetes.png')
 
 const labelsTest = [
   '18:50',
@@ -90,7 +92,8 @@ const dataMemoryBar = {
       'rgb(54, 162, 235)',
       'rgb(153, 102, 255)'
     ],
-    borderWidth: 1
+    borderWidth: 1,
+    // minBarLength: '500px'
   }]
 };
 
@@ -119,6 +122,8 @@ const Display = (props) => {
   // state for logging current charts to be displayed
   const [currentChartObject, setCurrentChartObject] = useState({'summaryDoughnutChart': configSummaryDoughnut});
   const [currentChart, setCurrentChart] = useState('summaryDoughnutChart');
+  // state for controlling speed of button transitions 
+  const [logoDestroyed, setLogoDestroyed] = useState(false)
 
   let myChart; 
 
@@ -216,21 +221,45 @@ const Display = (props) => {
   
   // toggle between different charts 
   const handleClick = (str) => {
-    // update states 
-    setStartChart(true);
-    props.setPreventChartLooping(true);
-    setCurrentChart(str)
-    // giving currently active button a 'active' class 
-    const previousActive = document.getElementsByClassName('activeChartButton');
-    if (previousActive[0]) previousActive[0].classList.remove('activeChartButton');
-    // figure out how to change the current button's class to 'active' 
-    let activeButton = document.getElementById(str + 'Button');
-    activeButton?.classList.add('activeChartButton');
-    if (str==='summaryDoughnutChart') setCurrentChartObject({'summaryDoughnutChart': configSummaryDoughnut});
-    if (str==='testChart') setCurrentChartObject({'testChart' : configTest});
-    if (str==='memoryBarChart') setCurrentChartObject({'memoryBarChart': configMemoryBar});
-  }
-  
+    let speed = 1500;
+    if (!logoDestroyed) speed = 0;
+    // clean up the loading submarine in case the user clicks on them before loading data. otherwise this would trigger a chart render and it would be pushed down by the submarine
+    destroyLoadingLogo(speed)
+    // making sure chart doesnt load until logo is destroyed
+    setTimeout(() => {
+      // update states 
+      setStartChart(true);
+      props.setPreventChartLooping(true);
+      setCurrentChart(str)
+      // giving currently active button a 'active' class 
+      const previousActive = document.getElementsByClassName('activeChartButton');
+      if (previousActive[0]) previousActive[0].classList.remove('activeChartButton');
+      // add 'active' class to the currently selected button 
+      let activeButton = document.getElementById(str + 'Button');
+      activeButton?.classList.add('activeChartButton');
+      if (str==='summaryDoughnutChart') setCurrentChartObject({'summaryDoughnutChart': configSummaryDoughnut});
+      if (str==='testChart') setCurrentChartObject({'testChart' : configTest});
+      if (str==='memoryBarChart') setCurrentChartObject({'memoryBarChart': configMemoryBar});
+      
+    }, speed);
+    
+    }
+    
+
+  async function destroyLoadingLogo(speed) {
+    const loadingLogo = document.getElementById('loading-logo'); 
+    // loadingLogo?.remove();
+    var seconds = speed/1000;
+    loadingLogo.style.transition = "opacity "+seconds+"s ease";
+
+    loadingLogo.style.opacity = 0;
+    setTimeout(function() {
+      loadingLogo.parentNode.removeChild(loadingLogo);
+    }, speed);
+    setLogoDestroyed(true)
+  };
+
+    
   return (
     <div id='display' className='display'>
       <div className='display-menu'>
@@ -240,7 +269,18 @@ const Display = (props) => {
         <button id='pendingButton'className='chartButton' onClick>SHOW PENDING</button>
       </div>
       {/* <img src="https://miro.medium.com/max/1400/1*QwGqOMObJd7oFHCfe1AvxA.png" alt="" /> */}
+      <div className='logo-container'>
+        <img id='loading-logo' src={logo} alt="Ekkremis Logo"/> 
+      </div>
       <canvas id="myChart"></canvas>
+      <div>
+        {props.status ?
+          <TimeTracker lastUpdate={props.lastUpdate}/> :
+          null
+      }
+      </div>
+      
+      
     </div>
   )
 }
