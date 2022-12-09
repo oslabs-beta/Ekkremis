@@ -27,7 +27,7 @@
 Some Kubernetes pods can't be scheduled and get stuck in a pending phase of the pod lifecycle. 
 
 <p align="left">
-  <img src = "./src/img/pod_lifecycle.jpeg" width="650">
+  <img src = "./src/img/pod_lifecycle.svg" width="650">
 </p>
 
 The status of pending pods has to be manually queried to proceed with resolving them, which slows down the deployment workflow. 

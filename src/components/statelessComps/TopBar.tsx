@@ -4,6 +4,7 @@ import Button from '../smallComps/Button'; // this should be button
 import '../../styles/topBar.css';
 // inpoting functiosn from utils
 import { getPodInfo } from '../../utils';
+import { nextTick } from 'process';
 
 // the top nav bar containing URL event listener and (potentially login?)
 const TopBar = (props: any) => {
@@ -12,26 +13,48 @@ const TopBar = (props: any) => {
       // document.getElementById() returns the type HTMLElement which does not contain a value property. The subtype HTMLInputElement does however contain the value property.
       const inputElement = (document.getElementById('endpoint-url') as HTMLInputElement);
       let inputValue = inputElement.value
-      // const url = inputValue.toString() + '/metrics'
+      
       if (inputValue) props.setCurrentUrl(inputValue);
-      else inputValue = 'http://localhost:9090';
+      else props.setCurrentUrl('http://localhost:9090');
      
       inputElement.value = '';
+
+      const loadingLogo : any = document.getElementById('loading-logo'); 
+      async function destroyLoadingLogo(speed: number) {
+        // loadingLogo?.remove();
+        var seconds = speed/1000;
+        loadingLogo.style.transition = "opacity "+seconds+"s ease";
+
+        loadingLogo.style.opacity = 0;
+        setTimeout(function() {
+          loadingLogo.parentNode.removeChild(loadingLogo);
+        }, speed);
+      };
+      
+      // removing logo and loding data
+      if (loadingLogo) {
+        (async () => {
+          await destroyLoadingLogo(1000);
+          setTimeout(()=> {
+            props.setStatus('summary');
+            props.setPreventChartLooping(true);
+          }, 500)
+        })()
+      } else {
+        props.setStatus('summary');
+        props.setPreventChartLooping(true);
+      }
+      
+
       // this is the get real data from localhost 9090
-      getPodInfo("actual", setAllPods, inputValue);
+      // getPodInfo("actual", setAllPods, inputValue);
+     
   
       // this uses mock data
       // getPodInfo("mock", setAllPods);
-  
-      // declare a resultObject -> {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}};
-      // call our first fetch function to update result object, pass in resultObject as an argument 
-      // second fetch 
-      // third fetch
-      // setAllPods(resultObject)
-  
     }
   
-    let placeholder = ' enter your url here';
+    let placeholder = 'Enter your url here';
     // if (props.currentUrl) placeholder = props.currentUrl;
   
     return(
@@ -41,8 +64,8 @@ const TopBar = (props: any) => {
             <input id='endpoint-url' type="text" placeholder={placeholder}/>
             <h5>/metrics</h5>
             <Button 
-              className="FPbutton url-button"
-              children="Update Url"
+              className="FPbutton update-button"
+              children="Update"
               onClick={()=>{handleClick(props.setAllPods)}}
             />
             {/* <button className='url-btn' onClick={()=>{handleClick(props.setAllPods)}}>update url</button> */}

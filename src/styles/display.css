@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap');
+
+.display {
+  border: 1.2px solid #ec633677;
+  flex: 0.3;
+  height: 400px;
+  width: 85%;
+  margin-top: 45px;
+  background-color: #d3d3d3;
+}
+
+.logo-container {
+  position: relative;
+  top: -20%;
+  left: 15%;
+  right: auto;
+  bottom: 20%;
+  width: 85%;
+}
+
+.display img {
+  height: 65%;
+  width: 75%;
+}
+
+
+@keyframes float {
+	0% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); grabs the whole div and not the image - makes the background gradient look weird*/
+		transform: translatey(0px);
+	}
+	50% {
+		/* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
+		transform: translatey(40px);
+	}
+	100% {
+		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
+		transform: translatey(0px);
+	}
+}
+
+#loading-logo{
+  text-align: center;
+  transform: translatey(0px);
+	animation: float 3s ease-in-out infinite;
+}
+
+.display-menu {
+  display: flex;
+  justify-content: right;
+
+  height: 0px;
+  position: relative;
+  left: 0px;
+  top: -8%;
+  z-index: 2;
+  /* border: 3px solid #ec633677; */
+}
+
+.display-menu button {
+  margin-top: 0px;
+  margin-left: 0px;
+  height: 29px;
+  width: 105px;
+  padding: 0px;
+  vertical-align: center;
+  border-radius: 0.2rem;
+
+  color: white;
+  background-color: rgb(117, 117, 117);
+
+  font-family: 'Nunito';
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.display-menu button:hover {
+  color: rgb(217, 197, 171);
+  background-color: rgb(93, 93, 93);
+}
+
+.activeChartButton {
+  color: rgb(166, 184, 218) !important;
+  background-color: rgb(93, 93, 93) !important;
+}
+
+#myChart {
+  max-height: 100%;
+  width: 100%;
+}
+
+#memoryBarChartButton {
+  font-size: 12px;
+  line-height: 11px;
+}
+
+#pendingButton {
+  font-size: 12px;
+  line-height: 11px;
+}
+
+.time-tracker {
+  position: relative;
+  display: flex;
+  font-size: 11px;
+  margin-top: -8px;
+  margin-bottom: -39px;
+  color:rgb(68, 68, 68); 
+}
+
+.time-tracker h4 {
+  margin-top: 12px;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 14px;
+  color: rgb(110, 126, 138);
+}

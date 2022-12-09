@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 // importing other components
 import PodInfo from './PodInfo';
-
+import '../../styles/allPodInfo.css';
 
 // component for all pods info 
 const AllPodInfo = (props: any) => {
@@ -10,13 +10,14 @@ const AllPodInfo = (props: any) => {
     // console.log(props.currentPods)
   
     const populateArray = () => {
+      // console.log('inside populateArray()... status: ', props.status)
       for (const key in props.currentPods) {
         podsArray.push(<PodInfo key={key} podName={key} podNamespace={props.currentPods[key].namespace} podStatus={props.currentPods[key].status} podRestart={props.currentPods[key].restart} podAge={props.currentPods[key].age} currentUrl={props.currentUrl}/>)
       }
     }
   
     // does this call still make sense when useEffect runs on the initial load? 
-    // populateArray();
+    populateArray();
   
     useEffect(() => {
       // for cleanup function
@@ -29,17 +30,18 @@ const AllPodInfo = (props: any) => {
       return () => {
         hasBeenCalled = true;
       }
-    }, [props.currentPods, props.currentUrl]); // update current pods when curent pods or url changes
+    }, [props.currentPods, props.currentUrl, props.status]); // update current pods when curent pods or url changes
 
 
     return(
-        <div>
+        <div className='pod-info-container'>
             <div className='pods-header'>
-              <h5>pod name</h5>
-              <h5>node</h5>
-              <h5>status</h5>
-              <h5>restarts</h5>
-              <h5>age</h5>
+              <div><p>POD NAME</p></div>
+              <div><p>NAMESPACE</p></div>
+              <div><p>STATUS</p></div>
+              <div className='smaller-header'><p>RESTARTS</p></div>
+              <div className='smaller-header'><p>AGE(H)</p></div>
+              <div><p></p></div>
             </div>
             <div className='all-pod-info'>
               {podsArray}

@@ -1,4 +1,5 @@
 // Cesar
+import { Route } from 'react-router-dom';
 import React from "react";
 import '../styles/frontPage.css'; // css folder
 import Button from './smallComps/Button'; // this should be button 
@@ -10,12 +11,12 @@ function FrontPage() {
   return (
     <div>
         <div className="fp">
-          <Link to='/dashboard'>
-            <Button 
-              className="FPbutton"
-              children="Continue to Dashboard"
-            />
-          </Link>
+        <Link to='/dashboard'>
+          <Button 
+            className="FPbutton"
+            children="Continue to Dashboard"
+          /> 
+        </Link>
         </div>
         
         <div className="fpLogo">

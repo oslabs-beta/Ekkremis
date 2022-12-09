@@ -13,7 +13,7 @@ import { getPodInfo } from '../utils';
 // import mock data 
 // import mockData from '../mock_data.json' assert { type: 'JSON' };
 // mockData = mockData.json();
-let mockData: any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}}
+let mockData: any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}, "initial": true}
 
 // fetch('../mock_data.json')
 //   .then(response => response.json())
@@ -22,30 +22,56 @@ let mockData: any = {"pending": {}, "running": {}, "succeeded": {}, "unknown": {
 
 // the parent componeent that holds all states and puts all other components together 
 const Dashboard = () => {
-  // state for current URL 
-  const [currentUrl, setCurrentUrl] = useState('http://localhost:9090');
-  // state for current active nav bar category 
-  const [status, setStatus] = useState('summary');
+  // state for current URL
+  const [currentUrl, setCurrentUrl] = useState("http://localhost:9090");
+  // state for current active nav bar category
+  const [status, setStatus] = useState("");
   // state for current pods for display - initialized by each button click - creates a subset of allPods based on status
   const [currentPods, setCurrentPods] = useState({
-    "pendingPod1": { "podName": "pending pod 1", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes" },
-    "pendingPod2": { "podName": "pending pod 2", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes" },
-    "pendingPod3": { "podName": "pending pod 3", "node": "minikube", "status": "pending", "restarts": 0, "age": "53 minutes" }
+    pendingPod1: {
+      podName: "pending pod 1",
+      node: "minikube",
+      status: "pending",
+      restarts: 0,
+      age: "53 minutes",
+    },
+    pendingPod2: {
+      podName: "pending pod 2",
+      node: "minikube",
+      status: "pending",
+      restarts: 0,
+      age: "53 minutes",
+    },
+    pendingPod3: {
+      podName: "pending pod 3",
+      node: "minikube",
+      status: "pending",
+      restarts: 0,
+      age: "53 minutes",
+    },
   });
   // all pods looks like this: {"pending": {}, "running": {}, "succeeded": {}, "unknown": {}, "failed": {}}
   const [allPods, setAllPods] = useState(mockData);
 
+  // state for making sure the useEffect doesn't loop
+  const [preventChartLooping, setPreventChartLooping] = useState(false);
+
+  const [lastUpdate, setLastUpdate] = useState(Math.floor(Date.now() / 1000))
+
   // function to convert all pod data to summary format
-  async function generateSummary() {
+  function generateSummary() {
     // array of keys of allPods
     let keysArray = Object.keys(allPods);
     let resultObject = {};
     for (let i = 0; i < keysArray.length; i++) {
-      Object.assign(resultObject, allPods[keysArray[i]])
+      Object.assign(resultObject, allPods[keysArray[i]]);
     }
+    console.log("inside generateSummary(): ", resultObject);
     // return an object that's in an accepted format by currentPods
     return resultObject;
   }
+
+
 
   // failed attempt to get the data to render on first load...
   // if (!status) setStatus('summary');
@@ -55,38 +81,53 @@ const Dashboard = () => {
     let hasBeenRun = false;
     if (!hasBeenRun) {
       // reshape all pod data to fit status - resets current pods
-      if (status !== 'summary') setCurrentPods(allPods[status]);
-      else {
-        (async () => {
-          getPodInfo("actual", setAllPods, currentUrl);
-          const summary: any = await generateSummary();
-          console.log(summary);
-          setCurrentPods(summary);
-        })();
+      console.log("inside Dashboard useEffect, status: ", status);
+      if (status === "summary") getPodInfo("actual", setAllPods, setCurrentPods, setLastUpdate, currentUrl);
+      else setCurrentPods(allPods[status]);
+
+      // cleanup function to aviod looping
+      return () => {
+        hasBeenRun = true;
       }
-    }
-    console.log(currentPods);
-    // cleanup function to aviod looping
-    return () => {
-      hasBeenRun = true;
-    }
+    };
   }, [status, currentUrl]); // update current pods when status or url changes
 
-
-  return(
-    <div className='dashboard'>
-      <TopBar currentUrl={currentUrl} setCurrentUrl={setCurrentUrl} setAllPods={setAllPods}/>
-      <div className='main'>
-        <div className='query-bar'>
-          <QueryBar status={status} setStatus={setStatus}/>
+  return (
+    <div className="dashboard">
+      <TopBar
+        currentUrl={currentUrl}
+        setCurrentUrl={setCurrentUrl}
+        setAllPods={setAllPods}
+        setStatus={setStatus}
+        setPreventChartLooping={setPreventChartLooping}
+      />
+      <div className="main">
+        <div className="query-bar">
+          <QueryBar
+            status={status}
+            setStatus={setStatus}
+            setPreventChartLooping={setPreventChartLooping}
+          />
         </div>
-        <div className='right-side'>
-          <Display />
-          <AllPodInfo currentPods={currentPods} currentUrl={currentUrl} status={status} allPods={allPods}/>
+        <div className="right-side">
+          <Display
+            allPods={allPods}
+            currentPods={currentPods}
+            preventChartLooping={preventChartLooping}
+            setPreventChartLooping={setPreventChartLooping}
+            lastUpdate={lastUpdate}
+            status={status}
+          />
+          <AllPodInfo
+            currentPods={currentPods}
+            currentUrl={currentUrl}
+            status={status}
+            allPods={allPods}
+          />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;

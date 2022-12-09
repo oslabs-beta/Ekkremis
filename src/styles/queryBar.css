@@ -9,14 +9,24 @@
     align-items: center;
     justify-content: space-around;
     padding: 10px;
+    font-size: 20px;
   }
 
-/* // Popup Texts & button */
+/* Popup Texts & button */
   .query-bar {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    height: 80%;
+    min-height: 900px;
+    padding-left: 55px;
   }
+
+  .query-bar img {
+    height: 20%;
+    margin-top: 20px;
+  }
+  
 
   /* //Button Link */
   .query-btn-unselected {
@@ -28,20 +38,31 @@
     color: white;
     border-radius: 5%;
     margin: 10px;
-    padding: 1.4em 3.5em;
-    background-size: 200% auto;
+    padding: 1.4em 3em;
     border: none;
+    background-size: 200% auto;
     background-image: linear-gradient(to right, rgb(222, 145, 41) 0%, #f7bd58df 50%, rgb(222, 145, 41)100%);
-    transition: 0.5s;
+    transition: height 1.7s linear;
   }
 
   .query-btn-unselected:hover {
     background-position: right center;
   }
 
-  .query-btn-unselected:focus {
-    background-position: right center;
+  .active {
+    height: 20%;
+    transition: height 1.7s linear;
+    background-image: linear-gradient(to right, #EC6536 0%, #f7bd58df 50%, rgb(218, 131, 18)100%);
   }
+
+  .active:hover {
+    background-position: right center;
+    background-image: linear-gradient(to right, #EC6536 0%, #f7bd58df 50%, rgb(218, 131, 18)100%);
+  }
+
+  /* .query-btn-unselected:focus {
+    background-position: right center;
+  } */
 
   /* @media only screen and (max-width: 600px) {
     .query-btn {
